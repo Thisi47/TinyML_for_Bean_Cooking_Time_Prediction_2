@@ -9,11 +9,11 @@
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Pipeline de prétraitement des images et des labels $T_c$.}}{16}{figure.caption.13}%
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Pipeline fonctionnel du système (chargement → entraînement → optimisation → déploiement).}}{18}{figure.caption.14}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Workflow fonctionnel de l’application Android.}}{27}{figure.caption.17}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Workflow fonctionnel de l’application Android (capture, prétraitement, inférence, affichage).}}{30}{figure.caption.17}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Évolution des courbes de perte pour les différents modèles testés.}}{29}{figure.caption.19}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Comparaison du MAE entre modèles.}}{30}{figure.caption.21}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Comparaison du RMSE entre modèles.}}{30}{figure.caption.22}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Comparaison du MAPE entre modèles.}}{30}{figure.caption.23}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Comparaison de l’erreur maximale (MaxErr) entre modèles.}}{30}{figure.caption.24}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Évolution des courbes de perte pour les différents modèles testés.}}{32}{figure.caption.19}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Comparaison du MAE entre modèles.}}{33}{figure.caption.21}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Comparaison du RMSE entre modèles.}}{33}{figure.caption.22}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Comparaison du MAPE entre modèles.}}{33}{figure.caption.23}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Comparaison de l’erreur maximale (MaxErr) entre modèles.}}{33}{figure.caption.24}%
 \addvspace {10\p@ }

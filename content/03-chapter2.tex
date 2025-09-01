@@ -1,107 +1,264 @@
 \chapter{Développement et implémentation}
+\label{chap:developpement}
+
+Ce chapitre détaille la mise en œuvre concrète du système de prédiction du temps de cuisson des haricots, depuis la préparation des données jusqu’au déploiement embarqué. Il s’appuie sur la méthodologie définie au Chapitre~\ref{chap:methodologie} et en reprend strictement les choix techniques (prétraitements, architectures candidates, schéma d’entraînement et optimisation TinyML).
 
 \section{Environnement de développement}
 \label{sec:env_dev}
 
-La mise en œuvre du système de prédiction repose sur un environnement logiciel soigneusement configuré afin de garantir la reproductibilité des expériences. Les scripts de prétraitement et d’entraînement ont été développés en \texttt{Python 3.10}, en s’appuyant sur \textbf{TensorFlow 2.13} et son API Keras, choisies pour leur support natif de la conversion en \texttt{TensorFlow Lite} et leur compatibilité avec les outils TinyML. Les analyses exploratoires et la visualisation des données ont été réalisées à l’aide de \texttt{Pandas 2.1}, \texttt{NumPy 1.25} et \texttt{Matplotlib 3.8}.
-
-L’intégration mobile a été conduite dans \textbf{Android Studio Narwhal (2025.1.2)} avec le SDK Android version \textbf{36}, en assurant une compatibilité descendante jusqu’à \texttt{minSdkVersion=24} (Android 7.0). L’application repose sur \texttt{Kotlin}, intégrant la bibliothèque \texttt{TensorFlow Lite Interpreter} (v2.13) pour l’exécution des modèles embarqués.
-
-Les expérimentations ont été menées sur une machine équipée d’un processeur Intel Core i7 (4 cœurs), de 16~Go de RAM et Google Colab Testa 4 (15~Go de VRAM, 12~Go de RAM, 118~Go de stockage), configuration permettant un entraînement efficace et des optimisations avancées.
-
-\section{Prétraitement et entraînement des modèles}
-\label{sec:preproc_train}
-
-\subsection{Pipeline de prétraitement}
-Le pipeline de prétraitement implémente les étapes suivantes :
-\begin{enumerate}
-\item \textbf{Recadrage et redimensionnement} : les images brutes (3000$\times$4000~px) sont recadrées au centre puis réduites à 224$\times$224~px, compatible avec les architectures de type CNN.
-\item \textbf{Mise à l’échelle des pixels} : normalisation dans l’intervalle [0,1].
-\item \textbf{Augmentation de données} : transformations stochastiques (flips horizontaux/verticaux, recadrages aléatoires, bruit gaussien, variations de luminosité), appliquées uniquement au jeu d’entraînement.
-\item \textbf{Normalisation des labels} : transformation Min--Max appliquée aux temps de cuisson $T_c$, ramenant les valeurs dans [0,1].
-\end{enumerate}
-
-\subsection{Configuration d’entraînement}
-Les entraînements ont été conduits avec l’optimiseur Adam ($\beta_1=0.9$, $\beta_2=0.999$), un taux d’apprentissage initial de $10^{-4}$ avec scheduler \emph{ReduceLROnPlateau}, des lots de 32, et un maximum de 100 époques. Un mécanisme d’\emph{early stopping} (patience de 5) a été intégré afin de limiter le surapprentissage. La régularisation repose sur un dropout de 0,3 et une pénalisation L2 ($10^{-4}$).
-
-Trois familles de modèles ont été testées : (i) des CNN personnalisés conçus pour une extraction hiérarchique des caractéristiques, (ii) des architectures mobiles pré-entraînées (MobileNetV2, EfficientNetB0, NASNetMobile), et (iii) des versions distillées, quantifiées et prunées pour un déploiement TinyML.
-
-\section{Optimisation et conversion TinyML}
-\label{sec:optimisation_tinyml}
-
-La contrainte majeure du projet réside dans l’exécution sur des dispositifs mobiles à ressources limitées. Pour y répondre, plusieurs techniques d’optimisation ont été appliquées :
-
+\subsection{Matériel}
+Les expérimentations ont été menées sur :
 \begin{itemize}
-\item \textbf{Quantification post-entraînement} : conversion \texttt{float32} $\rightarrow$ \texttt{int8}, réduisant la taille mémoire par un facteur proche de 4.
-\item \textbf{Quantization-aware training (QAT)} : intégration de la quantification pendant l’apprentissage pour améliorer la robustesse.
-\item \textbf{Pruning itératif} : suppression progressive des poids à faible contribution, suivie d’un \emph{fine-tuning}.
-\item \textbf{Conversion TensorFlow Lite} : export des modèles au format \texttt{.tflite}, exécutable via l’API \texttt{Interpreter}.
+    \item \textbf{Machine locale} : Intel Core i7 (4 cœurs), 16~Go RAM.
+    \item \textbf{Google Colab} : session `Testa 4` (15~Go VRAM, 12~Go RAM, 118~Go stockage).
 \end{itemize}
 
-Ces optimisations ont permis de réduire la taille mémoire de 70 à 75~\% pour certains modèles, tout en maintenant une précision acceptable pour la tâche de régression.
+\subsection{Logiciels et versions}
+Sauf mention contraire, les versions sont celles déjà fixées (voir Chap.~\ref{chap:developpement} version antérieure) :
+\begin{itemize}
+    \item \textbf{Python} 3.10
+    \item \textbf{TensorFlow} 2.13 \& API Keras (compatibles \texttt{TensorFlow Lite})
+    \item \textbf{Pandas} 2.1, \textbf{NumPy} 1.25, \textbf{Matplotlib} 3.8
+    \item (le cas échéant, outils d’analyse complémentaires cohérents avec la méthodologie)
+\end{itemize}
 
-\section{Déploiement sur Android}
-\label{sec:deploiement_android}
+\paragraph{Placeholders installation/env.}
+\begin{lstlisting}[language=bash,caption={(Placeholder) Installation/gel des dépendances},label={lst:env_install}]
+# >>> CODE ICI <<<
+# Exemple:
+# pip install tensorflow==2.13.0 pandas==2.1.* numpy==1.25.* matplotlib==3.8.*
+# pip freeze > requirements.txt
+\end{lstlisting}
 
-\subsection{Architecture logicielle}
-L’application Android repose sur trois couches principales (Figure~\ref{fig:archi_android}) :
+\section{Organisation des sources et données}
+\label{sec:orga_sources}
+
+\paragraph{Arborescence (placeholder).}
+\begin{lstlisting}[language=bash,caption={(Placeholder) Arborescence du projet},label={lst:tree}]
+# >>> CODE ICI <<<
+# Exemple (à adapter):
+# project/
+# ├─ data/
+# │  ├─ raw/           # images brutes
+# │  ├─ splits/        # index train/val/test
+# │  └─ hdf5/          # jeux HDF5 préparés
+# ├─ src/
+# │  ├─ preprocess/    # scripts prétraitement/offline
+# │  ├─ training/      # scripts entrainement
+# │  ├─ export/        # conversion TFLite
+# │  └─ android/       # app Android (Kotlin)
+# └─ reports/          # logs TensorBoard, figures, tableaux
+\end{lstlisting}
+
+\section{Préparation des données}
+\label{sec:pretraitement}
+
+Le protocole de préparation suit \textit{strictement} le Chapitre~\ref{chap:methodologie} :
 \begin{enumerate}
-\item \textbf{Interface utilisateur (UI)} : activités Kotlin gérant la capture d’image, le lancement de la prédiction et l’affichage des résultats.
-\item \textbf{Prétraitement embarqué} : redimensionnement 224$\times$224, normalisation et préparation du tenseur d’entrée.
-\item \textbf{Moteur de prédiction} : exécution du modèle \texttt{.tflite} et restitution du temps de cuisson estimé.
+    \item \textbf{Recadrage centré} et \textbf{redimensionnement} des images brutes (\(3000\times4000\)) en \(224\times224\).
+    \item \textbf{Mise à l’échelle} des pixels dans \([0,1]\).
+    \item \textbf{Augmentation} stochastique \textit{train-only} (flips, crops, jitter de luminosité/contraste/saturation, blur, bruit gaussien)\footnote{Paramètres détaillés et justification : voir Chap.~\ref{chap:methodologie}.}.
+    \item \textbf{Normalisation Min--Max} des labels \(T_c\in[0,1]\) calculée \emph{uniquement} sur \(\mathcal{D}_{\text{train}}\) et réappliquée à val/test; inversion pour revenir aux minutes en sortie.
+    \item \textbf{Export HDF5} par split avec clés \texttt{images}, \texttt{cooking\_times}.
 \end{enumerate}
 
-\subsection{Chargement et inférence}
-Le modèle est stocké dans le répertoire \texttt{assets/}. L’inférence est réalisée via :
-\begin{verbatim}
-val interpreter = Interpreter(loadModelFile("model.tflite"))
-interpreter.run(inputTensor, outputTensor)
-\end{verbatim}
+\paragraph{Scripts de préparation (placeholders).}
+\begin{lstlisting}[language=Python,caption={(Placeholder) Génération des splits et export HDF5},label={lst:prep_hdf5}]
+# >>> CODE ICI <<<
+# - chargement des chemins images + labels (CSV/JSON)
+# - génération des index train/val/test (seed fixée)
+# - pipeline: crop/resize 224x224 + normalisation [0,1]
+# - augmentation (train uniquement)
+# - scaling Min-Max de Tc avec Tc_min/Tc_max de train
+# - écriture HDF5: images (uint8/float16), labels (float32), meta
+\end{lstlisting}
 
-\subsection{Interface utilisateur}
-L’interface adopte une approche simple : capture de l’image, déclenchement de la prédiction par un bouton, puis affichage du temps de cuisson estimé avec intervalle de confiance.
+\paragraph{Chargement par lot (mémoire contrainte).}
+\begin{lstlisting}[language=Python,caption={(Placeholder) DataLoader/TFDataset depuis HDF5},label={lst:dataloader}]
+# >>> CODE ICI <<<
+# - ouverture HDF5 (mode lecture)
+# - dataset tf.data / generator Python
+# - batching, shuffle (train), prefetch
+\end{lstlisting}
 
+\section{Architectures de modèles}
+\label{sec:modeles}
+
+Conformément à la méthodologie, nous considérons :
+\begin{itemize}
+    \item \textbf{CNN personnalisés} (deux variantes) pour extraction hiérarchique efficace.
+    \item \textbf{MobileNetV2}, \textbf{EfficientNetB0}, \textbf{NASNetMobile} (apprentissage par transfert).
+\end{itemize}
+La tête de régression utilise une sortie scalaire avec activation \texttt{linear}. La régularisation reprend les choix de base (dropout 0{,}3, pénalisation L2 \(\lambda=10^{-4}\)).
+
+\paragraph{CNN personnalisé (placeholder).}
+\begin{lstlisting}[language=Python,caption={(Placeholder) Définition d'un CNN personnalisé (Keras)},label={lst:cnn_custom}]
+# >>> CODE ICI <<<
+# def build_cnn_custom(input_shape=(224,224,3), l2_reg=1e-4, dropout=0.3):
+#     ...
+#     return model
+\end{lstlisting}
+
+\paragraph{Modèles pré-entraînés (placeholder).}
+\begin{lstlisting}[language=Python,caption={(Placeholder) Transfer learning MobileNetV2/EfficientNetB0/NASNetMobile},label={lst:transfer}]
+# >>> CODE ICI <<<
+# - chargement du backbone (weights="imagenet", include_top=False, input_shape=224x224x3)
+# - global average pooling
+# - dense(s) + régularisation (L2, dropout)
+# - sortie Dense(1, activation="linear")
+# - stratégie de gel/dégel des couches (fine-tuning)
+\end{lstlisting}
+
+\section{Stratégie d’entraînement}
+\label{sec:entrainement}
+
+Les hyperparamètres de base sont ceux fixés précédemment (voir Chap.~\ref{chap:methodologie}) :
+\begin{itemize}
+    \item Optimiseur \textbf{Adam} (\(\beta_1=0{,}9\), \(\beta_2=0{,}999\)), LR initial \(10^{-4}\), \texttt{ReduceLROnPlateau}.
+    \item Perte \textbf{MSE}; métriques surveillées : MAE, RMSE, \(R^2\) (et MAPE si requis).
+    \item \textbf{Batch size}~32; \textbf{max}~100 époques; \textbf{early stopping} (patience 5).
+    \item Régularisation : \textbf{dropout 0{,}3}, \textbf{L2} \(10^{-4}\).
+\end{itemize}
+
+\paragraph{Compilation/entraînement (placeholders).}
+\begin{lstlisting}[language=Python,caption={(Placeholder) Compilation et fit Keras},label={lst:fit}]
+# >>> CODE ICI <<<
+# model.compile(optimizer=..., loss="mse", metrics=[...])
+# callbacks = [EarlyStopping(...), ReduceLROnPlateau(...), ModelCheckpoint(...)]
+# history = model.fit(train_ds, validation_data=val_ds, epochs=100, callbacks=callbacks)
+\end{lstlisting}
+
+\paragraph{Journalisation et réplication.}
+\begin{lstlisting}[language=Python,caption={(Placeholder) Seeds, TensorBoard, sauvegarde checkpoints},label={lst:tb}]
+# >>> CODE ICI <<<
+# - fix seeds (python/numpy/tf)
+# - TensorBoard (logs dir)
+# - sauvegarde des checkpoints .keras/.h5
+\end{lstlisting}
+
+\section{Export et optimisation TinyML}
+\label{sec:optim_tinyml}
+
+\subsection{Conversion TensorFlow Lite (float16)}
+Conformément à la décision validée, la quantification retenue est \textbf{float16} (réduction mémoire, bonne fidélité). 
+
+\paragraph{Conversion (placeholder).}
+\begin{lstlisting}[language=Python,caption={(Placeholder) Conversion TFLite en float16},label={lst:tflite_fp16}]
+# >>> CODE ICI <<<
+# converter = tf.lite.TLiteConverter.from_keras_model(model)
+# converter.optimizations = [tf.lite.Optimize.DEFAULT]
+# converter.target_spec.supported_types = [tf.float16]
+# tflite_model = converter.convert()
+# with open("model_fp16.tflite","wb") as f: f.write(tflite_model)
+\end{lstlisting}
+
+\subsection{Validation TFLite vs. modèle de référence}
+\paragraph{Parité de sortie (placeholder).}
+\begin{lstlisting}[language=Python,caption={(Placeholder) Test de parité Keras vs TFLite sur N échantillons},label={lst:parity}]
+# >>> CODE ICI <<<
+# - charger "model_fp16.tflite" dans un Interpreter
+# - comparer sorties (après inverse Min-Max) vs prédictions Keras
+# - rapporter MAE/RMSE de parité (à insérer dans le chap. Résultats)
+\end{lstlisting}
+
+\section{Déploiement Android}
+\label{sec:deploiement_android}
+
+\subsection{Cible et outils}
+\begin{itemize}
+    \item \textbf{Android Studio} Narwhal (2025.1.2), \textbf{SDK} Android \textbf{36}.
+    \item Compatibilité descendante \texttt{minSdkVersion=24} (Android 7.0).
+    \item \textbf{Langage} : Kotlin.
+    \item \textbf{Runtime ML} : \texttt{TensorFlow Lite Interpreter} v2.13.
+\end{itemize}
+
+\subsection{Intégration et inférence}
+Le modèle \texttt{.tflite} est placé dans \texttt{assets/}. Le pipeline embarqué reproduit le prétraitement (redimensionnement \(224\times224\), normalisation cohérente), exécute l’inférence, puis applique l’inversion Min--Max pour restituer \(T_c\) en minutes.
+
+\paragraph{Gradle (placeholder).}
+\begin{lstlisting}[language=groovy,caption={(Placeholder) Dépendances Gradle TFLite},label={lst:gradle}]
+# >>> CODE ICI <<<
+# implementation 'org.tensorflow:tensorflow-lite:2.13.0'
+# (ajouter delegates NNAPI/GPU si nécessaire)
+\end{lstlisting}
+
+\paragraph{Kotlin: chargement modèle (placeholder).}
+\begin{lstlisting}[language=Java,caption={(Placeholder) Kotlin - chargement et exécution TFLite},label={lst:kotlin_tflite}]
+/* >>> CODE ICI <<<
+// fun loadModel(context): MappedByteBuffer { ... }
+// val interpreter = Interpreter(loadModelFile("model_fp16.tflite"))
+// val inputBuffer: ByteBuffer = preprocessToInputBuffer(bitmap224x224) // normalisation cohérente
+// interpreter.run(inputBuffer, outputBuffer)
+// val y_pred_minutes = inverseMinMax(outputBuffer, Tc_min, Tc_max)
+*/
+\end{lstlisting}
+
+\paragraph{UI/Workflow (placeholder figure).}
 \begin{figure}[h!]
-\centering
-\begin{tikzpicture}[>=Latex, node distance=1.6cm, thick]
-\tikzstyle{block} = [rectangle, rounded corners, draw, fill=blue!12,
-text centered, minimum width=3.5cm, minimum height=1cm]
-\node[block] (img) {Capture de l’image};
-\node[block, below of=img] (preproc) {Prétraitement (224$\times$224, normalisation)};
-\node[block, below of=preproc] (tflite) {Exécution modèle TFLite};
-\node[block, below of=tflite] (pred) {Affichage du temps de cuisson (min)};
-\draw[->] (img) -- (preproc);
-\draw[->] (preproc) -- (tflite);
-\draw[->] (tflite) -- (pred);
-\end{tikzpicture}
-\caption{Workflow fonctionnel de l’application Android.}
-\label{fig:archi_android}
+    \centering
+    % >>> FIGURE ICI <<< (schéma UI: capture -> prétraitement -> inférence -> restitution Tc)
+    \caption{Workflow fonctionnel de l’application Android (capture, prétraitement, inférence, affichage).}
+    \label{fig:app_workflow}
 \end{figure}
 
-\section{Analyse comparative des modèles optimisés}
-\label{sec:comparaison_tinyml}
+\section{Mesures et artefacts à produire}
+\label{sec:mesures_artefacts}
 
-L’optimisation des modèles constitue une étape déterminante pour le déploiement sur microcontrôleurs et smartphones. Dans ce travail, la quantification post-entraînement a été retenue comme stratégie principale, complétée par du pruning structurel dans certains cas. La littérature confirme que la quantification en entiers 8~bits (\texttt{int8}) représente un compromis efficace entre efficacité computationnelle et préservation des performances \citep{jacob2018quantization, han2016deep, banbury2021micronets}.
+Cette section ne présente \emph{pas} de résultats chiffrés (rapportés au Chap. Résultats), mais liste les artefacts à générer pour chaque modèle testé.
 
-Le tableau~\ref{tab:comparaison_modeles_optimises} synthétise les résultats expérimentaux. Quatre critères ont été analysés : (i) la taille mémoire avant et après optimisation, (ii) la latence moyenne d’inférence mesurée sur ARM Cortex-M, (iii) la précision en régression (MAE, RMSE, $R^2$), et (iv) le taux de compression.
+\paragraph{Taille binaire et compatibilité.}
+\begin{lstlisting}[language=bash,caption={(Placeholder) Rapport de taille et compatibilité modèles},label={lst:size_report}]
+# >>> CODE ICI <<<
+# - taille du fichier .tflite (float32 vs float16)
+# - (optionnel) signature TFLite, infos d'entrées/sorties
+\end{lstlisting}
 
+\paragraph{Tableau comparatif (placeholder valeurs).}
 \begin{table}[h!]
 \centering
-\caption{Comparaison des modèles optimisés pour TinyML après quantification et pruning.}
-\label{tab:comparaison_modeles_optimises}
-\begin{tabular}{|l|c|c|c|c|}
-\hline
-\textbf{Modèle} & \textbf{Taille mémoire (MB)} & \textbf{Latence (ms)} & \textbf{MAE / RMSE / $R^2$} & \textbf{Réduction} \\
-\hline
-CNN personnalisé & 2.8 $\rightarrow$ 0.85 & 18.2 & 4.5 / 6.8 / 0.91 & -69.6 \% \\
-\hline
-MobileNetV2      & 14.1 $\rightarrow$ 3.9  & 26.5 & 5.2 / 7.4 / 0.88 & -72.3 \% \\
-\hline
-EfficientNetB0   & 20.4 $\rightarrow$ 5.6  & 34.7 & 5.5 / 7.9 / 0.87 & -72.5 \% \\
-NASNetMobile   & 20.4 $\rightarrow$ 5.6  & 34.7 & 5.5 / 7.9 / 0.87 & -72.5 \% \\
-\hline
+\caption{(Placeholder) Synthèse des modèles déployables (à remplir avec valeurs mesurées).}
+\label{tab:deploy_synthese}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Modèle & Fichier TFLite & Taille (Mo) & Latence (ms)\textsuperscript{$\dagger$} & Notes \\ \midrule
+CNN personnalisé & model\_fp16.tflite & \textit{à insérer} & \textit{à insérer} & float16 \\
+MobileNetV2      & model\_fp16.tflite & \textit{à insérer} & \textit{à insérer} & float16 \\
+EfficientNetB0   & model\_fp16.tflite & \textit{à insérer} & \textit{à insérer} & float16 \\
+NASNetMobile     & model\_fp16.tflite & \textit{à insérer} & \textit{à insérer} & float16 \\ \bottomrule
 \end{tabular}
+
+\begin{flushleft}
+\footnotesize{$\dagger$ Mesures \emph{sur appareil cible} : moyenne et percentiles; reportées au Chapitre Résultats.}
+\end{flushleft}
 \end{table}
 
-Les résultats démontrent que la quantification et le pruning permettent des gains mémoire supérieurs à 70~\%, associés à une réduction de latence notable. La perte de précision reste limitée et compatible avec l’usage ciblé, confirmant la pertinence des CNN légers pour des applications embarquées. Ces conclusions s’accordent avec les observations de \citet{lin2018towards} et \citet{wu2020comprehensive}, qui soulignent la nécessité d’un compromis entre compression et performance statistique.
+\section{Reproductibilité et CI (placeholders)}
+\label{sec:ci_repro}
 
+\paragraph{Scripts et seeds.}
+\begin{lstlisting}[language=bash,caption={(Placeholder) Exécution bout-en-bout},label={lst:run_all}]
+# >>> CODE ICI <<<
+# 1) python src/preprocess/make_hdf5.py --config ...
+# 2) python src/training/train.py --model cnn_custom --epochs 100 ...
+# 3) python src/export/to_tflite.py --quant float16 ...
+# 4) python src/validate/parity_tflite.py --n 256 ...
+\end{lstlisting}
+
+\paragraph{Tests de non-régression.}
+\begin{lstlisting}[language=Python,caption={(Placeholder) Tests unitaires/parité sortie},label={lst:tests}]
+# >>> CODE ICI <<<
+# - test: même normalisation/offline vs online
+# - test: parité Keras vs TFLite (tolérance MAE)
+\end{lstlisting}
+
+\section{Limites pratiques et points d’attention}
+\label{sec:limites}
+\begin{itemize}
+    \item \textbf{Alignement des prétraitements} : le pipeline embarqué doit reproduire exactement la normalisation (y compris l’inversion Min--Max).
+    \item \textbf{Latence et consommation} : les valeurs dépendent fortement de l’appareil et des délégués (CPU/GPU/NNAPI); les mesures sont reportées au Chapitre Résultats.
+    \item \textbf{Gestion mémoire} : réutilisation des buffers d’E/S et chargement paresseux recommandés côté Android.
+\end{itemize}
+
+\bigskip
+\noindent \textbf{Résumé} — Ce chapitre fournit la structure d’implémentation complète (prétraitement, modèles, entraînement, conversion float16, intégration Android) et des \textit{placeholders} pour insérer le code et les mesures réelles sans introduire d’informations non vérifiées.
+Il sert de guide pour la réalisation pratique et la documentation des résultats, qui seront présentés et analysés en détail au Chapitre~\ref{chap:resultats_discussion}.

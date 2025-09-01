@@ -7,8 +7,8 @@
 \contentsline {table}{\numberline {3.3}{\ignorespaces Hyperparamètres d'entraînement recommandés.}}{22}{table.caption.15}%
 \contentsline {table}{\numberline {3.4}{\ignorespaces Comparatif des modèles (valeurs indicatives pour 224×224).}}{22}{table.caption.16}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Comparaison des modèles optimisés pour TinyML après quantification et pruning.}}{28}{table.caption.18}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces (Placeholder) Synthèse des modèles déployables (à remplir avec valeurs mesurées).}}{30}{table.caption.18}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Performances des modèles sur le jeu de test.}}{29}{table.caption.20}%
-\contentsline {table}{\numberline {5.2}{\ignorespaces Performances par variété pour le modèle \texttt {model\_1\_v2}.}}{30}{table.caption.25}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Performances des modèles sur le jeu de test.}}{32}{table.caption.20}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Performances par variété pour le modèle \texttt {model\_1\_v2}.}}{33}{table.caption.25}%
 \addvspace {10\p@ }

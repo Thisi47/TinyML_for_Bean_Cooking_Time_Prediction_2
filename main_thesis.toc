@@ -49,45 +49,68 @@
 \contentsline {subsubsection}{Distillation de connaissances}{21}{subsection.3.3.4}%
 \contentsline {subsection}{\numberline {3.3.5}Workflow expérimental et hyperparamètres}{21}{subsection.3.3.5}%
 \contentsline {subsection}{\numberline {3.3.6}Comparaison chiffrée des modèles (estimation)}{22}{subsection.3.3.6}%
-\contentsline {subsection}{\numberline {3.3.7}Intégration embarquée : smartphone, gestion mémoire, latence et consommation}{22}{subsection.3.3.7}%
-\contentsline {paragraph}{Plateforme cible}{22}{subsection.3.3.7}%
+\contentsline {subsection}{\numberline {3.3.7}Intégration embarquée : smartphone, gestion mémoire, latence et consommation}{23}{subsection.3.3.7}%
+\contentsline {paragraph}{Plateforme cible}{23}{subsection.3.3.7}%
 \contentsline {paragraph}{Mesures et profilage}{23}{subsection.3.3.7}%
 \contentsline {paragraph}{Gestion mémoire et performance}{23}{subsection.3.3.7}%
 \contentsline {subsection}{\numberline {3.3.8}Aspects reproductibilité et intégration continue}{23}{subsection.3.3.8}%
 \contentsline {subsection}{\numberline {3.3.9}Discussion critique et limites}{24}{subsection.3.3.9}%
 \contentsline {chapter}{\numberline {4}Développement et implémentation}{25}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Environnement de développement}{25}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Prétraitement et entraînement des modèles}{25}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Pipeline de prétraitement}{25}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Configuration d’entraînement}{25}{subsection.4.2.2}%
-\contentsline {section}{\numberline {4.3}Optimisation et conversion TinyML}{26}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Déploiement sur Android}{26}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Architecture logicielle}{26}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Chargement et inférence}{26}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Interface utilisateur}{27}{subsection.4.4.3}%
-\contentsline {section}{\numberline {4.5}Analyse comparative des modèles optimisés}{27}{section.4.5}%
-\contentsline {chapter}{\numberline {5}Résultats et Discussion}{29}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Résultats d’entraînement et de test}{29}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Courbes de perte et convergence des modèles}{29}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Comparaison quantitative des modèles}{29}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}Analyse graphique des métriques}{30}{section.5.2}%
-\contentsline {subsubsection}{MAE}{30}{section.5.2}%
-\contentsline {subsubsection}{RMSE}{30}{figure.caption.21}%
-\contentsline {subsubsection}{MAPE}{30}{figure.caption.22}%
-\contentsline {subsubsection}{MaxErr}{30}{figure.caption.23}%
-\contentsline {section}{\numberline {5.3}Analyse par variété}{30}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Analyse des erreurs et robustesse}{30}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Cas difficiles}{30}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Robustesse en conditions réelles}{31}{subsection.5.4.2}%
-\contentsline {section}{\numberline {5.5}Discussion critique et implications}{31}{section.5.5}%
-\contentsline {subsection}{\numberline {5.5.1}Comparaison avec l’état de l’art}{31}{subsection.5.5.1}%
-\contentsline {subsection}{\numberline {5.5.2}Limites}{31}{subsection.5.5.2}%
-\contentsline {subsection}{\numberline {5.5.3}Perspectives}{31}{subsection.5.5.3}%
-\contentsline {section}{\numberline {5.6}Synthèse}{31}{section.5.6}%
-\contentsline {chapter}{\numberline {6}Conclusion et perspectives}{32}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Synthèse des contributions}{32}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Bilan critique}{32}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Points forts}{32}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}Limites}{33}{subsection.6.2.2}%
-\contentsline {section}{\numberline {6.3}Perspectives}{33}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Conclusion générale}{34}{section.6.4}%
+\contentsline {subsection}{\numberline {4.1.1}Matériel}{25}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Logiciels et versions}{25}{subsection.4.1.2}%
+\contentsline {paragraph}{Placeholders installation/env.}{25}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Organisation des sources et données}{25}{section.4.2}%
+\contentsline {paragraph}{Arborescence (placeholder).}{26}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Préparation des données}{26}{section.4.3}%
+\contentsline {paragraph}{Scripts de préparation (placeholders).}{26}{Item.13}%
+\contentsline {paragraph}{Chargement par lot (mémoire contrainte).}{27}{lstnumber.4.3.7}%
+\contentsline {section}{\numberline {4.4}Architectures de modèles}{27}{section.4.4}%
+\contentsline {paragraph}{CNN personnalisé (placeholder).}{27}{section.4.4}%
+\contentsline {paragraph}{Modèles pré-entraînés (placeholder).}{27}{lstnumber.4.5.4}%
+\contentsline {section}{\numberline {4.5}Stratégie d’entraînement}{28}{section.4.5}%
+\contentsline {paragraph}{Compilation/entraînement (placeholders).}{28}{section.4.5}%
+\contentsline {paragraph}{Journalisation et réplication.}{28}{lstnumber.4.7.4}%
+\contentsline {section}{\numberline {4.6}Export et optimisation TinyML}{28}{section.4.6}%
+\contentsline {subsection}{\numberline {4.6.1}Conversion TensorFlow Lite (float16)}{28}{subsection.4.6.1}%
+\contentsline {paragraph}{Conversion (placeholder).}{28}{subsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.6.2}Validation TFLite vs. modèle de référence}{29}{subsection.4.6.2}%
+\contentsline {paragraph}{Parité de sortie (placeholder).}{29}{subsection.4.6.2}%
+\contentsline {section}{\numberline {4.7}Déploiement Android}{29}{section.4.7}%
+\contentsline {subsection}{\numberline {4.7.1}Cible et outils}{29}{subsection.4.7.1}%
+\contentsline {subsection}{\numberline {4.7.2}Intégration et inférence}{29}{subsection.4.7.2}%
+\contentsline {paragraph}{Gradle (placeholder).}{29}{subsection.4.7.2}%
+\contentsline {paragraph}{Kotlin: chargement modèle (placeholder).}{30}{lstnumber.4.11.3}%
+\contentsline {paragraph}{UI/Workflow (placeholder figure).}{30}{lstnumber.4.12.7}%
+\contentsline {section}{\numberline {4.8}Mesures et artefacts à produire}{30}{section.4.8}%
+\contentsline {paragraph}{Taille binaire et compatibilité.}{30}{section.4.8}%
+\contentsline {paragraph}{Tableau comparatif (placeholder valeurs).}{30}{lstnumber.4.13.3}%
+\contentsline {section}{\numberline {4.9}Reproductibilité et CI (placeholders)}{31}{section.4.9}%
+\contentsline {paragraph}{Scripts et seeds.}{31}{section.4.9}%
+\contentsline {paragraph}{Tests de non-régression.}{31}{lstnumber.4.14.5}%
+\contentsline {section}{\numberline {4.10}Limites pratiques et points d’attention}{31}{section.4.10}%
+\contentsline {chapter}{\numberline {5}Résultats et Discussion}{32}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Résultats d’entraînement et de test}{32}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Courbes de perte et convergence des modèles}{32}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Comparaison quantitative des modèles}{32}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Analyse graphique des métriques}{33}{section.5.2}%
+\contentsline {subsubsection}{MAE}{33}{section.5.2}%
+\contentsline {subsubsection}{RMSE}{33}{figure.caption.21}%
+\contentsline {subsubsection}{MAPE}{33}{figure.caption.22}%
+\contentsline {subsubsection}{MaxErr}{33}{figure.caption.23}%
+\contentsline {section}{\numberline {5.3}Analyse par variété}{33}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Analyse des erreurs et robustesse}{33}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Cas difficiles}{33}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Robustesse en conditions réelles}{34}{subsection.5.4.2}%
+\contentsline {section}{\numberline {5.5}Discussion critique et implications}{34}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Comparaison avec l’état de l’art}{34}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Limites}{34}{subsection.5.5.2}%
+\contentsline {subsection}{\numberline {5.5.3}Perspectives}{34}{subsection.5.5.3}%
+\contentsline {section}{\numberline {5.6}Synthèse}{34}{section.5.6}%
+\contentsline {chapter}{\numberline {6}Conclusion et perspectives}{35}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Synthèse des contributions}{35}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Bilan critique}{35}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Points forts}{35}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Limites}{36}{subsection.6.2.2}%
+\contentsline {section}{\numberline {6.3}Perspectives}{36}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Conclusion générale}{37}{section.6.4}%
