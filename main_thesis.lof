@@ -1,0 +1,19 @@
+\babel@toc {french}{}\relax 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Pipeline méthodologique proposé pour la prédiction du temps de cuisson des haricots basé sur TinyML.}}{11}{figure.caption.7}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Distribution globale des temps de cuisson ($T_c$) pour l'ensemble des variétés. La distribution est multimodale, avec un pic principal autour de 120-150 minutes.}}{13}{figure.caption.9}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Diagramme en boîtes à moustaches illustrant la distribution des temps de cuisson par variété. La variabilité extrême de la variété \texttt {Macc55} et l'homogénéité de \texttt {NIT4G16187} sont clairement visibles.}}{14}{figure.caption.11}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Distribution du nombre d'images par variété. Le jeu de données est parfaitement équilibré, chaque classe contenant 200 échantillons.}}{15}{figure.caption.12}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Pipeline de prétraitement des images et des labels $T_c$.}}{16}{figure.caption.13}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Pipeline fonctionnel du système (chargement → entraînement → optimisation → déploiement).}}{18}{figure.caption.14}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Workflow fonctionnel de l’application Android.}}{27}{figure.caption.17}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Évolution des courbes de perte pour les différents modèles testés.}}{29}{figure.caption.19}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Comparaison du MAE entre modèles.}}{30}{figure.caption.21}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Comparaison du RMSE entre modèles.}}{30}{figure.caption.22}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Comparaison du MAPE entre modèles.}}{30}{figure.caption.23}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Comparaison de l’erreur maximale (MaxErr) entre modèles.}}{30}{figure.caption.24}%
+\addvspace {10\p@ }

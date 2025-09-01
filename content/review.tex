@@ -1,0 +1,48 @@
+\chapter{Revue de littérature}
+\addcontentsline{toc}{chapter}{Revue de littérature}
+
+\section{Introduction}
+La revue de littérature vise à établir un état des connaissances actuelles sur la prédiction du temps de cuisson des légumineuses, l’utilisation de la vision par ordinateur dans l’agroalimentaire et les applications du Tiny Machine Learning (TinyML) en agriculture. Elle s’appuie sur des articles scientifiques, thèses et rapports issus de bases de données reconnues telles que IEEE Xplore, ScienceDirect, SpringerLink et ResearchGate. Les mots-clés utilisés incluent \textit{cooking time prediction}, \textit{beans}, \textit{legumes}, \textit{computer vision}, \textit{TinyML}, \textit{lightweight CNN} et \textit{agriculture}. Les travaux sélectionnés concernent les approches de prédiction, les méthodes non destructives et les solutions embarquées, afin de mettre en évidence les avancées récentes, les défis persistants et les perspectives de recherche.
+
+\section{Prédiction du temps de cuisson des légumineuses}
+
+\subsection{Méthodes traditionnelles}
+Historiquement, la détermination du temps de cuisson des haricots et autres légumineuses repose sur des méthodes empiriques, telles que la cuisson test, ou sur des mesures physico-chimiques comme l’absorption d’eau et la texture mesurée par pénétration mécanique \citep{liu1993}. Bien que fiables, ces méthodes présentent l’inconvénient d’être destructives, chronophages et peu adaptées à une automatisation en ligne.
+
+\subsection{Approches non destructives}
+Les avancées récentes en imagerie et traitement du signal ont permis de développer des méthodes non destructives. L’imagerie hyperspectrale (400–1000 nm) s’est révélée efficace pour prédire le temps de cuisson des haricots secs, trempés ou non, avec des coefficients de corrélation supérieurs à 0,87 \citep{mendoza2018}.  
+De même, l’imagerie RGB combinée à des analyses de texture et de couleur a permis de caractériser l’apparition du phénomène \textit{hard-to-cook} au cours du stockage, montrant une corrélation significative entre les attributs visuels et la dureté des grains \citep{mbofung2012}.
+
+\subsection{Travaux récents pertinents}
+Des modèles de régression multivariée, tels que la régression par moindres carrés partiels (PLSR), ont été utilisés avec succès pour établir des relations entre signatures spectrales et temps de cuisson \citep{gao2019cortical}. L’émergence des réseaux de neurones convolutionnels (CNN) ouvre la possibilité d’extraire automatiquement des caractéristiques discriminantes à partir d’images simples, réduisant la nécessité de mesures instrumentales coûteuses.
+
+\section{Vision par ordinateur appliquée à l’agroalimentaire}
+La vision par ordinateur est largement utilisée pour évaluer la qualité et la maturité des produits agricoles. Par exemple, la classification de la maturité des tomates, la détection de maladies foliaires ou l’estimation de la texture de céréales ont été réalisées avec succès grâce à des CNN légers et optimisés pour le déploiement embarqué \citep{tastan2023}.  
+Dans le domaine des légumineuses, les changements de couleur, de brillance et de texture observés lors de la cuisson ou du stockage peuvent être capturés par des caméras standards et traités par des modèles de vision \citep{mbofung2012}.  
+Des architectures pré-entraînées comme MobileNetV2 ou EfficientNet-lite sont particulièrement adaptées à ce type de tâches, offrant un compromis entre précision et faible coût computationnel \citep{howard2019}.
+
+\section{Tiny Machine Learning (TinyML) et agriculture}
+
+\subsection{Principes et contraintes}
+Le TinyML désigne l’implémentation de modèles d’apprentissage automatique directement sur des microcontrôleurs ou systèmes embarqués disposant de ressources limitées en mémoire et puissance de calcul \citep{banbury2021}. Les contraintes incluent la réduction de la taille mémoire des modèles, l’optimisation du temps d’inférence et la minimisation de la consommation énergétique.
+
+\subsection{Applications en agriculture}
+Le TinyML a été appliqué à diverses tâches agricoles, telles que la détection de maladies sur feuilles, le suivi de la croissance des cultures ou la prédiction de la qualité des fruits \citep{abdalla2023}. Par exemple, l’évaluation de la qualité des dattes fraîches à l’aide de capteurs Vis-NIR embarqués a démontré qu’un modèle CNN léger pouvait être intégré sur microcontrôleur tout en maintenant une précision élevée.
+
+\subsection{Optimisation des modèles}
+Pour répondre aux contraintes matérielles, plusieurs techniques sont utilisées :
+\begin{itemize}
+    \item \textbf{Quantification} : réduction de la précision des poids (par ex. 32 bits $\rightarrow$ 8 bits) pour réduire la taille mémoire.
+    \item \textbf{Pruning} : élimination de connexions ou neurones peu influents pour alléger le modèle.
+    \item \textbf{Fine-tuning} : adaptation d’un modèle pré-entraîné en réentraînant ses poids sur une tâche spécifique, afin de spécialiser ses capacités tout en conservant les connaissances acquises précédemment.
+\end{itemize}
+
+\section{Synthèse et lacunes identifiées}
+La littérature montre que :
+\begin{itemize}
+    \item Les méthodes traditionnelles de prédiction du temps de cuisson sont fiables mais peu adaptées à un contrôle en ligne.
+    \item Les méthodes non destructives, notamment basées sur l’imagerie hyperspectrale ou RGB, sont prometteuses mais souvent coûteuses ou limitées à des environnements de laboratoire.
+    \item Les approches TinyML offrent une solution portable et peu énergivore, mais leur application spécifique à la prédiction du temps de cuisson des légumineuses reste peu explorée.
+\end{itemize}
+
+Ainsi, il existe une opportunité de développer un système de prédiction du temps de cuisson des haricots reposant sur la vision par ordinateur et le TinyML, combinant précision, portabilité et faible coût.

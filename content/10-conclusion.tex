@@ -1,0 +1,53 @@
+\chapter{Conclusion et perspectives}
+\label{chap:conclusion}
+
+\section{Synthèse des contributions}
+\label{sec:synthese_contributions}
+
+Ce travail a exploré l'application du \textit{Tiny Machine Learning} (TinyML) à la prédiction du temps de cuisson des haricots, en utilisant des images comme entrée. Les principales contributions sont les suivantes :
+
+\begin{enumerate}
+    \item \textbf{Collecte et constitution du jeu de données.} Un jeu de données original a été constitué, comprenant des images annotées de 56 variétés de haricots, chaque image étant associée à un temps de cuisson mesuré expérimentalement.
+    \item \textbf{Prétraitement et normalisation.} Un protocole rigoureux de prétraitement a été mis en place, incluant la redimension des images en \(224 \times 224 \times 3\), l'augmentation de données pour atténuer les déséquilibres inter-variétés, et la standardisation des valeurs pour stabiliser l'apprentissage.
+    \item \textbf{Conception et entraînement de modèles adaptés au TinyML.} Plusieurs architectures ont été testées et comparées, notamment des modèles légers dérivés de MobileNetV2, EfficientNetB0, NASNetMobile, ainsi qu'un \textit{Convolutional Neural Network} (CNN) personnalisé. Les expérimentations ont montré que le CNN conçu sur mesure, entraîné intégralement depuis zéro, offrait le meilleur compromis entre précision et complexité computationnelle.
+    \item \textbf{Évaluation approfondie.} Les performances des modèles ont été mesurées à l'aide d'indicateurs standards (MAE, RMSE, \(R^2\), MAPE). L'analyse a mis en évidence une corrélation satisfaisante entre les temps de cuisson prédits et les valeurs réelles, démontrant la faisabilité d'un tel système dans un cadre TinyML.
+    \item \textbf{Quantification et portabilité.} Les modèles ont été compressés et convertis en formats TensorFlow Lite afin de réduire leur empreinte mémoire et leur consommation énergétique, ouvrant ainsi la voie à une intégration dans des dispositifs embarqués tels que des microcontrôleurs ARM Cortex-M.
+\end{enumerate}
+
+\section{Bilan critique}
+\label{sec:bilan_critique}
+
+\subsection{Points forts}
+\begin{itemize}
+    \item \textbf{Originalité du jeu de données.} La constitution d'un jeu de données original constitue une valeur ajoutée significative pour la recherche appliquée à l'agroalimentaire.
+    \item \textbf{Adaptation au TinyML.} Le choix d'architectures légères et l'adaptation des modèles aux contraintes du TinyML démontrent une prise en compte pragmatique des réalités matérielles.
+    \item \textbf{Rigueur méthodologique.} L'analyse croisée par plusieurs métriques confère une robustesse méthodologique aux conclusions.
+\end{itemize}
+
+\subsection{Limites}
+\begin{itemize}
+    \item \textbf{Taille du jeu de données.} La taille du jeu de données reste relativement modeste au regard de la variabilité inter-variétés, ce qui peut limiter la généralisation du modèle.
+    \item \textbf{Sensibilité des mesures.} La mesure du temps de cuisson, bien que rigoureuse, reste sensible aux conditions expérimentales (qualité de l'eau, dureté initiale des grains, altitude, etc.), introduisant une part de bruit difficilement contrôlable.
+    \item \textbf{Prédiction univariée.} La prédiction reste basée uniquement sur des images statiques, sans prise en compte d'autres variables physico-chimiques susceptibles d'améliorer la précision.
+\end{itemize}
+
+\section{Perspectives}
+\label{sec:perspectives}
+
+Les perspectives de ce travail ouvrent plusieurs pistes de recherche et d'applications pratiques :
+
+\begin{enumerate}
+    \item \textbf{Extension du jeu de données.} L'enrichissement du jeu de données, tant en termes de variétés que de conditions de cuisson, permettrait d'améliorer la robustesse et la généralisabilité des modèles.
+    \item \textbf{Fusion multimodale.} L'intégration d'autres sources d'information (mesures spectroscopiques, texture, teneur en humidité, composition chimique) pourrait compléter l'information visuelle et réduire l'incertitude prédictive.
+    \item \textbf{Optimisation avancée pour TinyML.} Des techniques plus poussées de compression (quantification dynamique, distillation de connaissances, \textit{pruning}) pourraient être explorées pour réduire davantage la taille mémoire et l'énergie consommée par le modèle.
+    \item \textbf{Déploiement réel.} La mise en œuvre pratique dans des environnements agroalimentaires, par exemple via des prototypes de capteurs intelligents intégrant des caméras embarquées, permettrait de valider les performances en conditions réelles et d'identifier les besoins d'adaptation industrielle.
+    \item \textbf{Approches explicatives.} L'intégration de techniques d'explicabilité (\textit{Explainable AI}, XAI) permettrait de mieux comprendre les caractéristiques visuelles exploitées par le modèle pour établir ses prédictions, favorisant l'acceptabilité et la confiance dans des environnements critiques comme l'agroalimentaire.
+\end{enumerate}
+
+\section{Conclusion générale}
+\label{sec:conclusion_generale}
+
+En définitive, ce mémoire démontre la pertinence d'appliquer des approches de \textbf{vision par ordinateur et d'apprentissage profond} à une problématique agroalimentaire concrète : la prédiction du temps de cuisson des haricots. En combinant rigueur méthodologique, optimisation pour environnements contraints et analyse critique, cette recherche ouvre des perspectives tant scientifiques qu'industrielles.
+
+Elle contribue à la fois à la littérature émergente sur le TinyML et à l'amélioration potentielle des pratiques agroalimentaires, notamment en facilitant l'optimisation des temps et coûts de cuisson. Les limites identifiées et les pistes proposées posent les bases de travaux futurs, qui pourront renforcer la robustesse, l'explicabilité et l'applicabilité des solutions développées. Ainsi, ce travail constitue une étape significative vers l'intégration de l'intelligence artificielle embarquée au service de la transformation et de la valorisation des produits agricoles.
+\end{document}

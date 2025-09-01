@@ -1,0 +1,69 @@
+\documentclass[]{settings/wi-thesis}
+
+% ============================================================
+% Include all relevant information for the title page
+
+\titleThesis{TinyML for Bean Cooking Time Prediction}
+
+% Note that underscore needs to be escaped in LaTeX:
+\author{MBAIGOLMEM DANG-DANG THIERY \thanks{dev.thiery.dangdang@gmail.com}}
+
+% Matriculation Number
+\id{20A179FS}
+
+% Field of Study
+\field{Ing\'enerie Informatique}
+
+% Address, for declarations at the end of the thesis.
+\city{Université de Ngaoundéré}
+
+\professor{Prof. Dr. Ing. FENDJI Jean Louis}
+
+\supervisor{Supervisor, Pr Dr BOUKAR}
+
+% Submission Date
+\date{23.09.2025}
+
+\addbibresource{library.bib}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+
+\begin{document}
+
+    \maketitle
+
+    \tableofcontents
+
+    \listoffigures
+
+    \listoftables
+    
+    \input{content/01-introduction}
+    \input{content/review}
+    \input{content/02-chapter1}
+    \input{content/03-chapter2}
+    \input{content/04-chapter3}
+    \input{content/10-conclusion}
+
+    \begin{appendix}
+        \input{content/99-appendix}
+    \end{appendix}
+
+    \begin{backmatter}
+        % References
+        \begingroup
+        \setlength{\emergencystretch}{.5em}
+        \printbibliography[
+            heading=bibintoc,
+            title={Bibliography}
+        ]
+        \endgroup
+        % Declarations & Consent Forms
+    \end{backmatter}
+
+    \frenchDeclaration
+
+% ============================================================
+
+\end{document}

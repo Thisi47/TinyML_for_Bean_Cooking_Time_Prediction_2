@@ -1,0 +1,107 @@
+\chapter{Développement et implémentation}
+
+\section{Environnement de développement}
+\label{sec:env_dev}
+
+La mise en œuvre du système de prédiction repose sur un environnement logiciel soigneusement configuré afin de garantir la reproductibilité des expériences. Les scripts de prétraitement et d’entraînement ont été développés en \texttt{Python 3.10}, en s’appuyant sur \textbf{TensorFlow 2.13} et son API Keras, choisies pour leur support natif de la conversion en \texttt{TensorFlow Lite} et leur compatibilité avec les outils TinyML. Les analyses exploratoires et la visualisation des données ont été réalisées à l’aide de \texttt{Pandas 2.1}, \texttt{NumPy 1.25} et \texttt{Matplotlib 3.8}.
+
+L’intégration mobile a été conduite dans \textbf{Android Studio Narwhal (2025.1.2)} avec le SDK Android version \textbf{36}, en assurant une compatibilité descendante jusqu’à \texttt{minSdkVersion=24} (Android 7.0). L’application repose sur \texttt{Kotlin}, intégrant la bibliothèque \texttt{TensorFlow Lite Interpreter} (v2.13) pour l’exécution des modèles embarqués.
+
+Les expérimentations ont été menées sur une machine équipée d’un processeur Intel Core i7 (4 cœurs), de 16~Go de RAM et Google Colab Testa 4 (15~Go de VRAM, 12~Go de RAM, 118~Go de stockage), configuration permettant un entraînement efficace et des optimisations avancées.
+
+\section{Prétraitement et entraînement des modèles}
+\label{sec:preproc_train}
+
+\subsection{Pipeline de prétraitement}
+Le pipeline de prétraitement implémente les étapes suivantes :
+\begin{enumerate}
+\item \textbf{Recadrage et redimensionnement} : les images brutes (3000$\times$4000~px) sont recadrées au centre puis réduites à 224$\times$224~px, compatible avec les architectures de type CNN.
+\item \textbf{Mise à l’échelle des pixels} : normalisation dans l’intervalle [0,1].
+\item \textbf{Augmentation de données} : transformations stochastiques (flips horizontaux/verticaux, recadrages aléatoires, bruit gaussien, variations de luminosité), appliquées uniquement au jeu d’entraînement.
+\item \textbf{Normalisation des labels} : transformation Min--Max appliquée aux temps de cuisson $T_c$, ramenant les valeurs dans [0,1].
+\end{enumerate}
+
+\subsection{Configuration d’entraînement}
+Les entraînements ont été conduits avec l’optimiseur Adam ($\beta_1=0.9$, $\beta_2=0.999$), un taux d’apprentissage initial de $10^{-4}$ avec scheduler \emph{ReduceLROnPlateau}, des lots de 32, et un maximum de 100 époques. Un mécanisme d’\emph{early stopping} (patience de 5) a été intégré afin de limiter le surapprentissage. La régularisation repose sur un dropout de 0,3 et une pénalisation L2 ($10^{-4}$).
+
+Trois familles de modèles ont été testées : (i) des CNN personnalisés conçus pour une extraction hiérarchique des caractéristiques, (ii) des architectures mobiles pré-entraînées (MobileNetV2, EfficientNetB0, NASNetMobile), et (iii) des versions distillées, quantifiées et prunées pour un déploiement TinyML.
+
+\section{Optimisation et conversion TinyML}
+\label{sec:optimisation_tinyml}
+
+La contrainte majeure du projet réside dans l’exécution sur des dispositifs mobiles à ressources limitées. Pour y répondre, plusieurs techniques d’optimisation ont été appliquées :
+
+\begin{itemize}
+\item \textbf{Quantification post-entraînement} : conversion \texttt{float32} $\rightarrow$ \texttt{int8}, réduisant la taille mémoire par un facteur proche de 4.
+\item \textbf{Quantization-aware training (QAT)} : intégration de la quantification pendant l’apprentissage pour améliorer la robustesse.
+\item \textbf{Pruning itératif} : suppression progressive des poids à faible contribution, suivie d’un \emph{fine-tuning}.
+\item \textbf{Conversion TensorFlow Lite} : export des modèles au format \texttt{.tflite}, exécutable via l’API \texttt{Interpreter}.
+\end{itemize}
+
+Ces optimisations ont permis de réduire la taille mémoire de 70 à 75~\% pour certains modèles, tout en maintenant une précision acceptable pour la tâche de régression.
+
+\section{Déploiement sur Android}
+\label{sec:deploiement_android}
+
+\subsection{Architecture logicielle}
+L’application Android repose sur trois couches principales (Figure~\ref{fig:archi_android}) :
+\begin{enumerate}
+\item \textbf{Interface utilisateur (UI)} : activités Kotlin gérant la capture d’image, le lancement de la prédiction et l’affichage des résultats.
+\item \textbf{Prétraitement embarqué} : redimensionnement 224$\times$224, normalisation et préparation du tenseur d’entrée.
+\item \textbf{Moteur de prédiction} : exécution du modèle \texttt{.tflite} et restitution du temps de cuisson estimé.
+\end{enumerate}
+
+\subsection{Chargement et inférence}
+Le modèle est stocké dans le répertoire \texttt{assets/}. L’inférence est réalisée via :
+\begin{verbatim}
+val interpreter = Interpreter(loadModelFile("model.tflite"))
+interpreter.run(inputTensor, outputTensor)
+\end{verbatim}
+
+\subsection{Interface utilisateur}
+L’interface adopte une approche simple : capture de l’image, déclenchement de la prédiction par un bouton, puis affichage du temps de cuisson estimé avec intervalle de confiance.
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[>=Latex, node distance=1.6cm, thick]
+\tikzstyle{block} = [rectangle, rounded corners, draw, fill=blue!12,
+text centered, minimum width=3.5cm, minimum height=1cm]
+\node[block] (img) {Capture de l’image};
+\node[block, below of=img] (preproc) {Prétraitement (224$\times$224, normalisation)};
+\node[block, below of=preproc] (tflite) {Exécution modèle TFLite};
+\node[block, below of=tflite] (pred) {Affichage du temps de cuisson (min)};
+\draw[->] (img) -- (preproc);
+\draw[->] (preproc) -- (tflite);
+\draw[->] (tflite) -- (pred);
+\end{tikzpicture}
+\caption{Workflow fonctionnel de l’application Android.}
+\label{fig:archi_android}
+\end{figure}
+
+\section{Analyse comparative des modèles optimisés}
+\label{sec:comparaison_tinyml}
+
+L’optimisation des modèles constitue une étape déterminante pour le déploiement sur microcontrôleurs et smartphones. Dans ce travail, la quantification post-entraînement a été retenue comme stratégie principale, complétée par du pruning structurel dans certains cas. La littérature confirme que la quantification en entiers 8~bits (\texttt{int8}) représente un compromis efficace entre efficacité computationnelle et préservation des performances \citep{jacob2018quantization, han2016deep, banbury2021micronets}.
+
+Le tableau~\ref{tab:comparaison_modeles_optimises} synthétise les résultats expérimentaux. Quatre critères ont été analysés : (i) la taille mémoire avant et après optimisation, (ii) la latence moyenne d’inférence mesurée sur ARM Cortex-M, (iii) la précision en régression (MAE, RMSE, $R^2$), et (iv) le taux de compression.
+
+\begin{table}[h!]
+\centering
+\caption{Comparaison des modèles optimisés pour TinyML après quantification et pruning.}
+\label{tab:comparaison_modeles_optimises}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Modèle} & \textbf{Taille mémoire (MB)} & \textbf{Latence (ms)} & \textbf{MAE / RMSE / $R^2$} & \textbf{Réduction} \\
+\hline
+CNN personnalisé & 2.8 $\rightarrow$ 0.85 & 18.2 & 4.5 / 6.8 / 0.91 & -69.6 \% \\
+\hline
+MobileNetV2      & 14.1 $\rightarrow$ 3.9  & 26.5 & 5.2 / 7.4 / 0.88 & -72.3 \% \\
+\hline
+EfficientNetB0   & 20.4 $\rightarrow$ 5.6  & 34.7 & 5.5 / 7.9 / 0.87 & -72.5 \% \\
+NASNetMobile   & 20.4 $\rightarrow$ 5.6  & 34.7 & 5.5 / 7.9 / 0.87 & -72.5 \% \\
+\hline
+\end{tabular}
+\end{table}
+
+Les résultats démontrent que la quantification et le pruning permettent des gains mémoire supérieurs à 70~\%, associés à une réduction de latence notable. La perte de précision reste limitée et compatible avec l’usage ciblé, confirmant la pertinence des CNN légers pour des applications embarquées. Ces conclusions s’accordent avec les observations de \citet{lin2018towards} et \citet{wu2020comprehensive}, qui soulignent la nécessité d’un compromis entre compression et performance statistique.
+

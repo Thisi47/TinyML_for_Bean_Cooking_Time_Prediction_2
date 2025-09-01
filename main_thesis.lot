@@ -1,0 +1,14 @@
+\babel@toc {french}{}\relax 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Statistiques descriptives des temps de cuisson ($T_c$ en minutes) par variété.}}{12}{table.caption.8}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Variance intra-variété des temps de cuisson.}}{13}{table.caption.10}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces Hyperparamètres d'entraînement recommandés.}}{22}{table.caption.15}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces Comparatif des modèles (valeurs indicatives pour 224×224).}}{22}{table.caption.16}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Comparaison des modèles optimisés pour TinyML après quantification et pruning.}}{28}{table.caption.18}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Performances des modèles sur le jeu de test.}}{29}{table.caption.20}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Performances par variété pour le modèle \texttt {model\_1\_v2}.}}{30}{table.caption.25}%
+\addvspace {10\p@ }
