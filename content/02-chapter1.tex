@@ -11,27 +11,29 @@
   L’entraînement des modèles est conduit en tenant compte des bonnes pratiques : optimisation via Adam, régularisation (dropout, early stopping) et mesures objectives (MAE, RMSE, R², etc.). Enfin, une conversion en TensorFlow Lite (avec quantification en float16, int8) est effectuée pour obtenir une empreinte mémoire réduite, tout en testant l’inférence sur smartphone android — les travaux fondateurs de TensorFlow Lite Micro apportent un soutien technique précieux à cette étape \autocite{tfLiteMicro2020}.
 
   Cette méthodologie a pour ambition de proposer un pipeline complet, reproductible, allant de la capture d’images à la prédiction en temps réel sur smartphone android, afin de démontrer la faisabilité et l’efficacité de la vision par ordinateur embarquée dans le domaine agroalimentaire local.
-  \begin{figure}[H]
-      \centering
-      \begin{tikzpicture}[node distance=0.8cm, >=latex, thick]
-          % Styles
-          \tikzstyle{block} = [rectangle, draw=black, fill=blue!15, 
-                              text centered, rounded corners, minimum width=3cm, minimum height=1cm]
-          % Nodes
-          \node[block] (acquisition) {Acquisition des images};
-          \node[block, below of=acquisition, yshift=-1.8cm] (pretraitement) {Prétraitement \\ (Redimensionnement, Normalisation, Augmentation)};
-          \node[block, below of=pretraitement, yshift=-1.8cm] (entrainement) {Entraînement du modèle \\ (CNN, MobileNetV2, EfficientNetB0, etc.)};
-          \node[block, below of=entrainement, yshift=-1.8cm] (optimisation) {Optimisation TinyML \\ (Quantification TFLite)};
-          \node[block, below of=entrainement, yshift=-1.8cm] (deploiement) {Déploiement embarqué \\ (Microcontrôleur / Smartphone)};
-          
-          % Arrows
-          \draw[->] (acquisition) -- (pretraitement);
-          \draw[->] (pretraitement) -- (entrainement);
-          \draw[->] (entrainement) -- (optimisation);
-          \draw[->] (optimisation) -- (deploiement);
-      \end{tikzpicture}
-      \caption{Pipeline méthodologique proposé pour la prédiction du temps de cuisson des haricots basé sur TinyML.}
-  \end{figure}
+ 
+ \begin{figure}[H]
+  \centering
+  \begin{tikzpicture}[node distance=1.8cm, >=latex, thick]
+      % Styles
+      \tikzstyle{block} = [rectangle, draw=black, fill=blue!15, 
+                          text centered, rounded corners, minimum width=4cm, minimum height=1cm]
+      % Nodes
+      \node[block] (acquisition) {Acquisition des images};
+      \node[block, below of= acquisition] (pretraitement) {Prétraitement  (Redimensionnement, Normalisation, Augmentation)};
+      \node[block, below of= pretraitement] (entrainement) {Entraînement du modèle  (CNN, MobileNetV2, EfficientNetB0, etc.)};
+      \node[block, below of= entrainement] (optimisation) {Optimisation TinyML  (Quantification TFLite)};
+      \node[block, below of= optimisation] (deploiement) {Déploiement embarqué  (Smartphone)};
+      
+      % Arrows
+      \draw[->] (acquisition) -- (pretraitement);
+      \draw[->] (pretraitement) -- (entrainement);
+      \draw[->] (entrainement) -- (optimisation);
+      \draw[->] (optimisation) -- (deploiement);
+  \end{tikzpicture}
+  \caption{Pipeline méthodologique proposé pour la prédiction du temps de cuisson des haricots basé sur TinyML.}
+\end{figure}
+
 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -57,7 +59,7 @@
 
   Le tableau \ref{tab:stats_descriptives} résume les principaux descripteurs statistiques des temps de cuisson pour chaque variété.
 
-  \begin{table}[h!]
+  \begin{table}[!ht]
   \centering
   \caption{Statistiques descriptives des temps de cuisson ($T_c$ en minutes) par variété.}
   \label{tab:stats_descriptives}
@@ -84,7 +86,7 @@
 
   L'histogramme de la Figure \ref{fig:histogramme_tc} visualise la distribution globale des temps de cuisson, confirmant la présence de plusieurs modes et une asymétrie à droite.
 
-  \begin{figure}[h!]
+  \begin{figure}[!ht]
   \centering
   \includegraphics[width=0.8\textwidth]{figures/histogramme_tc.png}
   \caption{Distribution globale des temps de cuisson ($T_c$) pour l'ensemble des variétés. La distribution est multimodale, avec un pic principal autour de 120-150 minutes.}
@@ -95,7 +97,7 @@
 
   Pour affiner l'analyse de la dispersion, la variance ($s^2 = \sigma^2$) a été calculée pour chaque variété (Tableau \ref{tab:variance_intra}). La variance quantifie la dispersion quadratique moyenne et accentue les différences de variabilité.
 
-  \begin{table}[h!]
+  \begin{table}[!ht]
   \centering
   \caption{Variance intra-variété des temps de cuisson.}
   \label{tab:variance_intra}
@@ -115,7 +117,7 @@
 
   La Figure \ref{fig:boxplot_tc} (diagramme en boîtes à moustaches) offre une représentation visuelle comparative de ces variances. Elle met en évidence la médiane, l'intervalle interquartile (IQR) et l'étendue des données pour chaque catégorie, facilitant l'identification des distributions symétriques, asymétriques et des valeurs potentiellement aberrantes.
 
-  \begin{figure}[h!]
+  \begin{figure}[!ht]
   \centering
   \includegraphics[width=0.9\textwidth]{figures/boxplot_tc.png}
   \caption{Diagramme en boîtes à moustaches illustrant la distribution des temps de cuisson par variété. La variabilité extrême de la variété \texttt{Macc55} et l'homogénéité de \texttt{NIT4G16187} sont clairement visibles.}
@@ -128,7 +130,7 @@
 
   La performance et l'impartialité d'un modèle d'apprentissage profond dépendent fortement de l'équilibre du jeu de données. La Figure \ref{fig:distrib_varietes} montre la répartition des échantillons par variété.
 
-  \begin{figure}[h!]
+  \begin{figure}[!ht]
   \centering
   \includegraphics[width=0.7\textwidth]{figures/distrib_varietes.png}
   \caption{Distribution du nombre d'images par variété. Le jeu de données est parfaitement équilibré, chaque classe contenant 200 échantillons.}
@@ -167,7 +169,7 @@
 
   \subsection{Redimensionnement et outils}
 
-  Le redimensionnement est réalisé via \texttt{torchvision.transforms} (PyTorch) en appliquant un \texttt{CenterCrop} suivi d'un \texttt{Resize(224)} puis d'une normalisation des canaux si nécessaire pour des modèles pré-entraînés. Le choix $224\times224$ découle d'un compromis entre fidélité des motifs et coût mémoire d'inférence (MobileNetV2 / EfficientNet-B0 compatible) \autocite{sandler2018mobilenetv2,krizhevsky2012imagenet}.
+  Le redimensionnement est réalisé via \texttt{torchvision.transforms} (PyTorch) en appliquant un \texttt{CenterCrop} suivi d'un \texttt{Resize(224)} puis d'une normalisation des canaux si nécessaire pour des modèles pré-entraînés. Le choix $224\times224$ découle d'un compromis entre fidélité des motifs et coût mémoire d'inférence (MobileNetV2 / EfficientNet-B0 compatible) \citep{sandler2018mobilenetv2,krizhevsky2012imagenet}.
 
   \subsection{Augmentation (train uniquement) — paramètres}
 
@@ -214,7 +216,7 @@
     \item \textbf{Déploiement \& mesures} : conversion en TFLite, mesures de latence et consommation sur smartphone cible (mesures empiriques, idéalement sur plusieurs appareils).
   \end{enumerate}
 
-  \begin{figure}[h]
+  \begin{figure}[!ht]
   \centering
   \begin{tikzpicture}[node distance=1.6cm, auto, >=Latex, thick]
   \tikzstyle{block} = [rectangle, rounded corners, draw, fill=blue!12, text centered, minimum height=1cm, minimum width=3.4cm]
@@ -255,39 +257,93 @@
 
   \subsubsection{CNN personnalisés (architectures fournies)}
 
-  \paragraph{CNN-1 (profondeur progressive)}  
-  Architecture (implémentation Keras-like) :
-  \begin{verbatim}
-  layers.Input(shape=input_shape),
-  layers.Conv2D(16, (3,3), activation='relu'), layers.MaxPooling2D(),
-  layers.Conv2D(32, (3,3), activation='relu'), layers.MaxPooling2D(),
-  layers.Conv2D(64, (3,3), activation='relu'), layers.MaxPooling2D(),
-  layers.Dropout(0.3),
-  layers.Conv2D(128, (3,3), activation='relu'), layers.MaxPooling2D(),
-  layers.Conv2D(256, (3,3), activation='relu'), layers.MaxPooling2D(),
-  layers.Dropout(0.3),
-  layers.GlobalAveragePooling2D(),
-  layers.Dense(256, activation='relu'),
-  layers.Dense(1)
-  \end{verbatim}
+\paragraph{CNN-1 TB-Net2 (profondeur progressive)}
+L’architecture illustrée à la \textbf{Figure~\ref{fig:cnn1_tbnet2}} correspond à une approche dite de profondeur progressive, où le nombre de filtres est augmenté graduellement à mesure que la profondeur du réseau croît. Cette conception vise à extraire, dans un premier temps, des caractéristiques locales simples (bords, textures élémentaires), puis à capturer des représentations plus abstraites et discriminantes au fur et à mesure que les couches s’empilent.  
 
-  \noindent \textbf{Remarques} : cette topologie privilégie l’extraction progressive de caractéristiques à résolution réduite avant la global pooling — utile pour capter des motifs locaux et globaux sur les haricots (forme, texture). Les Dropout (0.3) servent de régularisation.
+Chaque bloc convolutionnel est suivi d’une opération de sous-échantillonnage (\textit{MaxPooling2D}), qui réduit la résolution spatiale des cartes de caractéristiques tout en préservant les informations les plus saillantes. Cette stratégie permet de limiter la taille des tenseurs intermédiaires et d’augmenter l’invariance aux translations. L’intégration de couches de \textit{Dropout} avec un taux de 0.3 constitue un mécanisme de régularisation essentiel : elle réduit le risque de surapprentissage en introduisant une désactivation aléatoire de neurones lors de l’entraînement.  
 
-  \paragraph{CNN-2 (bande passante accrue)}  
-  Architecture :
-  \begin{verbatim}
-  layers.Input(shape=input_shape),
-  layers.Conv2D(32,(3,3),activation='relu'), layers.MaxPooling2D(),
-  layers.Conv2D(64,(3,3),activation='relu'), layers.MaxPooling2D(),
-  layers.Conv2D(128,(3,3),activation='relu'), layers.MaxPooling2D(),
-  layers.Conv2D(256,(3,3),activation='relu'), layers.MaxPooling2D(),
-  layers.Conv2D(512,(3,3),activation='relu'),
-  layers.GlobalAveragePooling2D(),
-  layers.Dense(256,activation='relu'),
-  layers.Dense(1)
-  \end{verbatim}
+Après plusieurs étapes de convolution et de pooling, une couche de \textit{GlobalAveragePooling2D} condense les cartes de caractéristiques en un vecteur représentatif, réduisant ainsi la dimensionnalité et favorisant la généralisation. Enfin, la partie dense est constituée d’une couche de 256 neurones activés par ReLU, suivie d’une couche de sortie unique adaptée à la régression du temps de cuisson.  
 
-  \noindent \textbf{Remarques} : plus large (plus de filtres en sortie), cette architecture augmente la capacité de représentation au prix d'un coût en paramètres et FLOPs supérieur. Utile comme « teacher » pour distillation, ou si les ressources le permettent.
+Dans l’ensemble, cette topologie offre un compromis pertinent entre expressivité et complexité computationnelle, en exploitant la profondeur pour raffiner progressivement l’information tout en maintenant une régularisation efficace.  
+
+\begin{figure}[H]
+    \centering
+    \small
+    \begin{tikzpicture}[node distance=1.3cm, thick, >=latex, font=\small]
+        \tikzstyle{block} = [rectangle, draw=black, fill=cyan!20, 
+                            text centered, rounded corners, minimum width=6cm, minimum height=0.8cm]
+
+        % Noeuds combinés Conv2D + MaxPooling2D
+        \node[block] (input) {Input (shape = input\_shape)};
+        \node[block, below of = input] (conv_pool1) {Conv2D: 16 filtres, taille (3x3), activation ReLU + MaxPooling2D};
+        \node[block, below of = conv_pool1] (conv_pool2) {Conv2D: 32 filtres, taille (3x3), activation ReLU + MaxPooling2D};
+        \node[block, below of = conv_pool2] (conv_pool3) {Conv2D: 64 filtres, taille (3x3), activation ReLU + MaxPooling2D};
+        \node[block, below of = conv_pool3] (dropout1) {Dropout (rate=0.3)};
+        \node[block, below of = dropout1] (conv_pool4) {Conv2D: 128 filtres, taille (3x3), activation ReLU + MaxPooling2D};
+        \node[block, below of = conv_pool4] (conv_pool5) {Conv2D: 256 filtres, taille (3x3), activation ReLU + MaxPooling2D};
+        \node[block, below of = conv_pool5] (dropout2) {Dropout (rate=0.3)};
+        \node[block, below of = dropout2] (gap) {GlobalAveragePooling2D};
+        \node[block, below of = gap] (dense1) {Dense: 256 neurones, activation ReLU};
+        \node[block, below of = dense1] (output) {Dense: 1 neurone (sortie)};
+
+        % Flèches
+        \draw[->] (input) -- (conv_pool1);
+        \draw[->] (conv_pool1) -- (conv_pool2);
+        \draw[->] (conv_pool2) -- (conv_pool3);
+        \draw[->] (conv_pool3) -- (dropout1);
+        \draw[->] (dropout1) -- (conv_pool4);
+        \draw[->] (conv_pool4) -- (conv_pool5);
+        \draw[->] (conv_pool5) -- (dropout2);
+        \draw[->] (dropout2) -- (gap);
+        \draw[->] (gap) -- (dense1);
+        \draw[->] (dense1) -- (output);
+    \end{tikzpicture}
+    \caption{Architecture CNN proposée avec blocs Conv2D et MaxPooling2D combinés.}
+    \label{fig:cnn1_tbnet2_combined}
+\end{figure}
+
+
+\paragraph{CNN-2 TB-Net5 (bande passante accrue)}
+L’architecture représentée à la \textbf{Figure~\ref{fig:cnn2_tbnet5}} se distingue du modèle précédent (CNN-1) par une augmentation significative de la largeur et de la profondeur des couches convolutionnelles. Alors que le premier réseau privilégiait une progression graduelle et régulière, ce second design adopte une stratégie d’expansion plus agressive du nombre de filtres, atteignant jusqu’à 512 dans les couches les plus profondes. Cette « bande passante accrue » confère au modèle une capacité de représentation plus riche, lui permettant de capturer des motifs complexes et subtils présents dans les images de haricots.  
+
+Chaque bloc est constitué d’une couche \textit{Conv2D} suivie d’un \textit{MaxPooling2D}, assurant à la fois l’extraction de caractéristiques discriminantes et la réduction progressive de la résolution spatiale. La succession de ces blocs favorise une hiérarchisation efficace des représentations, allant des textures locales aux structures globales. L’intégration d’une couche de \textit{GlobalAveragePooling2D} avant la partie dense permet de condenser l’information tout en limitant la dimensionnalité des vecteurs de sortie.  
+
+Enfin, une couche dense intermédiaire de 256 neurones activés par ReLU prépare les données avant la couche de sortie unique, adaptée à la régression du temps de cuisson. Bien que cette architecture soit plus coûteuse en termes de paramètres et d’opérations (FLOPs), elle est particulièrement pertinente lorsqu’une puissance de calcul suffisante est disponible, ou comme modèle « enseignant » dans une approche de distillation de connaissances en vue d’optimiser des variantes plus légères.  
+
+
+\begin{figure}[H]
+    \centering
+    \small
+    \begin{tikzpicture}[node distance=1.5cm, thick, >=latex, font=\small]
+        \tikzstyle{block} = [rectangle, draw=black, fill=orange!20, 
+                            text centered, rounded corners, minimum width=6cm, minimum height=1cm]
+
+        % Noeuds combinés Conv2D + MaxPooling2D
+        \node[block] (input) {Input (shape = input\_shape)};
+        \node[block, below of = input] (conv_pool1) {Conv2D: 32 filtres, 3x3, ReLU + MaxPooling2D};
+        \node[block, below of = conv_pool1] (conv_pool2) {Conv2D: 64 filtres, 3x3, ReLU + MaxPooling2D};
+        \node[block, below of = conv_pool2] (conv_pool3) {Conv2D: 128 filtres, 3x3, ReLU + MaxPooling2D};
+        \node[block, below of = conv_pool3] (conv_pool4) {Conv2D: 256 filtres, 3x3, ReLU + MaxPooling2D};
+        \node[block, below of = conv_pool4] (conv5) {Conv2D: 512 filtres, 3x3, ReLU};
+        \node[block, below of = conv5] (gap) {GlobalAveragePooling2D};
+        \node[block, below of = gap] (dense1) {Dense: 256 neurones, ReLU};
+        \node[block, below of = dense1] (output) {Dense: 1 neurone (sortie)};
+
+        % Flèches
+        \draw[->] (input) -- (conv_pool1);
+        \draw[->] (conv_pool1) -- (conv_pool2);
+        \draw[->] (conv_pool2) -- (conv_pool3);
+        \draw[->] (conv_pool3) -- (conv_pool4);
+        \draw[->] (conv_pool4) -- (conv5);
+        \draw[->] (conv5) -- (gap);
+        \draw[->] (gap) -- (dense1);
+        \draw[->] (dense1) -- (output);
+    \end{tikzpicture}
+    \caption{Architecture CNN profonde avec blocs Conv2D et MaxPooling2D combinés.}
+    \label{fig:cnn2_tbnet5_combined}
+\end{figure}
+
+
 
   \subsubsection{Modèles pré-entraînés}
 
@@ -323,7 +379,7 @@
 
   Nous suivons une procédure reproductible incluant des scripts d'entraînement, conversion et test. Le tableau~\ref{tab:hyper} résume les hyperparamètres recommandés pour l'expérimentation initiale ; ces valeurs servent de baseline et peuvent être optimisées par recherche (grid/random/Bayesian).
 
-  \begin{table}[h]
+  \begin{table}[!ht]
   \centering
   \caption{Hyperparamètres d'entraînement recommandés.}
   \label{tab:hyper}
@@ -346,11 +402,11 @@
   \end{table}
 
 
-  \subsection{Comparaison chiffrée des modèles (estimation)}
+  \subsection{Comparaison chxiffrée des modèles (estimation)}
 
   La Table~\ref{tab:model_comp} rassemble des métriques utiles pour comparer précision/complexité/taille : nombre de paramètres, FLOPs (mult-adds), taille indicative après quantification en int8, et latence attendue (estimation à valider empiriquement sur smartphone cible). Les valeurs de paramètres/FLOPs sont extraites des publications originales et benchmarks \autocite{sandler2018mobilenetv2,tan2019efficientnet,zoph2018nasnet, openbenchmarks}.
 
-  \begin{table}[h]
+  \begin{table}[!ht]
   \centering
   \caption{Comparatif des modèles (valeurs indicatives pour 224×224).}
   \label{tab:model_comp}

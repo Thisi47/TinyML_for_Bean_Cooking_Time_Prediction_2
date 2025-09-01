@@ -18,6 +18,9 @@
 
 % Packages essentiels
 \RequirePackage[a4paper,left=2.9cm, top=2.9cm, bottom=2.3cm, right=2.9cm,includefoot,heightrounded]{geometry}
+\usepackage{tikz}           % pour dessiner des graphiques avec TikZ
+\usepackage{pgfplots}       % pour tracer des graphiques avec PGFPlots (basé sur TikZ)
+\pgfplotsset{compat=1.18}  % définit la version de compatibilité de PGFPlots
 \usepackage[titles]{tocloft}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
