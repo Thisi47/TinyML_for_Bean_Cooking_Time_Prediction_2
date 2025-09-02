@@ -33,28 +33,28 @@
 \contentsline {subsection}{\numberline {3.2.3}Pipeline de prétraitement}{17}{subsection.3.2.3}%
 \contentsline {subsection}{\numberline {3.2.4}Redimensionnement et outils}{18}{subsection.3.2.4}%
 \contentsline {subsection}{\numberline {3.2.5}Augmentation (train uniquement) — paramètres}{18}{subsection.3.2.5}%
-\contentsline {subsection}{\numberline {3.2.6}Normalisation des temps de cuisson ($T_c$)}{19}{subsection.3.2.6}%
-\contentsline {section}{\numberline {3.3}Conception du système proposé}{19}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Motivation et choix d'approche}{19}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Architecture générale du modèle et pipeline}{20}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Description détaillée des modèles testés}{21}{subsection.3.3.3}%
-\contentsline {subsubsection}{Formules de complexité et paramètres}{21}{subsection.3.3.3}%
-\contentsline {subsubsection}{CNN personnalisés (architectures fournies)}{21}{subsection.3.3.3}%
-\contentsline {paragraph}{CNN-1 TB-Net2 (profondeur progressive)}{21}{subsection.3.3.3}%
+\contentsline {section}{\numberline {3.3}Normalisation des temps de cuisson ($T_c$)}{19}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Conception du système proposé}{19}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Motivation et choix d'approche}{19}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Architecture générale du modèle et pipeline}{20}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Description détaillée des modèles testés}{21}{subsection.3.4.3}%
+\contentsline {subsubsection}{Formules de complexité et paramètres}{21}{subsection.3.4.3}%
+\contentsline {subsubsection}{CNN personnalisés (architectures fournies)}{21}{subsection.3.4.3}%
+\contentsline {paragraph}{CNN-1 TB-Net2 (profondeur progressive)}{21}{subsection.3.4.3}%
 \contentsline {paragraph}{CNN-2 TB-Net5 (bande passante accrue)}{22}{figure.caption.15}%
 \contentsline {subsubsection}{Modèles pré-entraînés}{24}{figure.caption.16}%
-\contentsline {subsection}{\numberline {3.3.4}Optimisations TinyML : quantification, pruning et techniques complémentaires}{24}{subsection.3.3.4}%
-\contentsline {subsubsection}{Quantification}{24}{subsection.3.3.4}%
-\contentsline {subsubsection}{Pruning (élagage)}{24}{subsection.3.3.4}%
-\contentsline {subsubsection}{Distillation de connaissances}{25}{subsection.3.3.4}%
-\contentsline {subsection}{\numberline {3.3.5}Workflow expérimental et hyperparamètres}{25}{subsection.3.3.5}%
-\contentsline {subsection}{\numberline {3.3.6}Comparaison chxiffrée des modèles (estimation)}{25}{subsection.3.3.6}%
-\contentsline {subsection}{\numberline {3.3.7}Intégration embarquée : smartphone, gestion mémoire, latence et consommation}{26}{subsection.3.3.7}%
-\contentsline {paragraph}{Plateforme cible}{26}{subsection.3.3.7}%
-\contentsline {paragraph}{Mesures et profilage}{26}{subsection.3.3.7}%
-\contentsline {paragraph}{Gestion mémoire et performance}{26}{subsection.3.3.7}%
-\contentsline {subsection}{\numberline {3.3.8}Aspects reproductibilité et intégration continue}{27}{subsection.3.3.8}%
-\contentsline {subsection}{\numberline {3.3.9}Discussion critique et limites}{27}{subsection.3.3.9}%
+\contentsline {subsection}{\numberline {3.4.4}Optimisations TinyML : quantification, pruning et techniques complémentaires}{24}{subsection.3.4.4}%
+\contentsline {subsubsection}{Quantification}{24}{subsection.3.4.4}%
+\contentsline {subsubsection}{Pruning (élagage)}{24}{subsection.3.4.4}%
+\contentsline {subsubsection}{Distillation de connaissances}{25}{subsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.4.5}Workflow expérimental et hyperparamètres}{25}{subsection.3.4.5}%
+\contentsline {subsection}{\numberline {3.4.6}Comparaison chxiffrée des modèles (estimation)}{25}{subsection.3.4.6}%
+\contentsline {subsection}{\numberline {3.4.7}Intégration embarquée : smartphone, gestion mémoire, latence et consommation}{26}{subsection.3.4.7}%
+\contentsline {paragraph}{Plateforme cible}{26}{subsection.3.4.7}%
+\contentsline {paragraph}{Mesures et profilage}{26}{subsection.3.4.7}%
+\contentsline {paragraph}{Gestion mémoire et performance}{26}{subsection.3.4.7}%
+\contentsline {subsection}{\numberline {3.4.8}Aspects reproductibilité et intégration continue}{27}{subsection.3.4.8}%
+\contentsline {subsection}{\numberline {3.4.9}Discussion critique et limites}{27}{subsection.3.4.9}%
 \contentsline {chapter}{\numberline {4}Développement et implémentation}{28}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Environnement de développement}{28}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Matériel}{28}{subsection.4.1.1}%
@@ -77,25 +77,20 @@
 \contentsline {chapter}{\numberline {5}Résultats et Discussion}{32}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Résultats d’entraînement et de test}{32}{section.5.1}%
 \contentsline {subsection}{\numberline {5.1.1}Courbes de perte et convergence des modèles}{32}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Comparaison quantitative des modèles}{32}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}Analyse graphique des métriques}{33}{section.5.2}%
-\contentsline {subsubsection}{MAE}{33}{section.5.2}%
-\contentsline {subsubsection}{RMSE}{33}{figure.caption.23}%
-\contentsline {subsubsection}{MAPE}{33}{figure.caption.24}%
-\contentsline {subsubsection}{MaxErr}{33}{figure.caption.25}%
-\contentsline {section}{\numberline {5.3}Analyse par variété}{33}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Analyse des erreurs et robustesse}{33}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Cas difficiles}{33}{subsection.5.4.1}%
+\contentsline {section}{\numberline {5.2}Visualisation des performances des modèles}{32}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Analyse par variété}{32}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Analyse des erreurs et robustesse}{35}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Cas difficiles}{35}{subsection.5.4.1}%
 \contentsline {subsection}{\numberline {5.4.2}Robustesse en conditions réelles}{35}{subsection.5.4.2}%
 \contentsline {section}{\numberline {5.5}Discussion critique et implications}{35}{section.5.5}%
 \contentsline {subsection}{\numberline {5.5.1}Comparaison avec l’état de l’art}{35}{subsection.5.5.1}%
 \contentsline {subsection}{\numberline {5.5.2}Limites}{35}{subsection.5.5.2}%
-\contentsline {subsection}{\numberline {5.5.3}Perspectives}{35}{subsection.5.5.3}%
-\contentsline {section}{\numberline {5.6}Synthèse}{35}{section.5.6}%
-\contentsline {chapter}{\numberline {6}Conclusion et perspectives}{36}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Synthèse des contributions}{36}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Bilan critique}{36}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Points forts}{36}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}Limites}{37}{subsection.6.2.2}%
-\contentsline {section}{\numberline {6.3}Perspectives}{37}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Conclusion générale}{38}{section.6.4}%
+\contentsline {subsection}{\numberline {5.5.3}Perspectives}{36}{subsection.5.5.3}%
+\contentsline {section}{\numberline {5.6}Synthèse}{36}{section.5.6}%
+\contentsline {chapter}{\numberline {6}Conclusion et perspectives}{37}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Synthèse des contributions}{37}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Bilan critique}{37}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Points forts}{37}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Limites}{38}{subsection.6.2.2}%
+\contentsline {section}{\numberline {6.3}Perspectives}{38}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Conclusion générale}{39}{section.6.4}%

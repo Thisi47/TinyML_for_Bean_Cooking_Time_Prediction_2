@@ -183,7 +183,8 @@
   \end{itemize}
   \textbf{Aucune rotation} n'est utilisée pour préserver les caractéristiques morphologiques directionnelles des grains. Ces transformations sont codées en PyTorch et appliquées stochastiquement pour générer quatre variantes supplémentaires par image d'entraînement initiale (1 image originale + 4 augmentées = facteur 5).
 
-  \subsection{Normalisation des temps de cuisson ($T_c$)}
+\section{\texorpdfstring{Normalisation des temps de cuisson ($T_c$)}{Normalisation des temps de cuisson (Tc)}}
+
 
   Avant sauvegarde, les valeurs $T_c$ (en minutes) sont mises à l'échelle par la transformation \emph{Min–Max} pour produire une cible dans l'intervalle $[0,1]$. Formellement, les paramètres de la transformation sont calculés \textbf{uniquement} sur l'ensemble d'entraînement $\mathcal{D}_{\text{train}}$:
 
@@ -299,7 +300,7 @@ Dans l’ensemble, cette topologie offre un compromis pertinent entre expressivi
         \draw[->] (dense1) -- (output);
     \end{tikzpicture}
     \caption{Architecture CNN proposée avec blocs Conv2D et MaxPooling2D combinés.}
-    \label{fig:cnn1_tbnet2_combined}
+    \label{fig:cnn1_tbnet2}
 \end{figure}
 
 
@@ -340,7 +341,7 @@ Enfin, une couche dense intermédiaire de 256 neurones activés par ReLU prépar
         \draw[->] (dense1) -- (output);
     \end{tikzpicture}
     \caption{Architecture CNN profonde avec blocs Conv2D et MaxPooling2D combinés.}
-    \label{fig:cnn2_tbnet5_combined}
+    \label{fig:cnn2_tbnet5}
 \end{figure}
 
 
@@ -348,9 +349,9 @@ Enfin, une couche dense intermédiaire de 256 neurones activés par ReLU prépar
   \subsubsection{Modèles pré-entraînés}
 
   \begin{itemize}
-    \item \textbf{MobileNetV2} \parencite{sandler2018mobilenetv2} : architecture mobile employant des \emph{inverted residual} blocks et les convolutions séparables en profondeur ; MobileNetV2 (1.0, résolution 224) compte environ \(\mathbf{3.4M}\) paramètres et ~\(\mathbf{0.3}\) GFLOPs (mult-adds) pour une image 224×224, ce qui le rend très attractif pour l'embarqué.
-    \item \textbf{EfficientNet-B0} \autocite{tan2019efficientnet} : conception via compound scaling ; EfficientNet-B0 : ~\(\mathbf{5.3M}\) paramètres et \(\approx\mathbf{0.39}\) GFLOPs (224×224). Excellente efficacité paramétrique/accuracie.
-    \item \textbf{NASNetMobile} \autocite{zoph2018nasnet} : architecture trouvée par Neural Architecture Search pour des plateformes mobiles ; configurations compactes (taille et FLOPs compatibles avec mobile, ordre de quelques millions de paramètres selon l'implémentation).
+    \item \textbf{MobileNetV2} \citep{sandler2018mobilenetv2} : architecture mobile employant des \emph{inverted residual} blocks et les convolutions séparables en profondeur ; MobileNetV2 (1.0, résolution 224) compte environ \(\mathbf{3.4M}\) paramètres et ~\(\mathbf{0.3}\) GFLOPs (mult-adds) pour une image 224×224, ce qui le rend très attractif pour l'embarqué.
+    \item \textbf{EfficientNet-B0} \citep{tan2019efficientnet} : conception via compound scaling ; EfficientNet-B0 : ~\(\mathbf{5.3M}\) paramètres et \(\approx\mathbf{0.39}\) GFLOPs (224×224). Excellente efficacité paramétrique/accuracie.
+    \item \textbf{NASNetMobile} \citep{zoph2018nasnet} : architecture trouvée par Neural Architecture Search pour des plateformes mobiles ; configurations compactes (taille et FLOPs compatibles avec mobile, ordre de quelques millions de paramètres selon l'implémentation).
   \end{itemize}
 
   Les nombres de paramètres et FLOPs cités ci-dessus proviennent des rapports originaux et benchmarks comparatifs (cf. Table~\ref{tab:model_comp} pour un résumé et les sources) \autocite{tan2019efficientnet,sandler2018mobilenetv2,zoph2018nasnet}.
@@ -408,6 +409,7 @@ Enfin, une couche dense intermédiaire de 256 neurones activés par ReLU prépar
 
   \begin{table}[!ht]
   \centering
+  \small
   \caption{Comparatif des modèles (valeurs indicatives pour 224×224).}
   \label{tab:model_comp}
   \begin{tabular}{@{}lcccc@{}}

@@ -13,14 +13,14 @@ Dans le domaine agricole, l’intégration de la vision par ordinateur et du Tin
 \section{Problématique}
 Malgré les progrès réalisés dans la transformation agroalimentaire, la prédiction précise et non destructive du temps de cuisson des légumineuses reste un défi technique. Les approches traditionnelles présentent plusieurs limites :
 \begin{itemize}
-    \item \textbf{Temps et coût} : les méthodes classiques sont chronophages et peu adaptées à un contrôle en ligne.
-    \item \textbf{Manque de portabilité} : la plupart des systèmes automatisés existants nécessitent des équipements coûteux ou encombrants.
-    \item \textbf{Contraintes énergétiques et matérielles} : dans les zones rurales ou les petites unités de production, l’accès à une puissance de calcul élevée est limité.
+	\item \textbf{Temps et coût} : les méthodes classiques sont chronophages et peu adaptées à un contrôle en ligne.
+	\item \textbf{Manque de portabilité} : la plupart des systèmes automatisés existants nécessitent des équipements coûteux ou encombrants.
+	\item \textbf{Contraintes énergétiques et matérielles} : dans les zones rurales ou les petites unités de production, l’accès à une puissance de calcul élevée est limité.
 \end{itemize}
 
 La question centrale de ce mémoire peut ainsi se formuler comme suit :
 \begin{quote}
-\textit{Comment concevoir et déployer un système de prédiction du temps de cuisson des haricots, basé sur l’analyse d’images, qui soit à la fois précis, portable et compatible avec les contraintes matérielles du TinyML ?}
+	\textit{Comment concevoir et déployer un système de prédiction du temps de cuisson des haricots, basé sur l’analyse d’images, qui soit à la fois précis, portable et compatible avec les contraintes matérielles du TinyML ?}
 \end{quote}
 
 \section{Objectifs et contributions}
@@ -30,17 +30,17 @@ Développer et déployer un modèle TinyML capable de prédire le temps de cuiss
 
 \subsection{Objectifs spécifiques}
 \begin{enumerate}
-    \item Constituer et prétraiter un jeu de données d’images de haricots avec annotation du temps de cuisson.
-    \item Concevoir, entraîner et optimiser des modèles légers adaptés au déploiement embarqué (CNN compacts, MobileNetV2, EfficientNet-lite, etc.).
-    \item Évaluer les performances des modèles en termes de précision, consommation mémoire et temps d’inférence.
-    \item Intégrer et tester le modèle final sur une plateforme embarquée (microcontrôleur ou smartphone).
+	\item Constituer et prétraiter un jeu de données d’images de haricots avec annotation du temps de cuisson.
+	\item Concevoir, entraîner et optimiser des modèles légers adaptés au déploiement embarqué (CNN compacts, MobileNetV2, EfficientNet-lite, etc.).
+	\item Évaluer les performances des modèles en termes de précision, consommation mémoire et temps d’inférence.
+	\item Intégrer et tester le modèle final sur une plateforme embarquée (microcontrôleur ou smartphone).
 \end{enumerate}
 
 \subsection{Contributions attendues}
 \begin{itemize}
-    \item Une méthodologie reproductible pour la prédiction visuelle du temps de cuisson des légumineuses.
-    \item Un modèle optimisé, compatible avec les contraintes du TinyML.
-    \item Une démonstration fonctionnelle sur un dispositif embarqué.
+	\item Une méthodologie reproductible pour la prédiction visuelle du temps de cuisson des légumineuses.
+	\item Un modèle optimisé, compatible avec les contraintes du TinyML.
+	\item Une démonstration fonctionnelle sur un dispositif embarqué.
 \end{itemize}
 
 \section{Portée et limites de l’étude}
@@ -48,20 +48,20 @@ Cette recherche se concentre sur la prédiction du temps de cuisson des haricots
 
 Les limites incluent :
 \begin{itemize}
-    \item La restriction aux données visuelles (sans capteurs hyperspectraux ou thermiques).
-    \item L’évaluation sur un nombre limité de dispositifs embarqués.
-    \item La dépendance à un jeu de données spécifique, pouvant limiter la généralisation à d’autres contextes.
+	\item La restriction aux données visuelles (sans capteurs hyperspectraux ou thermiques).
+	\item L’évaluation sur un nombre limité de dispositifs embarqués.
+	\item La dépendance à un jeu de données spécifique, pouvant limiter la généralisation à d’autres contextes.
 \end{itemize}
 
 \section{Organisation du mémoire}
-Le présent mémoire est structuré de manière à guider progressivement le lecteur depuis le contexte général de l’étude jusqu’aux conclusions et perspectives. Il se compose des parties suivantes :  
+Le présent mémoire est structuré de manière à guider progressivement le lecteur depuis le contexte général de l’étude jusqu’aux conclusions et perspectives. Il se compose des parties suivantes :
 
 \begin{itemize}
-    \item \textbf{Abstract} : une synthèse concise présentant le sujet, la méthodologie adoptée, les principaux résultats et les apports de ce travail.  
-    \item \textbf{Chapitre 1 - Introduction générale} : un exposé du contexte scientifique et applicatif, de la problématique étudiée, des objectifs poursuivis ainsi que des contributions attendues.  
-    \item \textbf{Chapitre 2 - Revue de la littérature} : une analyse critique des travaux existants relatifs à la prédiction du temps de cuisson des aliments, au TinyML et aux approches de vision par ordinateur appliquées au domaine agroalimentaire.  
-    \item \textbf{Chapitre 3 — Méthodologie et conception} : présentation de la démarche méthodologique, du protocole expérimental et de la conception du système proposé.  
-    \item \textbf{Chapitre 4 — Implémentation et déploiement} : description des choix technologiques, de l’implémentation logicielle et du processus de déploiement sur plateformes embarquées.  
-    \item \textbf{Chapitre 5 — Résultats et discussion} : analyse et interprétation des résultats obtenus, mise en perspective avec les travaux de la littérature et discussion des limites.  
-    \item \textbf{Chapitre 6 — Conclusion et perspectives} : synthèse des contributions majeures du mémoire et identification de pistes de recherche futures.  
+	\item \textbf{Abstract} : une synthèse concise présentant le sujet, la méthodologie adoptée, les principaux résultats et les apports de ce travail.
+	\item \textbf{Chapitre 1 - Introduction générale} : un exposé du contexte scientifique et applicatif, de la problématique étudiée, des objectifs poursuivis ainsi que des contributions attendues.
+	\item \textbf{Chapitre 2 - Revue de la littérature} : une analyse critique des travaux existants relatifs à la prédiction du temps de cuisson des aliments, au TinyML et aux approches de vision par ordinateur appliquées au domaine agroalimentaire.
+	\item \textbf{Chapitre 3 — Méthodologie et conception} : présentation de la démarche méthodologique, du protocole expérimental et de la conception du système proposé.
+	\item \textbf{Chapitre 4 — Implémentation et déploiement} : description des choix technologiques, de l’implémentation logicielle et du processus de déploiement sur plateformes embarquées.
+	\item \textbf{Chapitre 5 — Résultats et discussion} : analyse et interprétation des résultats obtenus, mise en perspective avec les travaux de la littérature et discussion des limites.
+	\item \textbf{Chapitre 6 — Conclusion et perspectives} : synthèse des contributions majeures du mémoire et identification de pistes de recherche futures.
 \end{itemize}

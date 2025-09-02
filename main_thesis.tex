@@ -1,15 +1,5 @@
 \documentclass[]{settings/wi-thesis}
 \addbibresource{library.bib}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[french]{babel}
-\usepackage{float}  % pour H
-\usepackage{tikz}   % pour dessiner
-
-
-% ============================================================
-% Include all relevant information for the title page
-
 
 \begin{document}
 
@@ -32,39 +22,40 @@
 \supervisor{Supervisor, Pr Dr BOUKAR}
 
 % Submission Date
-\date{23.09.2025}
-    \maketitle
+\date{08.09.2025}
 
-    \tableofcontents
+\maketitle
+\tableofcontents
+\listoffigures
+\listoftables
 
-    \listoffigures
+\input{content/01-introduction}
+\input{content/review}
+\input{content/02-chapter1}
+\input{content/03-chapter2}
+\input{content/04-chapter3}
+\input{content/10-conclusion}
 
-    \listoftables
-    
-    \input{content/01-introduction}
-    \input{content/review}
-    \input{content/02-chapter1}
-    \input{content/03-chapter2}
-    \input{content/04-chapter3}
-    \input{content/10-conclusion}
+\begin{appendix}
+	\input{content/99-appendix}
+\end{appendix}
 
-    \begin{appendix}
-        \input{content/99-appendix}
-    \end{appendix}
+\begin{backmatter}
 
-    \begin{backmatter}
-        % References
-        \begingroup
-        \setlength{\emergencystretch}{.5em}
-        \printbibliography[
-            heading=bibintoc,
-            title={Bibliography}
-        ]
-        \endgroup
-        % Declarations & Consent Forms
-    \end{backmatter}
+	\begingroup
 
-    \frenchDeclaration
+	% \setlength{\emergencystretch}{.5em}
+
+
+	\printbibliography[
+		heading=bibintoc,
+		title={Bibliographie}
+	]
+
+	\endgroup
+\end{backmatter}
+
+\frenchDeclaration
 
 % ============================================================
 

@@ -23,13 +23,13 @@
 \pgfplotsset{compat=1.18}  % définit la version de compatibilité de PGFPlots
 \usepackage[titles]{tocloft}
 \RequirePackage[utf8]{inputenc}
+\usepackage{csquotes}
 \RequirePackage[T1]{fontenc}
 \RequirePackage[french]{babel}
 \RequirePackage{booktabs}
 \RequirePackage{lipsum}
 \RequirePackage{graphicx}
 \RequirePackage{xcolor}
-\RequirePackage{tikz}
 \usetikzlibrary{arrows.meta}
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
@@ -39,7 +39,6 @@
 \RequirePackage{algorithmicx}
 \RequirePackage{minted}
 \usemintedstyle{tango}
-\RequirePackage{float}
 \RequirePackage{caption}
 \RequirePackage{subcaption}
 \RequirePackage{enumitem}

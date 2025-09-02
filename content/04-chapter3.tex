@@ -13,41 +13,71 @@ L’évaluation a reposé sur l’analyse de la perte d’entraînement et de va
 
 Les CNN personnalisés (\texttt{model\_1\_v2} et \texttt{model\_1}) convergent rapidement, stabilisant la perte après 20–25 époques. Les modèles pré-entraînés (MobileNetV2, EfficientNetB0, NASNetMobile) présentent une convergence plus lente et des fluctuations de validation plus marquées, indiquant un surapprentissage potentiel sur ce dataset de taille moyenne.
 
-\begin{figure}[h!]
+\begin{figure}[!ht]
 \centering
 \begin{tikzpicture}
 \begin{axis}[
     width=0.85\textwidth,
     height=6cm,
     xlabel=Époques,
-    ylabel=Perte,
+    ylabel=Perte de validation,
     legend pos=north east,
-    grid=major
+    legend style={font=\small},
+    grid=major,
+    xmin=1, xmax=26,
+    ymin=0, ymax=0.2
 ]
-\addplot[blue, thick] coordinates {(0,50000) (5,40000) (10,30000) (15,20000) (20,15000) (25,12000) (30,8000)};
-\addlegendentry{CNN personnalisé}
 
-\addplot[red, dashed, thick] coordinates {(0,60000) (5,50000) (10,42000) (15,36000) (20,32000) (25,29000) (30,27000)};
+% MobileNetV2
+\addplot[red, dashed, thick] coordinates {
+  (1,0.1909) (2,0.0437) (3,0.0574) (4,0.0219) (5,0.0742)
+  (6,0.0769) (7,0.0614) (8,0.0786) (9,0.0685)
+};
 \addlegendentry{MobileNetV2}
 
-\addplot[green, dotted, thick] coordinates {(0,58000) (5,48000) (10,42000) (15,38000) (20,35000) (25,33000) (30,32000)};
+% EfficientNetB0
+\addplot[green, dotted, thick] coordinates {
+  (1,0.0044) (2,0.0035) (3,0.0362) (4,0.0022) (5,0.0086)
+  (6,0.0098) (7,0.0059) (8,0.0033) (9,0.0232)
+};
 \addlegendentry{EfficientNetB0}
 
-\addplot[orange, dashdotted, thick] coordinates {(0,57000) (5,49000) (10,43000) (15,39000) (20,36000) (25,34000) (30,33000)};
+% NASNetMobile
+\addplot[orange, dashdotted, thick] coordinates {
+  (1,0.0988) (2,0.0620) (3,0.0879) (4,0.0324) (5,0.0742)
+  (6,0.0765) (7,2.6003) % valeur aberrante, à considérer
+};
 \addlegendentry{NASNetMobile}
+
+% TBNet2
+\addplot[blue, thick] coordinates {
+  (1,0.0352) (2,0.0234) (3,0.0181) (4,0.0182) (5,0.0162)
+  (6,0.0129) (7,0.0118) (8,0.0103) (9,0.0110) (10,0.0126)
+  (11,0.0104) (12,0.0100) (13,0.0074) (14,0.0074) (15,0.0065)
+  (16,0.0066) (17,0.0084) (18,0.0053) (19,0.0072) (20,0.0045)
+  (21,0.0042) (22,0.0063) (23,0.0047) (24,0.0052) (25,0.0055) (26,0.0055)
+};
+\addlegendentry{TBNet2}
+
+% TBNet5
+\addplot[purple, thick] coordinates {
+  (1,0.0299) (2,0.0244) (3,0.0203) (4,0.0159) (5,0.0115)
+  (6,0.0113) (7,0.0099) (8,0.0095) (9,0.0097) (10,0.0099)
+  (11,0.0081) (12,0.0084) (13,0.0086) (14,0.0061) (15,0.0065)
+  (16,0.0074) (17,0.0072) (18,0.0056) (19,0.0058) (20,0.0084)
+  (21,0.0052) (22,0.0060) (23,0.0054) (24,0.0049) (25,0.0051) (26,0.0078)
+};
+\addlegendentry{TBNet5}
+
 \end{axis}
 \end{tikzpicture}
-\caption{Évolution des courbes de perte pour les différents modèles testés.}
+\caption{Évolution des pertes de validation pour les différents modèles testés sur l'ensemble des époques.}
 \label{fig:loss_curves}
 \end{figure}
 
-\subsection{Comparaison quantitative des modèles}
-\label{subsec:metrics_comparison}
-
-Le Tableau~\ref{tab:metrics_comparison} synthétise les performances des modèles sur le jeu de test. Les CNN personnalisés (\texttt{model\_1\_v2}, \texttt{model\_1}) surpassent nettement les modèles pré-entraînés.
-
-\begin{table}[h!]
+\begin{table}[!ht]
 \centering
+\small
 \caption{Performances des modèles sur le jeu de test.}
 \label{tab:metrics_comparison}
 \begin{tabular}{|l|c|c|c|c|c|}
@@ -67,133 +97,178 @@ model\_1 & 16.40 & 26.20 & 0.90 & 0.14 & 228.87 \\
 \end{tabular}
 \end{table}
 
-\section{Analyse graphique des métriques}
-\label{sec:graph_metrics}
+\documentclass{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{geometry}
+\geometry{margin=1in}
 
-\subsubsection{MAE}
-\begin{figure}[h!]
-\centering
-\begin{tikzpicture}
-\begin{axis}[
-    width=0.85\textwidth,
-    height=6cm,
-    ybar,
-    bar width=8pt,
-    xlabel=Modèle,
-    ylabel=MAE (min),
-    symbolic x coords={mobnet\_fige\_v1,EfficientNetB0\_v1,NasNetMobile\_v1,modele\_1\_v2,model\_1},
-    xtick=data,
-    nodes near coords,
-    ymin=0
-]
-\addplot[blue,fill=blue!50] coordinates {
-    (mobnet\_fige\_v1,55499.68)
-    (EfficientNetB0\_v1,57162.30)
-    (NasNetMobile\_v1,56730.74)
-    (modele\_1\_v2,16.29)
-    (model\_1,16.40)
-};
-\end{axis}
-\end{tikzpicture}
-\caption{Comparaison du MAE entre modèles.}
-\label{fig:mae_all}
+\begin{document}
+
+\section{Visualisation des performances des modèles}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            ymode=log,
+            symbolic x coords={mobnet\_fige\_v1, EfficientNetB0\_v1, NasNetMobile\_v1, modele\_2, model\_96\_1, mobnet\_fige\_v2, NasNetMobile\_v2, model\_1\_v2, model\_1},
+            xtick=data,
+            x tick label style={rotate=45, anchor=east, font=\footnotesize},
+            ylabel={MAE (min)},
+            title={MAE (échelle logarithmique)},
+            width=15cm,
+            height=8cm,
+        ]
+        \addplot+[bar width=10pt,fill=blue] coordinates {
+            (mobnet\_fige\_v1,55499.68)
+            (EfficientNetB0\_v1,57162.30)
+            (NasNetMobile\_v1,56730.74)
+            (modele\_2,49596.76)
+            (model\_96\_1,42700.86)
+            (mobnet\_fige\_v2,56606.87)
+            (NasNetMobile\_v2,55799.49)
+            (model\_1\_v2,16.29)
+            (model\_1,16.40)
+        };
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Mean Absolute Error (MAE)}
 \end{figure}
 
-\subsubsection{RMSE}
-\begin{figure}[h!]
-\centering
-\begin{tikzpicture}
-\begin{axis}[
-    width=0.85\textwidth,
-    height=6cm,
-    ybar,
-    bar width=8pt,
-    xlabel=Modèle,
-    ylabel=RMSE (min),
-    symbolic x coords={mobnet\_fige\_v1,EfficientNetB0\_v1,NasNetMobile\_v1,modele\_1\_v2,model\_1},
-    xtick=data,
-    nodes near coords,
-    ymin=0
-]
-\addplot[green,fill=green!50] coordinates {
-    (mobnet\_fige\_v1,60155.30)
-    (EfficientNetB0\_v1,57162.35)
-    (NasNetMobile\_v1,61084.55)
-    (modele\_1\_v2,28.13)
-    (model\_1,26.20)
-};
-\end{axis}
-\end{tikzpicture}
-\caption{Comparaison du RMSE entre modèles.}
-\label{fig:rmse_all}
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            ymode=log,
+            symbolic x coords={mobnet\_fige\_v1, EfficientNetB0\_v1, NasNetMobile\_v1, modele\_2, model\_96\_1, mobnet\_fige\_v2, NasNetMobile\_v2, model\_1\_v2, model\_1},
+            xtick=data,
+            x tick label style={rotate=45, anchor=east, font=\footnotesize},
+            ylabel={RMSE (min)},
+            title={RMSE (échelle logarithmique)},
+            width=15cm,
+            height=8cm,
+        ]
+        \addplot+[bar width=10pt,fill=red] coordinates {
+            (mobnet\_fige\_v1,60155.30)
+            (EfficientNetB0\_v1,57162.35)
+            (NasNetMobile\_v1,61084.55)
+            (modele\_2,50963.23)
+            (model\_96\_1,44798.93)
+            (mobnet\_fige\_v2,60760.02)
+            (NasNetMobile\_v2,59374.25)
+            (model\_1\_v2,28.13)
+            (model\_1,26.20)
+        };
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Root Mean Square Error (RMSE)}
 \end{figure}
 
-\subsubsection{MAPE}
-\begin{figure}[h!]
-\centering
-\begin{tikzpicture}
-\begin{axis}[
-    width=0.85\textwidth,
-    height=6cm,
-    ybar,
-    bar width=8pt,
-    xlabel=Modèle,
-    ylabel=MAPE (\%),
-    symbolic x coords={mobnet\_fige\_v1,EfficientNetB0\_v1,NasNetMobile\_v1,modele\_1\_v2,model\_1},
-    xtick=data,
-    nodes near coords,
-    ymin=0
-]
-\addplot[orange,fill=orange!50] coordinates {
-    (mobnet\_fige\_v1,387.20)
-    (EfficientNetB0\_v1,466.53)
-    (NasNetMobile\_v1,402.03)
-    (modele\_1\_v2,0.12)
-    (model\_1,0.14)
-};
-\end{axis}
-\end{tikzpicture}
-\caption{Comparaison du MAPE entre modèles.}
-\label{fig:mape_all}
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            ymin=-1.5,
+            ymax=1,
+            symbolic x coords={mobnet\_fige\_v1, EfficientNetB0\_v1, NasNetMobile\_v1, modele\_2, model\_96\_1, mobnet\_fige\_v2, NasNetMobile\_v2, model\_1\_v2, model\_1},
+            xtick=data,
+            x tick label style={rotate=45, anchor=east, font=\footnotesize},
+            ylabel={$R^2$},
+            title={$R^2$ (zoomé entre -1.5 et 1)},
+            width=15cm,
+            height=8cm,
+        ]
+        \addplot+[bar width=10pt,fill=green] coordinates {
+            (mobnet\_fige\_v1,-1.5)
+            (EfficientNetB0\_v1,-1.5)
+            (NasNetMobile\_v1,-1.5)
+            (modele\_2,-1.5)
+            (model\_96\_1,-1.5)
+            (mobnet\_fige\_v2,-1.5)
+            (NasNetMobile\_v2,-1.5)
+            (model\_1\_v2,0.88)
+            (model\_1,0.90)
+        };
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Coefficient de détermination ($R^2$)}
 \end{figure}
 
-\subsubsection{MaxErr}
-\begin{figure}[h!]
-\centering
-\begin{tikzpicture}
-\begin{axis}[
-    width=0.85\textwidth,
-    height=6cm,
-    ybar,
-    bar width=8pt,
-    xlabel=Modèle,
-    ylabel=Erreur maximale (min),
-    symbolic x coords={mobnet\_fige\_v1,EfficientNetB0\_v1,NasNetMobile\_v1,modele\_1\_v2,model\_1},
-    xtick=data,
-    nodes near coords,
-    ymin=0
-]
-\addplot[red,fill=red!50] coordinates {
-    (mobnet\_fige\_v1,153697.80)
-    (EfficientNetB0\_v1,57288.20)
-    (NasNetMobile\_v1,149287.95)
-    (modele\_1\_v2,176.35)
-    (model\_1,228.87)
-};
-\end{axis}
-\end{tikzpicture}
-\caption{Comparaison de l’erreur maximale (MaxErr) entre modèles.}
-\label{fig:maxerr_all}
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            ymode=log,
+            symbolic x coords={mobnet\_fige\_v1, EfficientNetB0\_v1, NasNetMobile\_v1, modele\_2, model\_96\_1, mobnet\_fige\_v2, NasNetMobile\_v2, model\_1\_v2, model\_1},
+            xtick=data,
+            x tick label style={rotate=45, anchor=east, font=\footnotesize},
+            ylabel={MAPE (\%)},
+            title={MAPE (échelle logarithmique)},
+            width=15cm,
+            height=8cm,
+        ]
+        \addplot+[bar width=10pt,fill=orange] coordinates {
+            (mobnet\_fige\_v1,387.20)
+            (EfficientNetB0\_v1,466.53)
+            (NasNetMobile\_v1,402.03)
+            (modele\_2,378.60)
+            (model\_96\_1,315.60)
+            (mobnet\_fige\_v2,401.15)
+            (NasNetMobile\_v2,403.25)
+            (model\_1\_v2,0.12)
+            (model\_1,0.14)
+        };
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Mean Absolute Percentage Error (MAPE)}
 \end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            ymode=log,
+            symbolic x coords={mobnet\_fige\_v1, EfficientNetB0\_v1, NasNetMobile\_v1, modele\_2, model\_96\_1, mobnet\_fige\_v2, NasNetMobile\_v2, model\_1\_v2, model\_1},
+            xtick=data,
+            x tick label style={rotate=45, anchor=east, font=\footnotesize},
+            ylabel={MaxErr (min)},
+            title={Erreur maximale (MaxErr, échelle logarithmique)},
+            width=15cm,
+            height=8cm,
+        ]
+        \addplot+[bar width=10pt,fill=purple] coordinates {
+            (mobnet\_fige\_v1,153697.80)
+            (EfficientNetB0\_v1,57288.20)
+            (NasNetMobile\_v1,149287.95)
+            (modele\_2,110173.19)
+            (model\_96\_1,112126.64)
+            (mobnet\_fige\_v2,138063.39)
+            (NasNetMobile\_v2,135507.25)
+            (model\_1\_v2,176.35)
+            (model\_1,228.87)
+        };
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Erreur maximale (MaxErr)}
+\end{figure}
+
 
 \section{Analyse par variété}
 \label{subsec:analyse_variete}
 
 Les variétés sombres ou homogènes augmentent l’erreur, confirmant l’importance de l’augmentation de données. Le Tableau~\ref{tab:variete_stats} montre un exemple représentatif.
 
-\begin{table}[h!]
+\begin{table}[!ht]
 \centering
-\caption{Performances par variété pour le modèle \texttt{model\_1\_v2}.}
+\caption{Performances par variété pour le modèle \texttt{TB\_Net5}.}
 \label{tab:variete_stats}
 \begin{tabular}{|l|c|c|c|c|}
 \hline
