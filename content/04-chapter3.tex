@@ -11,9 +11,9 @@ Ce chapitre présente et analyse en profondeur les résultats obtenus lors de l�
 
 L’évaluation a reposé sur l’analyse de la perte d’entraînement et de validation, ainsi que sur les métriques de régression : MAE, RMSE, $R^2$, MAPE et MaxErr.  
 
-Les CNN personnalisés (\texttt{model\_1\_v2} et \texttt{model\_1}) convergent rapidement, stabilisant la perte après 20–25 époques. Les modèles pré-entraînés (MobileNetV2, EfficientNetB0, NASNetMobile) présentent une convergence plus lente et des fluctuations de validation plus marquées, indiquant un surapprentissage potentiel sur ce dataset de taille moyenne.
+Les CNN personnalisés (\texttt{TBNet5} et \texttt{TBNet2}) convergent rapidement, stabilisant la perte après 20–25 époques. Les modèles pré-entraînés (MobileNetV2, EfficientNetB0, NASNetMobile) présentent une convergence plus lente et des fluctuations de validation plus marquées, indiquant un surapprentissage potentiel sur ce dataset de taille moyenne.
 
-\begin{figure}[!ht]
+\begin{figure}[H]
 \centering
 \begin{tikzpicture}
 \begin{axis}[
@@ -75,7 +75,7 @@ Les CNN personnalisés (\texttt{model\_1\_v2} et \texttt{model\_1}) convergent r
 \label{fig:loss_curves}
 \end{figure}
 
-\begin{table}[!ht]
+\begin{table}[H]
 \centering
 \small
 \caption{Performances des modèles sur le jeu de test.}
@@ -91,31 +91,21 @@ modele\_2 & 49596.76 & 50963.23 & -381059.19 & 378.60 & 110173.19 \\
 model\_96\_1 & 42700.86 & 44798.93 & -294451.38 & 315.60 & 112126.64 \\
 mobnet\_fige\_v2 & 56606.87 & 60760.02 & -541644.94 & 401.15 & 138063.39 \\
 NasNetMobile\_v2 & 55799.49 & 59374.25 & -517219.72 & 403.25 & 135507.25 \\
-model\_1\_v2 & 16.29 & 28.13 & 0.88 & 0.12 & 176.35 \\
-model\_1 & 16.40 & 26.20 & 0.90 & 0.14 & 228.87 \\
+TBNet5 & 16.29 & 28.13 & 0.88 & 0.12 & 176.35 \\
+TBNet2 & 16.40 & 26.20 & 0.90 & 0.14 & 228.87 \\
 \hline
 \end{tabular}
 \end{table}
 
-\documentclass{article}
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.18}
-\usepackage{caption}
-\usepackage{subcaption}
-\usepackage{geometry}
-\geometry{margin=1in}
-
-\begin{document}
-
 \section{Visualisation des performances des modèles}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \begin{tikzpicture}
         \begin{axis}[
             ybar,
             ymode=log,
-            symbolic x coords={mobnet\_fige\_v1, EfficientNetB0\_v1, NasNetMobile\_v1, modele\_2, model\_96\_1, mobnet\_fige\_v2, NasNetMobile\_v2, model\_1\_v2, model\_1},
+            symbolic x coords={mobnet\_fige\_v1, EfficientNetB0\_v1, NasNetMobile\_v1, modele\_2, model\_96\_1, mobnet\_fige\_v2, NasNetMobile\_v2, TBNet5, TBNet2},
             xtick=data,
             x tick label style={rotate=45, anchor=east, font=\footnotesize},
             ylabel={MAE (min)},
@@ -131,21 +121,21 @@ model\_1 & 16.40 & 26.20 & 0.90 & 0.14 & 228.87 \\
             (model\_96\_1,42700.86)
             (mobnet\_fige\_v2,56606.87)
             (NasNetMobile\_v2,55799.49)
-            (model\_1\_v2,16.29)
-            (model\_1,16.40)
+            (TBNet5,16.29)
+            (TBNet2,16.40)
         };
         \end{axis}
     \end{tikzpicture}
     \caption{Mean Absolute Error (MAE)}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \begin{tikzpicture}
         \begin{axis}[
             ybar,
             ymode=log,
-            symbolic x coords={mobnet\_fige\_v1, EfficientNetB0\_v1, NasNetMobile\_v1, modele\_2, model\_96\_1, mobnet\_fige\_v2, NasNetMobile\_v2, model\_1\_v2, model\_1},
+            symbolic x coords={mobnet\_fige\_v1, EfficientNetB0\_v1, NasNetMobile\_v1, modele\_2, model\_96\_1, mobnet\_fige\_v2, NasNetMobile\_v2, TBNet5, TBNet2},
             xtick=data,
             x tick label style={rotate=45, anchor=east, font=\footnotesize},
             ylabel={RMSE (min)},
@@ -161,22 +151,22 @@ model\_1 & 16.40 & 26.20 & 0.90 & 0.14 & 228.87 \\
             (model\_96\_1,44798.93)
             (mobnet\_fige\_v2,60760.02)
             (NasNetMobile\_v2,59374.25)
-            (model\_1\_v2,28.13)
-            (model\_1,26.20)
+            (TBNet5,28.13)
+            (TBNet2,26.20)
         };
         \end{axis}
     \end{tikzpicture}
     \caption{Root Mean Square Error (RMSE)}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \begin{tikzpicture}
         \begin{axis}[
             ybar,
             ymin=-1.5,
             ymax=1,
-            symbolic x coords={mobnet\_fige\_v1, EfficientNetB0\_v1, NasNetMobile\_v1, modele\_2, model\_96\_1, mobnet\_fige\_v2, NasNetMobile\_v2, model\_1\_v2, model\_1},
+            symbolic x coords={mobnet\_fige\_v1, EfficientNetB0\_v1, NasNetMobile\_v1, modele\_2, model\_96\_1, mobnet\_fige\_v2, NasNetMobile\_v2, TBNet5, TBNet2},
             xtick=data,
             x tick label style={rotate=45, anchor=east, font=\footnotesize},
             ylabel={$R^2$},
@@ -192,21 +182,21 @@ model\_1 & 16.40 & 26.20 & 0.90 & 0.14 & 228.87 \\
             (model\_96\_1,-1.5)
             (mobnet\_fige\_v2,-1.5)
             (NasNetMobile\_v2,-1.5)
-            (model\_1\_v2,0.88)
-            (model\_1,0.90)
+            (TBNet5,0.88)
+            (TBNet2,0.90)
         };
         \end{axis}
     \end{tikzpicture}
     \caption{Coefficient de détermination ($R^2$)}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \begin{tikzpicture}
         \begin{axis}[
             ybar,
             ymode=log,
-            symbolic x coords={mobnet\_fige\_v1, EfficientNetB0\_v1, NasNetMobile\_v1, modele\_2, model\_96\_1, mobnet\_fige\_v2, NasNetMobile\_v2, model\_1\_v2, model\_1},
+            symbolic x coords={mobnet\_fige\_v1, EfficientNetB0\_v1, NasNetMobile\_v1, modele\_2, model\_96\_1, mobnet\_fige\_v2, NasNetMobile\_v2, TBNet5, TBNet2},
             xtick=data,
             x tick label style={rotate=45, anchor=east, font=\footnotesize},
             ylabel={MAPE (\%)},
@@ -222,21 +212,21 @@ model\_1 & 16.40 & 26.20 & 0.90 & 0.14 & 228.87 \\
             (model\_96\_1,315.60)
             (mobnet\_fige\_v2,401.15)
             (NasNetMobile\_v2,403.25)
-            (model\_1\_v2,0.12)
-            (model\_1,0.14)
+            (TBNet5,0.12)
+            (TBNet2,0.14)
         };
         \end{axis}
     \end{tikzpicture}
     \caption{Mean Absolute Percentage Error (MAPE)}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \begin{tikzpicture}
         \begin{axis}[
             ybar,
             ymode=log,
-            symbolic x coords={mobnet\_fige\_v1, EfficientNetB0\_v1, NasNetMobile\_v1, modele\_2, model\_96\_1, mobnet\_fige\_v2, NasNetMobile\_v2, model\_1\_v2, model\_1},
+            symbolic x coords={mobnet\_fige\_v1, EfficientNetB0\_v1, NasNetMobile\_v1, modele\_2, model\_96\_1, mobnet\_fige\_v2, NasNetMobile\_v2, TBNet5, TBNet2},
             xtick=data,
             x tick label style={rotate=45, anchor=east, font=\footnotesize},
             ylabel={MaxErr (min)},
@@ -252,8 +242,8 @@ model\_1 & 16.40 & 26.20 & 0.90 & 0.14 & 228.87 \\
             (model\_96\_1,112126.64)
             (mobnet\_fige\_v2,138063.39)
             (NasNetMobile\_v2,135507.25)
-            (model\_1\_v2,176.35)
-            (model\_1,228.87)
+            (TBNet5,176.35)
+            (TBNet2,228.87)
         };
         \end{axis}
     \end{tikzpicture}
@@ -266,9 +256,9 @@ model\_1 & 16.40 & 26.20 & 0.90 & 0.14 & 228.87 \\
 
 Les variétés sombres ou homogènes augmentent l’erreur, confirmant l’importance de l’augmentation de données. Le Tableau~\ref{tab:variete_stats} montre un exemple représentatif.
 
-\begin{table}[!ht]
+\begin{table}[H]
 \centering
-\caption{Performances par variété pour le modèle \texttt{TB\_Net5}.}
+\caption{Performances par variété pour le modèle \texttt{TBNet5}.}
 \label{tab:variete_stats}
 \begin{tabular}{|l|c|c|c|c|}
 \hline
@@ -294,15 +284,15 @@ TY339612 & 14.8 & 26.0 & 0.10 & 160 \\
 \end{itemize}
 
 \subsection{Robustesse en conditions réelles}
-MAE augmenté de seulement 0.5 à 1 min grâce à l’augmentation de données, conforme à \citet{tastan2023}.
+MAE augmenté de seulement 0.5 à 1 min grâce à l’augmentation de données, conforme à \cite{tastan2023}.
 
 \section{Discussion critique et implications}
 \subsection{Comparaison avec l’état de l’art}
-Les CNN compacts sur images RGB rivalisent avec des méthodes hyperspectrales ($r>0.87$) \citep{mendoza2018} et sont économiques et portables. Quantification et pruning réduisent la taille mémoire de plus de 70~\% \citep{jacob2018quantization, han2016deep}.
+Les CNN compacts sur images RGB rivalisent avec des méthodes hyperspectrales ($r>0.87$) \cite{mendoza2018prediction} et sont économiques et portables. Quantification et pruning réduisent la taille mémoire de plus de 70~\% \cite{jacob2018quantization, han2016deep}.
 
 \subsection{Limites}
 \begin{itemize}
-    \item Dataset limité à 56 variétés.  
+    \item Dataset limité à 56 sous\-variétés.  
     \item Expérimentations contraintes par GPU Google Colab.  
     \item Généralisation sur microcontrôleurs non encore validée.
 \end{itemize}

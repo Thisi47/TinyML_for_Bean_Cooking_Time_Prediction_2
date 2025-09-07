@@ -1,14 +1,16 @@
 \babel@toc {french}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Synthèse des travaux pertinents pour la revue de littérature}}{12}{table.caption.7}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Statistiques descriptives des temps de cuisson ($T_c$ en minutes) par variété.}}{14}{table.caption.8}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces Variance intra-variété des temps de cuisson.}}{15}{table.caption.10}%
-\contentsline {table}{\numberline {3.3}{\ignorespaces Hyperparamètres d'entraînement recommandés.}}{25}{table.caption.17}%
-\contentsline {table}{\numberline {3.4}{\ignorespaces Comparatif des modèles (valeurs indicatives pour 224×224).}}{26}{table.caption.18}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Statistiques descriptives des temps de cuisson ($T_c$ en minutes) par variété.}}{16}{table.caption.9}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Variance intra-variété des temps de cuisson.}}{17}{table.caption.11}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces Hyperparamètres d'entraînement recommandés.}}{27}{table.caption.18}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces Comparatif des modèles (valeurs indicatives pour 224×224).}}{28}{table.caption.19}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces (Placeholder) Synthèse des modèles déployables (à remplir avec valeurs mesurées).}}{30}{table.caption.20}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Hyperparamètres d’entraînement retenus.}}{32}{table.caption.20}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces (Placeholder) Synthèse des modèles déployables.}}{35}{table.caption.22}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Performances des modèles sur le jeu de test.}}{35}{table.caption.22}%
-\contentsline {table}{\numberline {5.2}{\ignorespaces Performances par variété pour le modèle \texttt {TB\_Net5}.}}{35}{table.caption.28}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Performances des modèles sur le jeu de test.}}{37}{table.caption.24}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Performances par variété pour le modèle \texttt {TBNet5}.}}{41}{table.caption.30}%
 \addvspace {10\p@ }

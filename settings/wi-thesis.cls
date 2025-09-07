@@ -23,7 +23,6 @@
 \pgfplotsset{compat=1.18}  % définit la version de compatibilité de PGFPlots
 \usepackage[titles]{tocloft}
 \RequirePackage[utf8]{inputenc}
-\usepackage{csquotes}
 \RequirePackage[T1]{fontenc}
 \RequirePackage[french]{babel}
 \RequirePackage{booktabs}
@@ -55,15 +54,30 @@
 \RequirePackage{longtable}
 \RequirePackage[flushmargin,hang,bottom]{footmisc}
 \usepackage{listings}
+\usepackage{tabularx} 
+\usepackage{csquotes}
 
-% Bibliographie (APA, backend biber)
+
+% Bibliographie (IEEE, backend biber)
 \RequirePackage[
-    natbib=true,
-    style=apa,
+    style=numeric,
     backend=biber,
+    sorting=none,
     hyperref=true,
     url=true
 ]{biblatex}
+
+\newenvironment{backmatter}{
+    \setlength{\parskip}{10pt}%
+    \newgeometry{left=2.9cm, top=2.9cm, bottom=2cm, right=2.9cm}
+    \pagestyle{fancyplain}
+    \fancyhf{}
+    \fancyfoot[C]{\thepage}
+    \renewcommand{\headrulewidth}{0pt}
+    \clearpage{\thispagestyle{empty}\cleardoublepage}
+}
+
+
 
 % Table des matières
 \let\default@tableofcontents\tableofcontents
