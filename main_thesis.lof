@@ -2,21 +2,15 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Pipeline méthodologique proposé pour la prédiction du temps de cuisson des haricots basé sur TinyML.}}{15}{figure.caption.8}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Distribution globale des temps de cuisson ($T_c$) pour l'ensemble des variétés. La distribution est multimodale, avec un pic principal autour de 120-150 minutes.}}{17}{figure.caption.10}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Diagramme en boîtes à moustaches illustrant la distribution des temps de cuisson par variété. La variabilité extrême de la variété \texttt {Macc55} et l'homogénéité de \texttt {NIT4G16187} sont clairement visibles.}}{18}{figure.caption.12}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Distribution du nombre d'images par variété. Le jeu de données est parfaitement équilibré, chaque classe contenant 200 échantillons.}}{19}{figure.caption.13}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Pipeline de prétraitement des images et des labels $T_c$.}}{19}{figure.caption.14}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Pipeline fonctionnel du système (chargement → entraînement → optimisation → déploiement).}}{22}{figure.caption.15}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Architecture CNN proposée avec blocs Conv2D et MaxPooling2D combinés.}}{24}{figure.caption.16}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Architecture CNN profonde avec blocs Conv2D et MaxPooling2D combinés.}}{25}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Pipeline global du système : classification suivie (si nécessaire) d'une régression.}}{20}{figure.caption.8}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Pipeline de préparation du dataset de régression.}}{22}{figure.caption.9}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Workflow fonctionnel de l’application Android : capture ou import d’image, prétraitement, inférence et affichage du temps de cuisson (\(T_c\)).}}{35}{figure.caption.21}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Workflow fonctionnel de l’application Android : capture ou import d’image, prétraitement, inférence et affichage du temps de cuisson (\(T_c\)).}}{34}{figure.caption.12}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Évolution des pertes de validation pour les différents modèles testés sur l'ensemble des époques.}}{37}{figure.caption.23}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Mean Absolute Error (MAE)}}{38}{figure.caption.25}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Root Mean Square Error (RMSE)}}{39}{figure.caption.26}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Coefficient de détermination ($R^2$)}}{39}{figure.caption.27}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Mean Absolute Percentage Error (MAPE)}}{40}{figure.caption.28}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Erreur maximale (MaxErr)}}{40}{figure.caption.29}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Évolution des pertes de validation pour les différents modèles testés sur l'ensemble des époques.}}{36}{figure.caption.14}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Mean Absolute Error (MAE)}}{37}{figure.caption.16}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Root Mean Square Error (RMSE)}}{38}{figure.caption.17}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Coefficient de détermination ($R^2$)}}{38}{figure.caption.18}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Mean Absolute Percentage Error (MAPE)}}{39}{figure.caption.19}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Erreur maximale (MaxErr)}}{39}{figure.caption.20}%
 \addvspace {10\p@ }

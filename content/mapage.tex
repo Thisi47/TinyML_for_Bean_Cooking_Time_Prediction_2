@@ -1,0 +1,35 @@
+\begin{titlepage}
+	\begin{tikzpicture}[remember picture,overlay]
+		\tikzset{
+			trait/.style={draw=blue!70!white,rounded corners,align=center,double,line width=7pt}}
+		\tikzset{
+			them/.style={draw=blue!70!black,line width=4pt,rounded corners,text justified, text width=0.75\linewidth,fill=white}}
+		\draw[trait,top color=green!80!cyan,bottom color=green!80!cyan](current page.north west) -- (current page.north east)--(current page.south east)--(current page.south west)--cycle;
+		
+		\node[yshift=-2cm,xshift=0.5cm](univ) at (current page.115){\normalsize{} \bfseries UNIVERSITE DE NGAOUNDERE};
+		\node[yshift=-2cm,xshift=5cm](univ) at (current page.110){\includegraphics[width=0.1\linewidth,height=1.5cm]{logou.png}};
+		\node[yshift=-3cm,xshift=0.5cm](fac) at (current page.115){\normalsize{} \bfseries FACULTE DES SCIENCES};
+		\node[yshift=-3.6cm,xshift=5cm](univ) at (current page.110){\includegraphics[width=0.05\linewidth,height=1cm]{logo.png}};
+		\node[yshift=-4cm,align=center](dep) at (current page.115){\hspace*{1cm}\normalsize{} \textbf{ Département de Mathématiques  }};
+		\node[yshift=-5cm,align=center](dep) at (current page.115){\hspace*{1cm}\normalsize{} \textbf{et Informatique }};
+		
+		\node[yshift=-2cm,xshift=11cm](univa) at (current page.110){\normalsize{} \bfseries THE UNIVERSITY OF NGAOUNDERE};
+		\node[yshift=-3cm,xshift=11cm](faca) at (current page.110){\normalsize{} \bfseries FACULTY OF SCIENCE};
+		\node[yshift=-4cm,align=center,xshift=10.5cm](depa) at (current page.110){\hspace*{1cm}\normalsize{} \textbf{ Department of Mathematics }};
+		\node[yshift=-5cm,align=center,xshift=10.5cm](depa) at (current page.110){\hspace*{1cm}\normalsize{} \textbf{ and Computer Science }};
+		
+		
+		\node[yshift=-10cm,xshift=5cm,align=center](mem) at (current page.110){\bfseries{}\large{} Mémoire de Master Recherche};
+		\node[yshift=-11cm,xshift=5cm,align=center](pres) at (current page.110){{\bfseries Présenté en vue de l'obtention du dipl\^ome de Master}};
+		\node[yshift=-12cm,xshift=5cm,align=center](ment) at (current page.110){{\bfseries  en Ingénierie Mathématiques}};
+		\node[yshift=-13.2cm,xshift=5cm,align=center](ment) at (current page.110){{\bfseries  Option: Probabilité et Statistique}};
+		\node[yshift=-14.2cm,xshift=5cm,align=center](tith) at (current page.110){{\bfseries  THEME:}}; 
+		\node[them,yshift=-16cm,xshift=6cm](them) at (current page.110){{\bfseries \Large{} Techniques d'échantillonnage et enqu\^ete par sondage sur le choix des étudiantes vers les filières scientifiques ou technologiques:  cas de l'Université de Ngaoundéré, année académqiue $\mathbf{2023/2024}$ }}; 
+		\node[yshift=-19cm,xshift=5cm](redac) at (current page.110){{\bfseries Rédigé par: MBELAWADZAI Joseph }};
+		\node[yshift=-19.8cm,xshift=3.88cm](matr) at (current page.110){{\bfseries Matricule: $\mathbf{17A292FS}$ }};
+		
+		\node[yshift=-21cm,xshift=3.88cm](imp) at (current page.110){{\bfseries Sous l'encadrement de: }};
+		\node[yshift=-21.8cm,xshift=5cm](imp) at (current page.110){{\bfseries Dr MBOUNJA BESSEME FRITZ  }};
+		\node[yshift=-24.8cm,xshift=5cm](imp) at (current page.110){{ \shadowbox{\color{cyan!85!red}\bfseries \textcolor{black}{Septembre 2024}} }}; 
+	\end{tikzpicture}
+\end{titlepage}

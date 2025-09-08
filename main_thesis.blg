@@ -1,15 +1,18 @@
 [0] Config.pm:308> INFO - This is Biber 2.20
 [0] Config.pm:311> INFO - Logfile is 'main_thesis.blg'
-[170] biber:340> INFO - === Thu Sep  4, 2025, 10:11:28
-[198] Biber.pm:420> INFO - Reading 'main_thesis.bcf'
-[341] Biber.pm:994> INFO - Found 39 citekeys in bib section 0
-[363] Biber.pm:4463> INFO - Processing section 0
-[377] Biber.pm:4654> INFO - Looking for bibtex file 'library.bib' for section 0
-[379] bibtex.pm:1713> INFO - LaTeX decoding ...
-[440] bibtex.pm:1519> INFO - Found BibTeX data source 'library.bib'
-[837] UCollate.pm:68> INFO - Overriding locale 'fr-FR' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[838] UCollate.pm:68> INFO - Overriding locale 'fr-FR' defaults 'variable = shifted' with 'variable = non-ignorable'
-[838] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'fr-FR'
-[838] Biber.pm:4289> INFO - No sort tailoring available for locale 'fr-FR'
-[861] bbl.pm:676> INFO - Writing 'main_thesis.bbl' with encoding 'UTF-8'
-[883] bbl.pm:779> INFO - Output to main_thesis.bbl
+[112] biber:340> INFO - === Sun Sep  7, 2025, 14:57:51
+[130] Biber.pm:420> INFO - Reading 'main_thesis.bcf'
+[235] Biber.pm:994> INFO - Found 41 citekeys in bib section 0
+[267] Biber.pm:4463> INFO - Processing section 0
+[288] Biber.pm:4654> INFO - Looking for bibtex file 'library.bib' for section 0
+[293] bibtex.pm:1713> INFO - LaTeX decoding ...
+[425] bibtex.pm:1519> INFO - Found BibTeX data source 'library.bib'
+[898] UCollate.pm:68> INFO - Overriding locale 'fr-FR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[898] UCollate.pm:68> INFO - Overriding locale 'fr-FR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[898] Biber.pm:4283> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'fr-FR'
+[898] Biber.pm:4289> INFO - No sort tailoring available for locale 'fr-FR'
+[941] bbl.pm:676> INFO - Writing 'main_thesis.bbl' with encoding 'UTF-8'
+[971] bbl.pm:779> INFO - Output to main_thesis.bbl
+[971] Biber.pm:131> WARN - Duplicate entry key: 'tinyml2024' in file 'library.bib', skipping ...
+[971] Biber.pm:131> WARN - Duplicate entry key: 'emergingtinyml2025' in file 'library.bib', skipping ...
+[972] Biber.pm:133> INFO - WARNINGS: 2
