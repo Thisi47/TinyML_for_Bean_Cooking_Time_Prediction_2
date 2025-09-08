@@ -1,7 +1,7 @@
 INFO:  latexindent version 3.24.4, 2024-07-18, a script to indent .tex files
        latexindent lives here: /usr/share/texlive/texmf-dist/scripts/latexindent/
-       Sun Sep  7 13:19:57 2025
-       Filename: /home/mthiery/Desktop/Memoire/TinyML_for_Bean_Cooking_Time_Prediction/content/02-chapter1.tex
+       Mon Sep  8 16:29:22 2025
+       Filename: /home/mthiery/Desktop/Memoire/TinyML_for_Bean_Cooking_Time_Prediction/content/dedicace.tex
 INFO:  Processing switches:
 INFO:  Directory for backup files and log file indent.log:
        /home/mthiery/Desktop/Memoire/TinyML_for_Bean_Cooking_Time_Prediction/content

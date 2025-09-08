@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.8.30)  7 SEP 2025 14:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.8.30)  8 SEP 2025 16:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1625,40 +1625,138 @@ Package biblatex Info: ... file 'main_thesis.bbl' found.
 (./main_thesis.bbl)
 Package biblatex Info: Reference section=0 on input line 4.
 Package biblatex Info: Reference segment=0 on input line 4.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
-6.
- (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
+ (./content/mapage.tex
+
+! Package tikz Error: You need to say \usetikzlibrary{calc} for coordinate calc
+ulation.
+
+See the tikz package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.6 	($(current page.north west)+(.5cm,-.5cm)$)
+                                                rectangle ($(current page.so...
+
+? 
+
+! Package tikz Error: You need to say \usetikzlibrary{calc} for coordinate calc
+ulation.
+
+See the tikz package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.6 ... ($(current page.south east)+(-.5cm,.5cm)$)
+                                                  ;
+? 
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
+5.
+(/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
-6.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
+5.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 26.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 15.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 26.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 15.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 26
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 15
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
+<figures/univ_logo.jpeg, id=364, 291.0875pt x 291.0875pt>
+File: figures/univ_logo.jpeg Graphic file (type jpg)
+<use figures/univ_logo.jpeg>
+Package pdftex.def Info: figures/univ_logo.jpeg  used on input line 25.
+(pdftex.def)             Requested size: 56.90173pt x 56.9055pt.
+<figures/fac_logo.jpeg, id=365, 501.875pt x 501.875pt>
+File: figures/fac_logo.jpeg Graphic file (type jpg)
+<use figures/fac_logo.jpeg>
+Package pdftex.def Info: figures/fac_logo.jpeg  used on input line 26.
+(pdftex.def)             Requested size: 51.20894pt x 51.21504pt.
+
+! Undefined control sequence.
+l.86 	\shadowbox
+                {\bfseries Septembre 2025}
+? 
+)
 
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/
-dvips/lm/lm-ec.enc}]
+dvips/lm/lm-ec.enc} <./figures/univ_logo.jpeg> <./figures/fac_logo.jpeg>]
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.26 
+      [1] (./content/dedicace.tex
+
+! LaTeX Error: Environment cursive undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3 \begin{cursive}
+                   
+? 
+
+! LaTeX Error: \begin{document} ended by \end{cursive}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.6 \end{cursive}
+                 
+? 
+) (./content/remerciement.tex
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1 \chapter
+            *{REMERCIEMENTS}\addcontentsline{toc}{chapter}{Remerciements}
+[1
+
+]
+Overfull \hbox (15.10326pt too wide) in paragraph at lines 8--9
+[]\T1/lmr/m/n/12 Directeur de ce mÈ-moire, \T1/lmr/bx/n/10 Pr Dr Ing. FENDJI JE
+AN LOUIS KE-DIENG EBONGUE\T1/lmr/m/n/12 ,
+ []
+
+) (./content/00-abstract.tex
+
+[2
+
+]) (./content/resume.tex
+
+[3
+
+])
+
+[4
+
+]
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: a4paper
@@ -1693,25 +1791,24 @@ dvips/lm/lm-ec.enc}]
 
  (./main_thesis.toc
 
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.40 ...tatistiques descriptives}{23}{section.3.3}
-                                                  % [1
+[5
 
 
 
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolS.enc}]
+]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 4
+6.
+ (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
 
-[2])
+[6{/usr/share/texlive/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolS.enc}])
 \tf@toc=\write7
 \openout7 = `main_thesis.toc'.
 
 
 
-[3]
+[7]
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: a4paper
@@ -1756,7 +1853,7 @@ Overfull \hbox (7.82463pt too wide) in paragraph at lines 8--8
 
 
 
-[4
+[8
 
 
 
@@ -1795,19 +1892,13 @@ dvips/lm/lm-rm.enc}]
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
- (./main_thesis.lot
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-2.
-
-(/usr/share/texmf/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-))
+ (./main_thesis.lot)
 \tf@lot=\write9
 \openout9 = `main_thesis.lot'.
 
 
 
-[5
+[9
 
 
 
@@ -1816,18 +1907,18 @@ File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 Chapitre 1.
 
 
-[6
+[10
 
 
 ]
 
-[7]) (./content/review.tex
+[11]) (./content/review.tex
 
-[8]
+[12]
 Chapitre 2.
 
 
-[9
+[13
 
 ]
 Overfull \hbox (23.32593pt too wide) in paragraph at lines 30--32
@@ -1840,7 +1931,7 @@ it/12 u;  n[]\OT1/lmr/m/n/12 1[]\OML/lmm/m/it/12 v\OMX/MnSymbolE/m/n/12 ç$
 
 
 
-[10{/usr/share/texlive/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}{/usr/
+[14{/usr/share/texlive/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}{/usr/
 share/texlive/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}{/usr/share/tex
 live/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolE.enc}{/usr/share/texlive/texm
 f-dist/fonts/enc/dvips/mnsymbol/MnSymbolF.enc}]
@@ -1851,9 +1942,9 @@ Overfull \hbox (17.456pt too wide) in paragraph at lines 63--64
 
 
 
-[11]
+[15]
 
-[12]
+[16]
 Overfull \hbox (34.55583pt too wide) in paragraph at lines 99--101
 \T1/lmr/m/it/12 tion \T1/lmr/m/n/12 (PTQ) avec ca-li-bra-tion (quelques cen-tai
 nes d'Èchan-tillons re-prÈ-sen-ta-tifs) ; \T1/lmr/m/it/12 Quantization-
@@ -1861,11 +1952,11 @@ nes d'Èchan-tillons re-prÈ-sen-ta-tifs) ; \T1/lmr/m/it/12 Quantization-
 
 
 
-[13]
+[17]
 
-[14]
+[18]
 
-[15]
+[19]
 Overfull \hbox (3.30139pt too wide) in paragraph at lines 236--236
 []|\T1/lmr/bx/n/8 RÈf.| 
  []
@@ -2452,11 +2543,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 236--236
 
 
 
-[16]
+[20]
 
-[17]) (./content/02-chapter1.tex
+[21]) (./content/02-chapter1.tex
 
-[18]
+[22]
 Chapitre 3.
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
 1.
@@ -2469,7 +2560,7 @@ Overfull \hbox (17.96631pt too wide) in paragraph at lines 33--34
 
 
 
-[19
+[23
 
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolA.enc}]
 
@@ -2482,7 +2573,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 
-[20{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}]
+[24{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 54.
@@ -2499,11 +2590,11 @@ Overfull \hbox (30.6136pt too wide) in paragraph at lines 62--63
 
 
 
-[21]
+[25]
 
-[22]
+[26]
 
-[23]
+[27]
 
 ! LaTeX Error: Unicode character ‚ÄØ (U+202F)
                not set up for use with LaTeX.
@@ -2512,7 +2603,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.165 ...√©t√©s avec 190 images chacune, soit 1‚ÄØ
+l.161 ...√©t√©s avec 190 images chacune, soit 1‚ÄØ
                                                   400 images par vari√©t√©. ...
 
 ? 
@@ -2524,17 +2615,17 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.165 ...©. La classe \texttt{autre} contient 1‚ÄØ
+l.161 ...©. La classe \texttt{autre} contient 1‚ÄØ
                                                   000 images diverses (chien...
 
 ? 
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 169.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 165.
 
 
-[24]
+[28]
 
-[25]
+[29]
 
 ! LaTeX Error: Unicode character ‚â• (U+2265)
                not set up for use with LaTeX.
@@ -2543,16 +2634,16 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.223 ...ateforme cible (smartphone Android API‚â•
+l.219 ...ateforme cible (smartphone Android API‚â•
                                                   24) :
 ? 
 
 
-[26]
+[30]
 
-[27]) (./content/03-chapter2.tex
+[31]) (./content/03-chapter2.tex
 
-[28]
+[32]
 Chapitre 4.
 
 Overfull \hbox (86.21802pt too wide) in paragraph at lines 64--64
@@ -2562,7 +2653,7 @@ es Ètiquettes (labels).[]
 
 
 
-[29
+[33
 
 ]
 Overfull \hbox (73.86801pt too wide) in paragraph at lines 64--64
@@ -2615,7 +2706,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 
-[30]
+[34]
 Overfull \hbox (117.09303pt too wide) in paragraph at lines 128--128
 []\T1/lmtt/m/n/12 1. Initialiser les variables pour la meilleure validation MAE
  et le compteur de patience.[] 
@@ -2665,7 +2756,7 @@ er l'entraÓnement prÈmaturÈment.[]
 
 
 
-[31]
+[35]
 Overfull \hbox (49.168pt too wide) in paragraph at lines 203--203
 []    \T1/lmtt/m/n/12 - loadModelFile(context, modelPath) : charger modËle TFLi
 te depuis assets.[] 
@@ -2673,24 +2764,24 @@ te depuis assets.[]
 
 
 
-[32]
+[36]
 Overfull \hbox (73.86801pt too wide) in paragraph at lines 203--203
 []    \T1/lmtt/m/n/12 - denormalize(normalizedValue) : convertir sortie normali
 sÈe en valeur rÈelle.[] 
  []
 
-<figures/workflow.png, id=820, 641.39626pt x 645.41125pt>
+<figures/workflow.png, id=858, 641.39626pt x 645.41125pt>
 File: figures/workflow.png Graphic file (type png)
 <use figures/workflow.png>
 Package pdftex.def Info: figures/workflow.png  used on input line 208.
 (pdftex.def)             Requested size: 389.23137pt x 391.67157pt.
 
 
-[33]
+[37]
 
-[34 <./figures/workflow.png>]) (./content/04-chapter3.tex
+[38 <./figures/workflow.png>]) (./content/04-chapter3.tex
 
-[35]
+[39]
 Chapitre 5.
 
 Overfull \hbox (59.79036pt too wide) in paragraph at lines 83--98
@@ -2703,7 +2794,7 @@ Package pgfplots info on input line 115: Using 'lua backend=false' for axis: x
 coord trafo unsupported.
 
 
-[36
+[40
 
 ]
 Package pgfplots info on input line 145: Using 'lua backend=false' for axis: ym
@@ -2712,7 +2803,7 @@ Package pgfplots info on input line 145: Using 'lua backend=false' for axis: x
 coord trafo unsupported.
 
 
-[37]
+[41]
 Package pgfplots info on input line 176: Using 'lua backend=false' for axis: x 
 coord trafo unsupported.
 Package pgfplots info on input line 206: Using 'lua backend=false' for axis: ym
@@ -2721,24 +2812,24 @@ Package pgfplots info on input line 206: Using 'lua backend=false' for axis: x
 coord trafo unsupported.
 
 
-[38]
+[42]
 Package pgfplots info on input line 236: Using 'lua backend=false' for axis: ym
 ode=log unsupported (yet).
 Package pgfplots info on input line 236: Using 'lua backend=false' for axis: x 
 coord trafo unsupported.
 
 
-[39]) (./content/10-conclusion.tex
+[43]) (./content/10-conclusion.tex
 
-[40]
+[44]
 Chapitre 6.
 
 
-[41
+[45
 
 ]) (./content/99-appendix.tex)
 
-[42]
+[46]
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: a4paper
@@ -2773,21 +2864,21 @@ Chapitre 6.
 
 
 
-[43
+[47
 
 
 
 
 ]
 
-[44]
+[48]
 
-[45]
+[49]
 
-[46]
+[50]
 
-[47]
-runsystem(latexminted cleantemp  --timestamp 20250907145758 089B4D902AC2554897B
+[51]
+runsystem(latexminted cleantemp  --timestamp 20250908162412 089B4D902AC2554897B
 6DF0A3FE4C49F)...executed safely (allowed).
 
  (./main_thesis.aux)
@@ -2796,23 +2887,19 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `main_thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 62AEE443CE2F39AA973A55CB640FC900;18099.
+(rerunfilecheck)             Checksum: 0BA1BB1F066515EFB9B0EF470D5398CD;18570.
 Package logreq Info: Writing requests to 'main_thesis.run.xml'.
 \openout1 = `main_thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 54467 strings out of 473197
- 1197268 string characters out of 5718605
- 2273480 words of memory out of 5000000
- 76640 multiletter control sequences out of 15000+600000
- 694426 words of font info for 172 fonts, out of 8000000 for 9000
+ 54537 strings out of 473197
+ 1198740 string characters out of 5718605
+ 2273532 words of memory out of 5000000
+ 76686 multiletter control sequences out of 15000+600000
+ 700439 words of font info for 174 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 117i,19n,121p,1184b,2307s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist
-, replaced by a fixed one
-
+ 117i,19n,121p,1719b,2307s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 , replaced by a fixed one
@@ -2834,10 +2921,10 @@ onts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb>
 /share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/pub
 lic/lm/lmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/sy
 mbols/msbm10.pfb>
-Output written on main_thesis.pdf (48 pages, 823039 bytes).
+Output written on main_thesis.pdf (53 pages, 941234 bytes).
 PDF statistics:
- 1112 PDF objects out of 1200 (max. 8388607)
- 952 compressed objects within 10 object streams
- 234 named destinations out of 1000 (max. 500000)
- 706 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1151 PDF objects out of 1200 (max. 8388607)
+ 984 compressed objects within 10 object streams
+ 242 named destinations out of 1000 (max. 500000)
+ 740 words of extra memory for PDF output out of 10000 (max. 10000000)
 
