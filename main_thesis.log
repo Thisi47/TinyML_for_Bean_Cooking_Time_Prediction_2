@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.8.30)  8 SEP 2025 16:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.8.30)  11 SEP 2025 22:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1678,12 +1678,12 @@ LaTeX Font Info:    Trying to load font information for U+wasy on input line 15
 (/usr/share/texlive/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
-<figures/univ_logo.jpeg, id=364, 291.0875pt x 291.0875pt>
+<figures/univ_logo.jpeg, id=380, 291.0875pt x 291.0875pt>
 File: figures/univ_logo.jpeg Graphic file (type jpg)
 <use figures/univ_logo.jpeg>
 Package pdftex.def Info: figures/univ_logo.jpeg  used on input line 25.
 (pdftex.def)             Requested size: 56.90173pt x 56.9055pt.
-<figures/fac_logo.jpeg, id=365, 501.875pt x 501.875pt>
+<figures/fac_logo.jpeg, id=381, 501.875pt x 501.875pt>
 File: figures/fac_logo.jpeg Graphic file (type jpg)
 <use figures/fac_logo.jpeg>
 Package pdftex.def Info: figures/fac_logo.jpeg  used on input line 26.
@@ -1796,8 +1796,8 @@ AN LOUIS KE-DIENG EBONGUE\T1/lmr/m/n/12 ,
 
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 4
-6.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 5
+0.
  (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1842,7 +1842,7 @@ File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
  (./main_thesis.lof
-Overfull \hbox (7.82463pt too wide) in paragraph at lines 8--8
+Overfull \hbox (7.82463pt too wide) in paragraph at lines 5--5
  [][] [][][]\T1/lmr/m/n/12 Workflow fonc-tion-nel de l'ap-pli-ca-tion An-droid 
 : cap-ture ou im-port d'image, 
  []
@@ -1903,22 +1903,26 @@ dvips/lm/lm-rm.enc}]
 
 
 
-] (./content/01-introduction.tex
-Chapitre 1.
-
+] (./content/abreviation.tex) (./content/01-introduction.tex
 
 [10
 
 
 ]
+Chapitre 1.
 
-[11]) (./content/review.tex
 
-[12]
+[11
+
+]
+
+[12]) (./content/review.tex
+
+[13]
 Chapitre 2.
 
 
-[13
+[14
 
 ]
 Overfull \hbox (23.32593pt too wide) in paragraph at lines 30--32
@@ -1931,7 +1935,7 @@ it/12 u;  n[]\OT1/lmr/m/n/12 1[]\OML/lmm/m/it/12 v\OMX/MnSymbolE/m/n/12 ç$
 
 
 
-[14{/usr/share/texlive/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}{/usr/
+[15{/usr/share/texlive/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolD.enc}{/usr/
 share/texlive/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolC.enc}{/usr/share/tex
 live/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolE.enc}{/usr/share/texlive/texm
 f-dist/fonts/enc/dvips/mnsymbol/MnSymbolF.enc}]
@@ -1942,659 +1946,691 @@ Overfull \hbox (17.456pt too wide) in paragraph at lines 63--64
 
 
 
-[15]
-
 [16]
-Overfull \hbox (34.55583pt too wide) in paragraph at lines 99--101
+
+[17{/usr/share/texlive/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolA.enc}]
+
+[18]
+Overfull \hbox (34.55583pt too wide) in paragraph at lines 137--139
 \T1/lmr/m/it/12 tion \T1/lmr/m/n/12 (PTQ) avec ca-li-bra-tion (quelques cen-tai
 nes d'Èchan-tillons re-prÈ-sen-ta-tifs) ; \T1/lmr/m/it/12 Quantization-
  []
 
 
 
-[17]
-
-[18]
-
 [19]
-Overfull \hbox (3.30139pt too wide) in paragraph at lines 236--236
+
+[20]
+
+[21]
+Overfull \hbox (3.30139pt too wide) in paragraph at lines 274--274
 []|\T1/lmr/bx/n/8 RÈf.| 
  []
 
 
-Overfull \hbox (7.32817pt too wide) in paragraph at lines 236--236
+Overfull \hbox (7.32817pt too wide) in paragraph at lines 274--274
 []|\T1/lmr/bx/n/8 AnnÈe| 
  []
 
 
-Overfull \hbox (9.89996pt too wide) in paragraph at lines 236--236
+Overfull \hbox (9.89996pt too wide) in paragraph at lines 274--274
 []|\T1/lmr/bx/n/8 MÈthodologie| 
  []
 
 
-Underfull \hbox (badness 5985) in paragraph at lines 236--236
+Underfull \hbox (badness 5985) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Deep lear-ning
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Survol IA
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Contexte
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 \T1/lmr/m/n/8 agroa-li-men-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Food co-oking
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Estimer
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 \T1/lmr/m/n/8 temps de
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 \T1/lmr/m/n/8 cuis-son via
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Analyse
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 CorrÈlation
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 …chantillon
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Lien di-rect
  []
 
 
-Underfull \hbox (badness 6047) in paragraph at lines 236--236
+Underfull \hbox (badness 6047) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 TinyML prin-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 DÈfinir Ti-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 TinyML
  []
 
 
-Underfull \hbox (badness 4403) in paragraph at lines 236--236
+Underfull \hbox (badness 4403) in paragraph at lines 274--274
 \T1/lmr/m/n/8 pos-sible sur
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Manque
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 \T1/lmr/m/n/8 d'im-plÈ-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 \T1/lmr/m/n/8 men-ta-tions
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Cadre Ti-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 MobileNet
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 CNN lÈ-ger
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Bonne prÈ-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Co˚t ÈlevÈ
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Base pour
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 \T1/lmr/m/n/8 mo-dËles
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 EfficientNet
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Optimiser
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 \T1/lmr/m/n/8 mise ‡
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 \T1/lmr/m/n/8 l'Èchelle
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Architecture
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Toujours
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 \T1/lmr/m/n/8 lourd pour
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Recherche
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Architecture
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 ComplexitÈ
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Quantization
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 RÈduire
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 \T1/lmr/m/n/8 taille mo-
  []
 
 
-Overfull \hbox (4.75914pt too wide) in paragraph at lines 236--236
+Overfull \hbox (4.75914pt too wide) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Quantification
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 RÈduction
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Perte de
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 \T1/lmr/m/n/8 prÈ-ci-sion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Compression
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Pruning deep
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 RÈduction
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 \T1/lmr/m/n/8 des pa-ra-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 RÈduction
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 \T1/lmr/m/n/8 pa-ra-mËtres
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 RÈduction
  []
 
 
-Underfull \hbox (badness 6658) in paragraph at lines 236--236
+Underfull \hbox (badness 6658) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Grain clas-si-fi-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Classifier
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 \T1/lmr/m/n/8 va-riÈ-tÈs de
  []
 
 
-Overfull \hbox (0.84009pt too wide) in paragraph at lines 236--236
+Overfull \hbox (0.84009pt too wide) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Classification
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 \T1/lmr/m/n/8 grains/-ha-ri-
  []
 
 
-Underfull \hbox (badness 2828) in paragraph at lines 236--236
+Underfull \hbox (badness 2828) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 PrÈdire ma-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 PrÈdictions
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Dataset li-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Lien cuis-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 DÈtection
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 \T1/lmr/m/n/8 de dÈ-fauts
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Analyse
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 ApplicabilitÈ
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 QualitÈ ali-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 CorrÈler
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 \T1/lmr/m/n/8 images et
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Vision +
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 \T1/lmr/m/n/8 spec-tro-sco-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 CorrÈlations
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Peu d'ap-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 \T1/lmr/m/n/8 pli-ca-tions
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Lien cuis-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 TinyML mi-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 \T1/lmr/m/n/8 cro-nu-trient
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 TinyML
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 \T1/lmr/m/n/8 pour dÈ-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 \T1/lmr/m/n/8 tec-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 \T1/lmr/m/n/8 mi-cro-nu-tri-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Revue
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 ModËles
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 \T1/lmr/m/n/8 hy-brides
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Reporting
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Insight Ti-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 \T1/lmr/m/n/8 nyML en
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Domain-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 \T1/lmr/m/n/8 Adaptive
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 DÈtection
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 2D-CNN +
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 \T1/lmr/m/n/8 adap-ta-tion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Performance
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Chute de
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 \T1/lmr/m/n/8 per-for-mance
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 \T1/lmr/m/n/8 en condi-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 AdaptabilitÈ
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Survey Ti-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Taxonomie
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Revue
  []
 
 
-Underfull \hbox (badness 1102) in paragraph at lines 236--236
+Underfull \hbox (badness 1102) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Peu d'ap-pli-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Ressources
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 \T1/lmr/m/n/8 mÈ-tho-do-lo-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 TinyML on-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 \T1/lmr/m/n/8 device in-fe-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 \T1/lmr/m/n/8 l'in-fÈ-rence
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Peu
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 \T1/lmr/m/n/8 d'exemples
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Justification
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 \T1/lmr/m/n/8 in-fÈ-rence
  []
 
 
-Underfull \hbox (badness 2285) in paragraph at lines 236--236
+Underfull \hbox (badness 2285) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 From Ti-nyML
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Comparatif
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Framework
  []
 
 
-Underfull \hbox (badness 1102) in paragraph at lines 236--236
+Underfull \hbox (badness 1102) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Peu d'ap-pli-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\T1/lmr/m/n/8 Inspiration
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 \T1/lmr/m/n/8 pour l'op-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--236
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 \T1/lmr/m/n/8 ti-mi-sa-tion
  []
 
 
 
-[20]
-
-[21]) (./content/02-chapter1.tex
-
 [22]
+
+[23]) (./content/02-chapter1.tex
+
+[24]
 Chapitre 3.
+<figures/workflow.png, id=795, 1194.4625pt x 754.82pt>
+File: figures/workflow.png Graphic file (type png)
+<use figures/workflow.png>
+Package pdftex.def Info: figures/workflow.png  used on input line 13.
+(pdftex.def)             Requested size: 389.23137pt x 245.9701pt.
+
+
+[25
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 18.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 18.
+
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 2
-1.
+8.
 (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Overfull \hbox (17.96631pt too wide) in paragraph at lines 33--34
- [][] 
- []
 
-
-
-[23
-
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/mnsymbol/MnSymbolA.enc}]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 38.
+[26 <./figures/workflow.png>]
+<figures/dataset_classification.png, id=811, 619.3539pt x 475.5366pt>
+File: figures/dataset_classification.png Graphic file (type png)
+<use figures/dataset_classification.png>
+Package pdftex.def Info: figures/dataset_classification.png  used on input line
+ 36.
+(pdftex.def)             Requested size: 389.23137pt x 298.84952pt.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 38.
-
-
-
-[24{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 54.
+(hyperref)                removing `math shift' on input line 41.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 54.
+(hyperref)                removing `subscript' on input line 41.
 
 
-Overfull \hbox (30.6136pt too wide) in paragraph at lines 62--63
+
+[27{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc} <./figures/dataset_classifi
+cation.png>]
+Overfull \hbox (30.6136pt too wide) in paragraph at lines 49--50
 []\T1/lmr/bx/n/12 Augmentation \T1/lmr/m/n/12 : pour ac-croÓtre la ro-bus-tesse
  et rÈ-duire le risque de sur-apprentissage,
  []
 
 
 
-[25]
+[28]
+<figures/distrib_varietes.png, id=830, 508.7808pt x 392.4261pt>
+File: figures/distrib_varietes.png Graphic file (type png)
+<use figures/distrib_varietes.png>
+Package pdftex.def Info: figures/distrib_varietes.png  used on input line 61.
+(pdftex.def)             Requested size: 389.23137pt x 300.22894pt.
 
-[26]
 
-[27]
+[29 <./figures/distrib_varietes.png>]
+<figures/boxplot_tc.png, id=847, 726.3135pt x 434.3427pt>
+File: figures/boxplot_tc.png Graphic file (type png)
+<use figures/boxplot_tc.png>
+Package pdftex.def Info: figures/boxplot_tc.png  used on input line 149.
+(pdftex.def)             Requested size: 345.9871pt x 206.9114pt.
+
+
+[30]
+<figures/histogramme_tc.png, id=856, 620.7993pt x 339.669pt>
+File: figures/histogramme_tc.png Graphic file (type png)
+<use figures/histogramme_tc.png>
+Package pdftex.def Info: figures/histogramme_tc.png  used on input line 156.
+(pdftex.def)             Requested size: 345.9871pt x 189.30632pt.
+
+
+[31 <./figures/boxplot_tc.png> <./figures/histogramme_tc.png>]
 
 ! LaTeX Error: Unicode character ‚ÄØ (U+202F)
                not set up for use with LaTeX.
@@ -2603,7 +2639,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.161 ...√©t√©s avec 190 images chacune, soit 1‚ÄØ
+l.174 ...√©t√©s avec 190 images chacune, soit 1‚ÄØ
                                                   400 images par vari√©t√©. ...
 
 ? 
@@ -2615,17 +2651,69 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.161 ...©. La classe \texttt{autre} contient 1‚ÄØ
+l.174 ...©. La classe \texttt{autre} contient 1‚ÄØ
                                                   000 images diverses (chien...
 
 ? 
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 165.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 178.
 
 
-[28]
+[32]
+Overfull \hbox (3.82422pt too wide) in paragraph at lines 207--209
+\T1/lmr/m/n/12 (TB-Net2, TB-Net5) et des mo-dËles \T1/lmr/m/it/12 prÈ-entraÓnÈs
+ \T1/lmr/m/n/12 (EfficientNet-B0, Mo-bi-le-NetV2, NAS-
+ []
 
-[29]
+<figures/tbnet2.png, id=876, 455.7025pt x 1170.3725pt>
+File: figures/tbnet2.png Graphic file (type png)
+<use figures/tbnet2.png>
+Package pdftex.def Info: figures/tbnet2.png  used on input line 225.
+(pdftex.def)             Requested size: 155.69313pt x 399.86795pt.
+
+Underfull \hbox (badness 4518) in paragraph at lines 226--226
+[]\T1/lmr/m/n/10.95 (a) |Ar-chi-tec-ture TB-Net2 dÈ-ve-lop-pÈe
+ []
+
+<figures/tbnet5.png, id=877, 363.3575pt x 828.09375pt>
+File: figures/tbnet5.png Graphic file (type png)
+<use figures/tbnet5.png>
+Package pdftex.def Info: figures/tbnet5.png  used on input line 232.
+(pdftex.def)             Requested size: 155.69313pt x 354.83508pt.
+
+Underfull \hbox (badness 4108) in paragraph at lines 233--233
+[]\T1/lmr/m/n/10.95 (b) |Ar-chi-tec-ture TB-Net5 dÈ-ve-lop-pÈe
+ []
+
+
+
+[33]
+<figures/efficientnetb0.png, id=884, 412.54124pt x 1175.39125pt>
+File: figures/efficientnetb0.png Graphic file (type png)
+<use figures/efficientnetb0.png>
+Package pdftex.def Info: figures/efficientnetb0.png  used on input line 249.
+(pdftex.def)             Requested size: 129.74599pt x 369.65836pt.
+
+
+[34 <./figures/tbnet2.png> <./figures/tbnet5.png>]
+<figures/mobilenetv2.png, id=895, 526.96875pt x 518.93875pt>
+File: figures/mobilenetv2.png Graphic file (type png)
+<use figures/mobilenetv2.png>
+Package pdftex.def Info: figures/mobilenetv2.png  used on input line 261.
+(pdftex.def)             Requested size: 281.11081pt x 276.84161pt.
+
+
+[35 <./figures/efficientnetb0.png>]
+<figures/nasnetmobile.png, id=903, 162.6075pt x 470.75874pt>
+File: figures/nasnetmobile.png Graphic file (type png)
+<use figures/nasnetmobile.png>
+Package pdftex.def Info: figures/nasnetmobile.png  used on input line 275.
+(pdftex.def)             Requested size: 129.74599pt x 375.65215pt.
+
+
+[36 <./figures/mobilenetv2.png>]
+
+[37 <./figures/nasnetmobile.png>]
 
 ! LaTeX Error: Unicode character ‚â• (U+2265)
                not set up for use with LaTeX.
@@ -2634,202 +2722,396 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.219 ...ateforme cible (smartphone Android API‚â•
-                                                  24) :
+l.302 ...ateforme cible (smartphone Android API‚â•
+                                                  26) :
 ? 
 
 
-[30]
-
-[31]) (./content/03-chapter2.tex
-
-[32]
-Chapitre 4.
-
-Overfull \hbox (86.21802pt too wide) in paragraph at lines 64--64
-[]\T1/lmtt/m/n/12 1. Charger le fichier CSV contenant les chemins d'images et l
-es Ètiquettes (labels).[] 
- []
-
-
-
-[33
-
-]
-Overfull \hbox (73.86801pt too wide) in paragraph at lines 64--64
-[]\T1/lmtt/m/n/12 2. Extraire la liste des chemins d'images et convertir les la
-bels au format float.[] 
- []
-
-
-Overfull \hbox (73.86801pt too wide) in paragraph at lines 64--64
-[]\T1/lmtt/m/n/12 3. DÈfinir les transformations de base (redimensionnement, co
-nversion en tenseur).[] 
- []
-
-
-Overfull \hbox (73.86801pt too wide) in paragraph at lines 64--64
-[]   \T1/lmtt/m/n/12 (redimensionnement, recadrage alÈatoire, flips, jitter cou
-leur, flou gaussien).[] 
- []
-
-
-Overfull \hbox (129.44304pt too wide) in paragraph at lines 64--64
-[]    \T1/lmtt/m/n/12 c. Convertir l'image en tableau numpy uint8 et l'ajouter 
-‡ la liste des images de base.[] 
- []
-
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
-64.
-(/usr/share/texmf/tex/latex/lm/ts1lmtt.fd
-File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-Overfull \hbox (73.86801pt too wide) in paragraph at lines 64--64
-[]\T1/lmtt/m/n/12 8. SÈparer le jeu de donnÈes en ensembles d\TS1/lmtt/m/n/12 '
-\T1/lmtt/m/n/12 entraÓnement, de validation et de test[] 
- []
-
-
-Overfull \hbox (12.11798pt too wide) in paragraph at lines 64--64
-[]\T1/lmtt/m/n/12 10. Convertir les listes d'images et labels augmentÈs en tabl
-eaux numpy.[] 
- []
-
-
-Overfull \hbox (98.56802pt too wide) in paragraph at lines 64--64
-[]\T1/lmtt/m/n/12 11. Enregistrer chaque ensemble (entraÓnement, validation, te
-st) dans un fichier HDF5,[] 
- []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-
-[34]
-Overfull \hbox (117.09303pt too wide) in paragraph at lines 128--128
-[]\T1/lmtt/m/n/12 1. Initialiser les variables pour la meilleure validation MAE
- et le compteur de patience.[] 
- []
-
-
-Overfull \hbox (36.818pt too wide) in paragraph at lines 128--128
-[]\T1/lmtt/m/n/12 2. Construire une nouvelle instance du modËle via la fonction
- model_builder.[] 
- []
-
-
-Overfull \hbox (12.11798pt too wide) in paragraph at lines 128--128
-[]\T1/lmtt/m/n/12 3. Initialiser un dictionnaire pour stocker l'historique d'en
-traÓnement.[] 
- []
-
-
-Overfull \hbox (55.343pt too wide) in paragraph at lines 128--128
-[]\T1/lmtt/m/n/12 5. Calculer le nombre d'itÈrations (steps) par Èpoque selon l
-a taille du batch.[] 
- []
-
-
-Overfull \hbox (110.91803pt too wide) in paragraph at lines 128--128
-[]    \T1/lmtt/m/n/12 e. …valuer le modËle sur les donnÈes de validation pour o
-btenir val_loss et val_mae.[] 
- []
-
-
-Overfull \hbox (12.11798pt too wide) in paragraph at lines 128--128
-[]    \T1/lmtt/m/n/12 g. Afficher un rÈsumÈ des rÈsultats d'entraÓnement et de 
-validation.[] 
- []
-
-
-Overfull \hbox (166.49306pt too wide) in paragraph at lines 128--128
-[]        \T1/lmtt/m/n/12 i. Si val_mae s'amÈliore, sauvegarder le modËle et rÈ
-initialiser le compteur de patience.[] 
- []
-
-
-Overfull \hbox (141.79305pt too wide) in paragraph at lines 128--128
-[]      \T1/lmtt/m/n/12 iii. Si le compteur atteint la patience maximale, arrÍt
-er l'entraÓnement prÈmaturÈment.[] 
- []
-
-
-
-[35]
-Overfull \hbox (49.168pt too wide) in paragraph at lines 203--203
-[]    \T1/lmtt/m/n/12 - loadModelFile(context, modelPath) : charger modËle TFLi
-te depuis assets.[] 
- []
-
-
-
-[36]
-Overfull \hbox (73.86801pt too wide) in paragraph at lines 203--203
-[]    \T1/lmtt/m/n/12 - denormalize(normalizedValue) : convertir sortie normali
-sÈe en valeur rÈelle.[] 
- []
-
-<figures/workflow.png, id=858, 641.39626pt x 645.41125pt>
-File: figures/workflow.png Graphic file (type png)
-<use figures/workflow.png>
-Package pdftex.def Info: figures/workflow.png  used on input line 208.
-(pdftex.def)             Requested size: 389.23137pt x 391.67157pt.
-
-
-[37]
-
-[38 <./figures/workflow.png>]) (./content/04-chapter3.tex
+[38]) (./content/03-chapter2.tex
 
 [39]
-Chapitre 5.
+Chapitre 4.
 
-Overfull \hbox (59.79036pt too wide) in paragraph at lines 83--98
- [][] 
- []
+! LaTeX Error: Unicode character ‚ÄØ (U+202F)
+               not set up for use with LaTeX.
 
-Package pgfplots info on input line 115: Using 'lua backend=false' for axis: ym
-ode=log unsupported (yet).
-Package pgfplots info on input line 115: Using 'lua backend=false' for axis: x 
-coord trafo unsupported.
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.6 ...oche adopt√©e est \textbf{hi√©rarchique}‚ÄØ
+                                                  : une premi√®re √©tape de ...
+
+? 
+
+! LaTeX Error: Unicode character ‚ÄØ (U+202F)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.30 ...orrespondant aux \textbf{deux mod√®les}‚ÄØ
+                                                  :
+? 
 
 
 [40
 
 ]
-Package pgfplots info on input line 145: Using 'lua backend=false' for axis: ym
-ode=log unsupported (yet).
-Package pgfplots info on input line 145: Using 'lua backend=false' for axis: x 
-coord trafo unsupported.
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
+48.
+ (/usr/share/texmf/tex/latex/lm/ts1lmtt.fd
+File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Overfull \hbox (36.818pt too wide) in paragraph at lines 70--70
+[]\T1/lmtt/m/n/12 # Bloc 3 : SÈlection d\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 un so
+us-ensemble d\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 images et copie dans train et te
+st[] 
+ []
+
 
 
 [41]
-Package pgfplots info on input line 176: Using 'lua backend=false' for axis: x 
-coord trafo unsupported.
-Package pgfplots info on input line 206: Using 'lua backend=false' for axis: ym
-ode=log unsupported (yet).
-Package pgfplots info on input line 206: Using 'lua backend=false' for axis: x 
-coord trafo unsupported.
+Overfull \hbox (24.46799pt too wide) in paragraph at lines 101--101
+[]\T1/lmtt/m/n/12 # Bloc 5 : CrÈation d\TS1/lmtt/m/n/12 '\T1/lmtt/m/n/12 un dat
+aset TensorFlow ‡ partir des chemins et labels[] 
+ []
+
+
+Overfull \hbox (5.94298pt too wide) in paragraph at lines 101--101
+[]\T1/lmtt/m/n/12 MÈlanger dataset, batcher par 32, prÈcharger donnÈes de faÁon
+ optimisÈe[] 
+ []
+
+
+Overfull \hbox (18.28598pt too wide) in paragraph at lines 111--111
+[]\T1/lmtt/m/n/12 # Bloc 6 : Chargement automatique du dataset depuis un dossie
+r avec Keras[] 
+ []
+
+
+Overfull \hbox (12.11798pt too wide) in paragraph at lines 111--111
+[]\T1/lmtt/m/n/12 Charger dataset depuis train_dir avec Keras image_dataset_fro
+m_directory[] 
+ []
+
 
 
 [42]
-Package pgfplots info on input line 236: Using 'lua backend=false' for axis: ym
+Overfull \hbox (42.993pt too wide) in paragraph at lines 138--138
+[]\T1/lmtt/m/n/12 # Bloc 8 : Visualisation de la distribution des images par cl
+asse (bar chart)[] 
+ []
+
+
+Overfull \hbox (24.46098pt too wide) in paragraph at lines 155--155
+[]\T1/lmtt/m/n/12 # Bloc 9 : Lecture des tailles d\TS1/lmtt/m/n/12 '\T1/lmtt/m/
+n/12 images et dÈtection des images corrompues[] 
+ []
+
+
+
+[43]
+Overfull \hbox (49.168pt too wide) in paragraph at lines 181--181
+[]\T1/lmtt/m/n/12 # Bloc 11 : Histogrammes de distribution des canaux couleur R
+, G, B par classe[] 
+ []
+
+
+Overfull \hbox (50.41138pt too wide) in paragraph at lines 193--193
+[]\T1/lmtt/m/n/10.95 # Bloc 12 : Calcul de la moyenne et de l\TS1/lmtt/m/n/10.9
+5 '\T1/lmtt/m/n/10.95 Ècart-type des pixels sur un batch d\TS1/lmtt/m/n/10.95 '
+\T1/lmtt/m/n/10.95 images[] 
+ []
+
+
+Overfull \hbox (8.51648pt too wide) in paragraph at lines 242--242
+[]\T1/lmtt/m/n/10 1. Charger le fichier CSV contenant les chemins d'images et l
+es Ètiquettes (labels).[] 
+ []
+
+
+Overfull \hbox (50.51636pt too wide) in paragraph at lines 242--242
+[]   \T1/lmtt/m/n/10 % Cette Ètape permet de rÈcupÈrer la correspondance image/
+label depuis le fichier source.[] 
+ []
+
+
+
+[44]
+Overfull \hbox (45.26637pt too wide) in paragraph at lines 242--242
+[]   \T1/lmtt/m/n/10 % Conversion nÈcessaire pour la rÈgression, car les labels
+ seront utilisÈs comme valeurs[] 
+ []
+
+
+Overfull \hbox (66.26631pt too wide) in paragraph at lines 242--242
+[]   \T1/lmtt/m/n/10 % PrÈpare les images ‡ une taille standard (224x224) et un
+ format exploitable par le modËle.[] 
+ []
+
+
+Overfull \hbox (76.76628pt too wide) in paragraph at lines 242--242
+[]   \T1/lmtt/m/n/10 % Ces augmentations permettent d'enrichir le jeu de donnÈe
+s et de rÈduire le surapprentissage.[] 
+ []
+
+
+Overfull \hbox (45.26637pt too wide) in paragraph at lines 242--242
+[]    \T1/lmtt/m/n/10 c. Convertir l'image en tableau numpy uint8 et l'ajouter 
+‡ la liste des images de base.[] 
+ []
+
+
+Overfull \hbox (3.2665pt too wide) in paragraph at lines 242--242
+[]   \T1/lmtt/m/n/10 % Mise ‡ l'Èchelle Min-Max des temps de cuisson pour stabi
+liser l'apprentissage.[] 
+ []
+
+
+Overfull \hbox (29.51642pt too wide) in paragraph at lines 242--242
+[]   \T1/lmtt/m/n/10 % Permet d'Èvaluer correctement le modËle et de conserver 
+la distribution des labels.[] 
+ []
+
+
+Overfull \hbox (34.7664pt too wide) in paragraph at lines 242--242
+[]           \T1/lmtt/m/n/10 % GÈnËre des variantes artificielles de chaque ima
+ge pour renforcer le modËle.[] 
+ []
+
+
+Overfull \hbox (19.01645pt too wide) in paragraph at lines 242--242
+[]\T1/lmtt/m/n/10 11. Enregistrer chaque ensemble (entraÓnement, validation, te
+st) dans un fichier HDF5,[] 
+ []
+
+
+Overfull \hbox (34.7664pt too wide) in paragraph at lines 242--242
+[]    \T1/lmtt/m/n/10 % Permet un accËs rapide et structurÈ aux donnÈes pour l'
+entraÓnement et l'infÈrence.[] 
+ []
+
+
+! LaTeX Error: Unicode character ‚ÄØ (U+202F)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.248 Conform√©ment √† la m√©thodologie‚ÄØ
+                                          :
+? 
+
+
+[45]
+Overfull \hbox (34.7664pt too wide) in paragraph at lines 292--292
+[]\T1/lmtt/m/n/10 2. Geler les poids du base_model pour ne pas entraÓner le rÈs
+eau convolutif prÈ-entraÓnÈ.[] 
+ []
+
+
+Overfull \hbox (61.518pt too wide) in paragraph at lines 305--305
+[]\T1/lmtt/m/n/12 4. Tracer les courbes d'accuracy et loss pour les ensembles t
+rain et validation.[] 
+ []
+
+
+Overfull \hbox (42.993pt too wide) in paragraph at lines 305--305
+[]\T1/lmtt/m/n/12 5. Afficher les graphiques pour visualiser la progression de 
+l'apprentissage.[] 
+ []
+
+
+
+[46]
+Overfull \hbox (79.15504pt too wide) in paragraph at lines 337--337
+[]\T1/lmtt/m/n/10.95 1. Initialiser les variables pour la meilleure validation 
+MAE et le compteur de patience.[] 
+ []
+
+
+Overfull \hbox (4.42151pt too wide) in paragraph at lines 337--337
+[]\T1/lmtt/m/n/10.95 2. Construire une nouvelle instance du modËle via la fonct
+ion model_builder.[] 
+ []
+
+
+Overfull \hbox (21.66771pt too wide) in paragraph at lines 337--337
+[]\T1/lmtt/m/n/10.95 5. Calculer le nombre d'itÈrations (steps) par Èpoque selo
+n la taille du batch.[] 
+ []
+
+
+Overfull \hbox (73.40631pt too wide) in paragraph at lines 337--337
+[]    \T1/lmtt/m/n/10.95 e. …valuer le modËle sur les donnÈes de validation pou
+r obtenir val_loss et val_mae.[] 
+ []
+
+
+Overfull \hbox (4.42151pt too wide) in paragraph at lines 337--337
+[]        \T1/lmtt/m/n/10.95 i. (Si val_mae s'amÈliore, sauvegarder le modËle e
+t rÈinitialiser le[] 
+ []
+
+
+Overfull \hbox (21.66771pt too wide) in paragraph at lines 337--337
+[]      \T1/lmtt/m/n/10.95 iii. (Si le compteur atteint la patience maximale, a
+rrÍter l'entraÓnement[] 
+ []
+
+
+
+[47]
+Overfull \hbox (21.66771pt too wide) in paragraph at lines 361--361
+[]\T1/lmtt/m/n/10.95 2. Charger le modËle TensorFlow SavedModel de classificati
+on (saved_model_dir).[] 
+ []
+
+
+Overfull \hbox (67.65758pt too wide) in paragraph at lines 361--361
+[]\T1/lmtt/m/n/10.95 5. DÈfinir un dataset reprÈsentatif pour la quantification
+ (100 images du jeu de test).[] 
+ []
+
+
+Overfull \hbox (73.86101pt too wide) in paragraph at lines 378--378
+[]\T1/lmtt/m/n/12 5. DÈfinir le type de donnÈes cible : float16 (rÈduction de t
+aille mÈmoire ~50\%).[] 
+ []
+
+
+
+[48]
+Overfull \hbox (49.168pt too wide) in paragraph at lines 435--435
+[]    \T1/lmtt/m/n/12 - loadModelFile(context, modelPath) : charger modËle TFLi
+te depuis assets.[] 
+ []
+
+
+Overfull \hbox (73.86801pt too wide) in paragraph at lines 435--435
+[]    \T1/lmtt/m/n/12 - denormalize(normalizedValue) : convertir sortie normali
+sÈe en valeur rÈelle.[] 
+ []
+
+
+
+[49]
+Overfull \hbox (15.34488pt too wide) in paragraph at lines 445--451
+ [][] 
+ []
+
+) (./content/04-chapter3.tex
+
+[50]
+Chapitre 5.
+<figures/matrice_confusion.png, id=990, 622.2447pt x 559.3698pt>
+File: figures/matrice_confusion.png Graphic file (type png)
+<use figures/matrice_confusion.png>
+Package pdftex.def Info: figures/matrice_confusion.png  used on input line 48.
+(pdftex.def)             Requested size: 324.36168pt x 291.59093pt.
+
+
+[51
+
+]
+
+[52 <./figures/matrice_confusion.png>]
+Overfull \hbox (40.32347pt too wide) in paragraph at lines 148--159
+ [][] 
+ []
+
+Package pgfplots info on input line 174: Using 'lua backend=false' for axis: ym
 ode=log unsupported (yet).
-Package pgfplots info on input line 236: Using 'lua backend=false' for axis: x 
+Package pgfplots info on input line 174: Using 'lua backend=false' for axis: x 
 coord trafo unsupported.
 
 
-[43]) (./content/10-conclusion.tex
+[53]
+Package pgfplots info on input line 200: Using 'lua backend=false' for axis: ym
+ode=log unsupported (yet).
+Package pgfplots info on input line 200: Using 'lua backend=false' for axis: x 
+coord trafo unsupported.
 
-[44]
+
+! Package pgfplots Error: Sorry, the input coordinate `EfficientNetB0\_v1' has 
+not been defined with 'symbolic x coords={EfficientNetB0, MobileNetV2, NasNetMo
+bile, TBNet5, TBNet2}... Maybe it has been misspelled? Or did you mean somethin
+g like [normalized]EfficientNetB0\_v1?.
+
+See the pgfplots package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.207 				};
+            
+? 
+Package pgfplots info on input line 227: Using 'lua backend=false' for axis: x 
+coord trafo unsupported.
+
+! Package pgfplots Error: Sorry, the input coordinate `EfficientNetB0\_v1' has 
+not been defined with 'symbolic x coords={EfficientNetB0, MobileNetV2, NasNetMo
+bile, TBNet5, TBNet2}... Maybe it has been misspelled? Or did you mean somethin
+g like [normalized]EfficientNetB0\_v1?.
+
+See the pgfplots package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.234 				};
+            
+? 
+
+
+[54]
+Package pgfplots info on input line 253: Using 'lua backend=false' for axis: ym
+ode=log unsupported (yet).
+Package pgfplots info on input line 253: Using 'lua backend=false' for axis: x 
+coord trafo unsupported.
+Package pgfplots info on input line 279: Using 'lua backend=false' for axis: ym
+ode=log unsupported (yet).
+Package pgfplots info on input line 279: Using 'lua backend=false' for axis: x 
+coord trafo unsupported.
+
+
+[55]
+
+LaTeX Warning: Reference `tab:variete_stats' on page 56 undefined on input line
+ 296.
+
+
+
+[56]) (./content/10-conclusion.tex
+
+[57]
 Chapitre 6.
 
 
-[45
+[58
 
-]) (./content/99-appendix.tex)
+]
+Overfull \hbox (0.93127pt too wide) in paragraph at lines 35--36
+[]\T1/lmr/bx/n/12 PrÈdiction uni-di-men-sion-nelle. \T1/lmr/m/n/12 Le sys-tËme 
+re-pose uni-que-ment sur des images
+ []
 
-[46]
+
+Overfull \hbox (0.31108pt too wide) in paragraph at lines 52--53
+\T1/lmr/m/n/12 suelles ex-ploi-tÈes par le rÈ-seau [[][]49[][]], ren-for-Áant a
+insi l'ac-cep-ta-bi-litÈ et la confiance
+ []
+
+
+
+[59]) (./content/99-appendix.tex
+
+[60])
+
+[61
+
+]
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: a4paper
@@ -2864,21 +3146,21 @@ Chapitre 6.
 
 
 
-[47
+[62
 
 
 
 
 ]
 
-[48]
+[63]
 
-[49]
+[64]
 
-[50]
+[65]
 
-[51]
-runsystem(latexminted cleantemp  --timestamp 20250908162412 089B4D902AC2554897B
+[66]
+runsystem(latexminted cleantemp  --timestamp 20250911222706 089B4D902AC2554897B
 6DF0A3FE4C49F)...executed safely (allowed).
 
  (./main_thesis.aux)
@@ -2886,45 +3168,43 @@ runsystem(latexminted cleantemp  --timestamp 20250908162412 089B4D902AC2554897B
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `main_thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 0BA1BB1F066515EFB9B0EF470D5398CD;18570.
+(rerunfilecheck)             Checksum: BAC15B1034A0B2EBC3C8EB71544384D0;20542.
 Package logreq Info: Writing requests to 'main_thesis.run.xml'.
 \openout1 = `main_thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 54537 strings out of 473197
- 1198740 string characters out of 5718605
- 2273532 words of memory out of 5000000
- 76686 multiletter control sequences out of 15000+600000
- 700439 words of font info for 174 fonts, out of 8000000 for 9000
+ 54554 strings out of 473197
+ 1200712 string characters out of 5718605
+ 2277328 words of memory out of 5000000
+ 76672 multiletter control sequences out of 15000+600000
+ 687280 words of font info for 166 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 117i,19n,121p,1719b,2307s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
-, replaced by a fixed one
-
-</usr/share/texlive/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol10.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol6.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol8.pfb></usr/share/texmf/font
-s/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb
-></usr/share/texmf/fonts/type1/public/lm/lmbx8.pfb></usr/share/texmf/fonts/type
-1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></us
-r/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/pu
-blic/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share
-/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/
-lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/f
-onts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb>
-</usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type
-1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmtk10.pfb></usr
-/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/pub
-lic/lm/lmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/sy
-mbols/msbm10.pfb>
-Output written on main_thesis.pdf (53 pages, 941234 bytes).
+ 117i,19n,121p,1719b,3199s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol12.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol6.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/mnsymbol/MnSymbol8.pfb></usr/share/tex
+mf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmb
+x12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx8.pfb></usr/share/texmf/fon
+ts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.
+pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/
+type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></
+usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/p
+ublic/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/shar
+e/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm
+/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/
+fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10
+.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main_thesis.pdf (68 pages, 2056384 bytes).
 PDF statistics:
- 1151 PDF objects out of 1200 (max. 8388607)
- 984 compressed objects within 10 object streams
- 242 named destinations out of 1000 (max. 500000)
- 740 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1307 PDF objects out of 1440 (max. 8388607)
+ 1109 compressed objects within 12 object streams
+ 277 named destinations out of 1000 (max. 500000)
+ 822 words of extra memory for PDF output out of 10000 (max. 10000000)
 

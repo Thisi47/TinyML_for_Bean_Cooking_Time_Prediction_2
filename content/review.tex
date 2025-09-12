@@ -63,6 +63,44 @@ ce qui explique les gains substantiels pour des noyaux $3 \times 3$ et de grands
     \item \textbf{Normalisations/activations} : Batch/Group Normalization, ReLU/ReLU6/SiLU — souvent adaptées pour la stabilité sur matériel contraint.
 \end{itemize}
 
+\subsection{Fonction d’activation \textit{Softmax}}
+La fonction \textit{softmax} est une activation essentielle en sortie des CNN lorsqu’il s’agit de problèmes de classification multi-classes \cite{goodfellow2016deep, bishop2006pattern}. Elle transforme un vecteur de scores réels (appelés \emph{logits}) en une distribution de probabilité sur les classes.
+
+Soit un vecteur de sorties $z = (z_1, z_2, \dots, z_K) \in \mathbb{R}^K$, où $K$ est le nombre de classes. La fonction softmax est définie par :
+\begin{equation}
+    \label{eq:softmax}
+    \mathrm{softmax}(z_i) = \frac{\exp(z_i)}{\sum_{j=1}^{K} \exp(z_j)}, \quad \text{pour } i = 1, \dots, K.
+\end{equation}
+
+Cette transformation garantit deux propriétés fondamentales :
+\begin{itemize}
+    \item \textbf{Positivité} : $\mathrm{softmax}(z_i) > 0$ pour tout $i$.
+    \item \textbf{Normalisation} : $\sum_{i=1}^{K} \mathrm{softmax}(z_i) = 1$.
+\end{itemize}
+
+Ainsi, chaque sortie peut être interprétée comme une probabilité associée à la classe correspondante. Dans l’entraînement, la fonction softmax est souvent couplée à la fonction de perte \emph{entropie croisée}, qui mesure la divergence entre la distribution prédite et la distribution réelle (étiquettes une-hot). Cette combinaison est particulièrement efficace pour l’optimisation de réseaux de neurones profonds \cite{goodfellow2016deep}.
+
+Enfin, bien que très répandue, la softmax présente une sensibilité aux valeurs extrêmes des logits (phénomène de saturation). Des alternatives comme la \emph{sigmoid multi-label} ou la \emph{temperature scaling} peuvent être utilisées selon les besoins.
+
+\subsection{Encodage des classes : utilisation du Label Encoding}
+Dans ce travail, les classes textuelles représentant les différentes variétés de haricots (par exemple : \texttt{Dor701}, \texttt{TY339612}, etc.) ont été converties en entiers grâce à la méthode \textbf{Label Encoding}. Cette transformation consiste à associer un entier unique à chaque classe :
+\[
+    \texttt{Dor701} \mapsto 0, \quad
+    \texttt{TY339612} \mapsto 1, \quad
+    \dots
+\]
+
+Le \emph{Label Encoding} présente plusieurs avantages :
+\begin{itemize}
+    \item Il est \textbf{simple et efficace}, nécessitant peu de mémoire et facilitant le prétraitement.
+    \item Il est parfaitement adapté aux modèles de \textbf{deep learning} où les étiquettes sont ensuite converties implicitement en vecteurs lors de la phase d’entraînement, notamment lorsqu’elles sont couplées à une couche de sortie avec \textit{softmax}.
+    \item Dans notre approche, il s’intègre naturellement au pipeline basé sur \textbf{MobileNetV2} comme extracteur de caractéristiques, car les sorties du réseau correspondent directement à des indices entiers de classes.
+\end{itemize}
+
+Toutefois, il convient de noter que le \emph{Label Encoding} introduit artificiellement une notion d’ordre entre les classes (par exemple, $0 < 1 < 2$), ce qui peut poser problème pour certains modèles linéaires sensibles aux relations ordinales \cite{jones2020label}. Dans notre cas, ce biais est compensé par l’utilisation d’un réseau de neurones convolutif, pour lequel les indices sont simplement traités comme des catégories distinctes, sans relation hiérarchique implicite.
+
+En résumé, le choix du \emph{Label Encoding} dans ce projet permet de garantir une représentation compacte des étiquettes, compatible avec la couche de sortie \textit{softmax} et la fonction de perte par entropie croisée, assurant ainsi un apprentissage efficace de la classification des variétés de haricots.
+
 \section{TinyML : principes, avantages, cas d’usage et limites}
 Le \textit{Tiny Machine Learning} (TinyML) désigne l’exécution de modèles d’apprentissage automatique directement sur des dispositifs embarqués à ressources limitées (microcontrôleurs, capteurs intelligents) \cite{banbury2021}. L’objectif est de réaliser des inférences en temps réel localement, avec une faible empreinte mémoire et énergétique, rendant l’IA accessible même dans des environnements à faible connectivité.
 
