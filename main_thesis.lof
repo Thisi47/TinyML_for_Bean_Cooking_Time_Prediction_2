@@ -2,22 +2,23 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Workflow fonctionnel de l’application Android : capture ou import d’image, prétraitement, classification -> inférence et affichage du temps de cuisson (\(T_c\)) si haricots.}}{26}{figure.caption.13}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Dataset de Classification [Extrait]}}{27}{figure.caption.14}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Distribution du Dataset de régression par variété}}{29}{figure.caption.15}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Distribution des temps de cuisson par variété : le boxplot met en évidence les médianes, les quartiles et les valeurs extrêmes.}}{31}{figure.caption.17}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Histogramme global des temps de cuisson ($T_c$) toutes variétés confondues. La distribution multimodale reflète l’hétérogénéité du dataset.}}{31}{figure.caption.18}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Architectures CNN personnalisées utilisées pour la tâche de régression.}}{34}{figure.caption.19}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Schéma simplifié de l’architecture EfficientNet-B0 (source : \blx@tocontentsinit {0}\cite {tanle2019}).}}{35}{figure.caption.20}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Architecture MobileNetV2 utilisée comme extracteur de caractéristiques.}}{36}{figure.caption.21}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Schéma de l’architecture NASNetMobile (source : \blx@tocontentsinit {0}\cite {zoph2018}).}}{37}{figure.caption.22}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Workflow fonctionnel de l’application Android : capture ou import d’image, prétraitement, classification -> inférence et affichage du temps de cuisson (\(T_c\)) si haricots.}}{24}{figure.caption.13}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Dataset de Classification [Extrait]}}{25}{figure.caption.14}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Distribution du Dataset de régression par variété}}{27}{figure.caption.15}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Distribution des temps de cuisson par variété : le boxplot met en évidence les médianes, les quartiles et les valeurs extrêmes.}}{29}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Histogramme global des temps de cuisson ($T_c$) toutes variétés confondues. La distribution multimodale reflète l’hétérogénéité du dataset.}}{29}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Architectures CNN personnalisées utilisées pour la tâche de régression.}}{32}{figure.caption.19}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Schéma simplifié de l’architecture EfficientNet-B0 (source : \blx@tocontentsinit {0}\cite {tanle2019}).}}{33}{figure.caption.20}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Architecture MobileNetV2 utilisée comme extracteur de caractéristiques.}}{34}{figure.caption.21}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Schéma de l’architecture NASNetMobile (source : \blx@tocontentsinit {0}\cite {zoph2018}).}}{35}{figure.caption.22}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Matrice de confusion obtenue pour la classification des variétés de haricots.}}{52}{figure.caption.26}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Évolution des pertes de validation pour les différents modèles testés sur l'ensemble des époques.}}{53}{figure.caption.27}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Mean Absolute Error (MAE)}}{54}{figure.caption.29}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Root Mean Square Error (RMSE)}}{54}{figure.caption.30}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Coefficient de détermination ($R^2$)}}{55}{figure.caption.31}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Mean Absolute Percentage Error (MAPE)}}{55}{figure.caption.32}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Erreur maximale (MaxErr)}}{56}{figure.caption.33}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Matrice de confusion obtenue pour la classification des variétés de haricots.}}{47}{figure.caption.26}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Évolution des pertes de validation pour les différents modèles testés sur l'ensemble des époques.}}{48}{figure.caption.27}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Mean Absolute Error (MAE)}}{49}{figure.caption.29}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Root Mean Square Error (RMSE)}}{50}{figure.caption.30}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Coefficient de détermination ($R^2$)}}{50}{figure.caption.31}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Mean Absolute Percentage Error (MAPE)}}{51}{figure.caption.32}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Erreur maximale (MaxErr)}}{51}{figure.caption.33}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {1}{\ignorespaces Images de test de l’application Android montrant les résultats de prédiction.}}{57}{figure.caption.35}%

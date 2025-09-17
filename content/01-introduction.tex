@@ -1,57 +1,58 @@
-\chapter{Introduction g\'en\'erale}
-\label{chap:Introduction généerale}
+\chapter{Introduction générale}
+\label{chap:introduction_generale}
 
 \section{Contexte et justification}
-L’optimisation des procédés de transformation agroalimentaire constitue un enjeu stratégique à l’échelle mondiale. Elle conditionne à la fois la qualité et la sécurité des produits, la réduction des coûts de production et la lutte contre le gaspillage alimentaire, dans un contexte marqué par la croissance démographique et les pressions sur les ressources naturelles. Parmi ces procédés, la cuisson des légumineuses — et particulièrement celle des haricots — occupe une place centrale. Consommés dans de nombreuses régions du monde, les haricots représentent une source essentielle de protéines, de fibres et de micronutriments, contribuant à la sécurité nutritionnelle et à la souveraineté alimentaire de plusieurs pays \cite{mendoza2018prediction}. Le temps de cuisson détermine de manière décisive la texture, la saveur et la valeur nutritionnelle des produits, tout en influençant leur acceptabilité par les consommateurs \cite{mbofung2012proximate}.
+Les projections démographiques annoncent une croissance continue de la population mondiale, qui devrait atteindre près de 9,7 milliards d’habitants à l’horizon 2050 \cite{UN_WPP_2022}. Cette évolution impose des défis sans précédent en matière de sécurité alimentaire, de gestion durable des ressources et de résilience des systèmes de production. Dans ce contexte, l’optimisation des procédés de transformation agroalimentaire apparaît comme un enjeu stratégique majeur. Elle conditionne non seulement la qualité et la sécurité des produits, mais aussi la maîtrise des coûts de production et la réduction des pertes post-récolte, dans un monde où la pression sur les ressources naturelles ne cesse de croître.
 
-Traditionnellement, ce temps est estimé à partir de méthodes empiriques ou destructives, telles que les tests de cuisson ou la mesure de l’absorption d’eau. Bien que fiables, ces techniques présentent d’importants inconvénients : elles sont chronophages, coûteuses et difficilement applicables à un contrôle en ligne. Elles génèrent par ailleurs une dépense énergétique non négligeable, problématique dans un contexte où la maîtrise des consommations énergétiques est devenue prioritaire. Ces limites sont particulièrement contraignantes pour les petites et moyennes unités de production agroalimentaire, souvent dépourvues d’infrastructures lourdes ou d’équipements sophistiqués.
+Parmi ces procédés, la cuisson des légumineuses — et plus particulièrement des haricots — occupe une place essentielle. Représentant une source majeure de protéines, de fibres et de micronutriments, les haricots jouent un rôle central dans l’équilibre nutritionnel et la souveraineté alimentaire de nombreuses régions du globe \cite{mendoza2018prediction,mbofung2012proximate}. Leur accessibilité économique en fait une denrée privilégiée pour répondre aux besoins nutritionnels des populations croissantes, notamment dans les pays en développement. Toutefois, le temps de cuisson des haricots constitue un facteur critique : il influence directement la texture, la saveur et la valeur nutritionnelle, tout en déterminant leur acceptabilité par les consommateurs.
 
-L’émergence de l’intelligence artificielle (IA) et des technologies embarquées ouvre de nouvelles perspectives pour surmonter ces obstacles. Le \textit{Tiny Machine Learning} (TinyML) constitue en particulier une innovation de rupture : il permet de déployer des modèles d’apprentissage automatique directement sur des dispositifs embarqués à faible consommation énergétique et à ressources limitées. Grâce à des architectures légères telles que \textit{MobileNetV2} ou des réseaux de neurones convolutionnels compacts, il devient possible de traiter des données visuelles localement, sur microcontrôleurs ou smartphones, sans recourir à une infrastructure informatique lourde ni à une connexion internet permanente \cite{banbury2021micronets}. Cette approche rend l’IA accessible dans des environnements contraints, et s’avère particulièrement pertinente pour les zones rurales et les petites unités de transformation, qui constituent une part importante de la chaîne de valeur agroalimentaire.
+Les méthodes conventionnelles d’estimation du temps de cuisson, basées sur des approches empiriques ou destructives (tests de cuisson, mesures d’absorption d’eau), bien que fiables, se révèlent chronophages, coûteuses et difficilement adaptables à une production industrielle en flux tendu. Elles entraînent également une consommation énergétique significative, peu compatible avec les impératifs actuels de durabilité. Ces contraintes affectent particulièrement les petites et moyennes unités de transformation, souvent dépourvues d’équipements sophistiqués et confrontées à des marges de manœuvre limitées.
 
-Dans ce contexte, l’intégration de la vision par ordinateur et du TinyML dans l’agriculture et l’agroalimentaire a déjà montré son efficacité pour l’évaluation de la maturité des fruits, la détection précoce de maladies ou le suivi de la qualité de denrées périssables \cite{tastan2023}. L’application de ces avancées à l’estimation du temps de cuisson des haricots représente un enjeu à la fois scientifique et socio-économique : elle permettrait non seulement d’améliorer la maîtrise des procédés industriels, mais aussi de renforcer l’autonomie technologique des producteurs, de réduire les coûts énergétiques et de proposer aux consommateurs des produits de qualité constante. Ce travail s’inscrit ainsi dans une dynamique d’innovation technologique au service du développement durable et de la sécurité alimentaire.
+L’émergence de l’intelligence artificielle (IA) et des technologies embarquées ouvre de nouvelles perspectives pour dépasser ces limitations. Le \textit{Tiny Machine Learning} (TinyML), en particulier, permet de déployer des modèles légers directement sur des dispositifs à faibles ressources, tels que les microcontrôleurs ou les smartphones, sans nécessiter d’infrastructure lourde ni de connexion internet permanente \cite{banbury2021micronets}. Grâce à des architectures compactes comme \textit{MobileNetV2} ou des réseaux convolutionnels sur mesure, il devient possible de traiter des données visuelles localement, avec un coût énergétique réduit. Cette approche rend l’IA accessible dans des environnements contraints, notamment en zones rurales, et s’avère particulièrement pertinente pour des chaînes de valeur agroalimentaires où la flexibilité et l’efficacité sont essentielles \cite{tastan2023}.
+
+Les travaux récents en vision par ordinateur appliquée à l’agriculture illustrent déjà ce potentiel : détection précoce de maladies, évaluation de la maturité des fruits ou suivi de la qualité de denrées périssables. Appliquer ces avancées à la prédiction du temps de cuisson des haricots s’inscrit donc dans une dynamique à la fois scientifique et socio-économique. Il s’agit non seulement d’améliorer la maîtrise des procédés industriels, mais aussi de contribuer à la sécurité alimentaire mondiale face aux défis démographiques à venir, en proposant des solutions accessibles, économes en énergie et adaptées aux réalités des producteurs.
 
 \section{Problématique}
-Malgré les progrès réalisés, la prédiction précise et non destructive du temps de cuisson des légumineuses reste un défi technique et scientifique. Les méthodes conventionnelles souffrent de plusieurs limites majeures :
+Malgré les avancées technologiques, la prédiction précise et non destructive du temps de cuisson des légumineuses demeure un défi. Les approches traditionnelles présentent plusieurs limites :
 \begin{itemize}
-	\item \textbf{Temps et coût} : leur mise en œuvre est longue et inadaptée à un contrôle en ligne ou à une production de grande échelle.
-	\item \textbf{Manque de portabilité} : les dispositifs existants nécessitent des équipements encombrants et onéreux, peu accessibles aux petites structures.
-	\item \textbf{Contraintes matérielles et énergétiques} : l’absence de solutions légères freine l’adoption de technologies avancées dans les zones rurales et au sein des petites unités de production.
+    \item \textbf{Temps et coût} : des méthodes chronophages, peu adaptées à un contrôle en temps réel ou à grande échelle.
+    \item \textbf{Manque de portabilité} : des dispositifs lourds et onéreux, difficilement accessibles aux petites unités.
+    \item \textbf{Contraintes matérielles et énergétiques} : peu de solutions compatibles avec les ressources limitées des environnements ruraux ou des micro-entreprises.
 \end{itemize}
 
-Dès lors, la question centrale qui guide ce mémoire est la suivante :
+La question centrale à laquelle ce travail tente de répondre est donc la suivante :
 \begin{quote}
-	\textit{Comment concevoir et déployer un système de prédiction du temps de cuisson des haricots, fondé sur l’analyse d’images, qui soit à la fois précis, portable et compatible avec les contraintes matérielles et énergétiques du TinyML ?}
+    \textit{Comment concevoir et déployer un système de prédiction du temps de cuisson des haricots, fondé sur l’analyse d’images, qui soit à la fois précis, portable et compatible avec les contraintes matérielles et énergétiques du TinyML ?}
 \end{quote}
 
 \section{Objectifs et contributions}
 
 \subsection{Objectif général}
-Concevoir, développer et valider un modèle TinyML capable de prédire le temps de cuisson des haricots à partir d’images, de façon non destructive, fiable et en quasi temps réel.
+Développer et valider un modèle TinyML capable de prédire le temps de cuisson des haricots à partir d’images, de manière non destructive, fiable et en quasi temps réel.
 
 \subsection{Objectifs spécifiques}
 \begin{enumerate}
-	\item Constituer et prétraiter un jeu de données d’images de haricots annotées avec leur temps de cuisson.
-	\item Concevoir, entraîner et optimiser des modèles légers adaptés au déploiement embarqué (CNN compacts, MobileNetV2, EfficientNet-lite, etc.).
-	\item Évaluer les performances des modèles en termes de précision, de consommation mémoire et de temps d’inférence.
-	\item Intégrer et tester le modèle final sur une plateforme embarquée (smartphone).
+    \item Constituer et prétraiter un jeu de données d’images de haricots annotées par leur temps de cuisson.
+    \item Concevoir, entraîner et optimiser des modèles légers adaptés aux contraintes du TinyML (CNN compacts, MobileNetV2, EfficientNet-lite, etc.).
+    \item Évaluer les performances des modèles selon des critères de précision, de consommation mémoire et de temps d’inférence.
+    \item Intégrer et tester le modèle final sur une plateforme embarquée (smartphone).
 \end{enumerate}
 
 \subsection{Contributions attendues}
 \begin{itemize}
-	\item Une méthodologie reproductible et généralisable pour la prédiction visuelle du temps de cuisson des légumineuses.
-	\item Un modèle optimisé, validé expérimentalement et conforme aux contraintes du TinyML.
-	\item Une démonstration fonctionnelle sur dispositif embarqué, attestant de la faisabilité et de l’impact potentiel de l’approche dans des contextes réels.
+    \item Une méthodologie reproductible et généralisable pour la prédiction visuelle du temps de cuisson des légumineuses.
+    \item Un modèle optimisé, validé expérimentalement et conforme aux contraintes du TinyML.
+    \item Une démonstration fonctionnelle sur dispositif embarqué, attestant de la faisabilité et de l’impact potentiel de l’approche en contexte réel.
 \end{itemize}
 
 \section{Organisation du mémoire}
-La structure du mémoire a été pensée pour guider progressivement le lecteur, du cadre conceptuel aux contributions pratiques et scientifiques. Elle se décline comme suit :
-
+Le mémoire est structuré de manière à guider le lecteur du cadre conceptuel aux résultats pratiques :
 \begin{itemize}
-	\item \textbf{Abstract} : une présentation synthétique du sujet, de la méthodologie, des résultats principaux et des apports du travail.
-	\item \textbf{Chapitre 1 — Introduction générale} : mise en contexte scientifique et socio-économique, formulation de la problématique, présentation des objectifs et contributions attendues.
-	\item \textbf{Chapitre 2 — Revue de la littérature} : analyse critique des travaux existants liés à la prédiction du temps de cuisson des aliments, au TinyML et aux applications de la vision par ordinateur dans l’agroalimentaire.
-	\item \textbf{Chapitre 3 — Méthodologie et conception} : description de la démarche méthodologique, du protocole expérimental et de la conception du système proposé.
-	\item \textbf{Chapitre 4 — Implémentation et déploiement} : présentation des choix technologiques, de l’implémentation logicielle et du déploiement sur plateformes embarquées.
-	\item \textbf{Chapitre 5 — Résultats et discussion} : analyse et interprétation des résultats, confrontation avec l’état de l’art et discussion des limites.
-	\item \textbf{Chapitre 6 — Conclusion et perspectives} : synthèse des contributions majeures et identification de pistes de recherche futures.
+    \item \textbf{Abstract} : synthèse du sujet, de la méthodologie et des résultats principaux.
+    \item \textbf{Chapitre 1 — Introduction générale} : mise en contexte, problématique, objectifs et contributions.
+    \item \textbf{Chapitre 2 — Revue de la littérature} : analyse critique des travaux antérieurs sur la prédiction du temps de cuisson, le TinyML et la vision par ordinateur appliquée à l’agroalimentaire.
+    \item \textbf{Chapitre 3 — Méthodologie et conception} : description de la démarche expérimentale et des choix de conception.
+    \item \textbf{Chapitre 4 — Implémentation et déploiement} : présentation des choix technologiques, de l’implémentation et du déploiement embarqué.
+    \item \textbf{Chapitre 5 — Résultats et discussion} : analyse des performances obtenues et comparaison avec l’état de l’art.
+    \item \textbf{Chapitre 6 — Conclusion et perspectives} : synthèse des contributions et identification de pistes futures.
 \end{itemize}

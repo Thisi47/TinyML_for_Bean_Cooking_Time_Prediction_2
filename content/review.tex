@@ -60,7 +60,7 @@ ce qui explique les gains substantiels pour des noyaux $3 \times 3$ et de grands
 \begin{itemize}
     \item \textbf{Bottlenecks résiduels} (Inverted Residuals, SE, etc.) : améliorent le flux d’information et la précision à coût quasi constant.
     \item \textbf{Global Average Pooling} : remplace des couches entièrement connectées coûteuses par une moyenne spatiale.
-    \item \textbf{Normalisations/activations} : Batch/Group Normalization, ReLU/ReLU6/SiLU — souvent adaptées pour la stabilité sur matériel contraint.
+    \item \textbf{Normalisations/activations} : Batch Normalization, ReLU, souvent adaptées pour la stabilité sur matériel contraint.
 \end{itemize}
 
 \subsection{Fonction d’activation \textit{Softmax}}
@@ -78,7 +78,7 @@ Cette transformation garantit deux propriétés fondamentales :
     \item \textbf{Normalisation} : $\sum_{i=1}^{K} \mathrm{softmax}(z_i) = 1$.
 \end{itemize}
 
-Ainsi, chaque sortie peut être interprétée comme une probabilité associée à la classe correspondante. Dans l’entraînement, la fonction softmax est souvent couplée à la fonction de perte \emph{entropie croisée}, qui mesure la divergence entre la distribution prédite et la distribution réelle (étiquettes une-hot). Cette combinaison est particulièrement efficace pour l’optimisation de réseaux de neurones profonds \cite{goodfellow2016deep}.
+Ainsi, chaque sortie peut être interprétée comme une probabilité associée à la classe correspondante. Dans l’entraînement, la fonction softmax est souvent couplée à la fonction de perte \emph{entropie croisée}, qui mesure la divergence entre la distribution prédite et la distribution réelle (étiquettes one-hot). Cette combinaison est particulièrement efficace pour l’optimisation de réseaux de neurones profonds \cite{goodfellow2016deep}.
 
 Enfin, bien que très répandue, la softmax présente une sensibilité aux valeurs extrêmes des logits (phénomène de saturation). Des alternatives comme la \emph{sigmoid multi-label} ou la \emph{temperature scaling} peuvent être utilisées selon les besoins.
 
@@ -206,7 +206,9 @@ Soit un jeu d’observations \(\{(y_i,\hat{y}_i)\}_{i=1}^n\).
 \subsection{Métriques de classification}
 Pour une matrice de confusion multiclasses \(\mathbf{C}\) avec \(C\) classes, et en notant \(TP_c\), \(FP_c\), \(FN_c\), \(TN_c\) les valeurs par classe \(c\) :
 \begin{itemize}
-    \item \textbf{Précision (Precision)} par classe : \(\mathrm{Prec}_c = \frac{TP_c}{TP_c + FP_c}\) ; \textbf{Rappel (Recall)} : \(\mathrm{Rec}_c = \frac{TP_c}{TP_c + FN_c}\) ; \textbf{F1} : \(\mathrm{F1}_c = 2 \frac{\mathrm{Prec}_c \times \mathrm{Rec}_c}{\mathrm{Prec}_c + \mathrm{Rec}_c}\).
+    \item \textbf{Précision (Precision)} par classe : \(\mathrm{Prec}_c = \frac{TP_c}{TP_c + FP_c}\) ; 
+    \item \textbf{Rappel (Recall)} : \(\mathrm{Rec}_c = \frac{TP_c}{TP_c + FN_c}\) ; 
+    \item \textbf{F1} : \(\mathrm{F1}_c = 2 \frac{\mathrm{Prec}_c \times \mathrm{Rec}_c}{\mathrm{Prec}_c + \mathrm{Rec}_c}\).
     \item \textbf{Agrégations} : \emph{macro} (moyenne non pondérée des classes), \emph{micro} (calcul sur l’ensemble des instances), \emph{pondérée} (pondération par support de chaque classe).
           \[
               \mathrm{F1}_{\text{macro}} = \frac{1}{C} \sum_{c=1}^C \mathrm{F1}_c, \quad \mathrm{Precision}_{\text{micro}} = \frac{\sum_c TP_c}{\sum_c (TP_c + FP_c)}.

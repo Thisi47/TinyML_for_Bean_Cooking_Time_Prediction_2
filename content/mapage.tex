@@ -1,34 +1,33 @@
 \thispagestyle{empty}
 
-% Bordure bleue discrète
+% --- Bordure bleue discrète ---
 \begin{tikzpicture}[remember picture,overlay]
 	\draw[line width=1pt, color=blue!40!black, rounded corners=10pt]
-	($(current page.north west)+(.5cm,-.5cm)$) rectangle ($(current page.south east)+(-.5cm,.5cm)$);
+	($(current page.north west)+(.5cm,-.5cm)$) rectangle
+	($(current page.south east)+(-.5cm,.5cm)$);
 \end{tikzpicture}
 
-\vspace*{0.3cm}
-
-% En-tête en 3 colonnes : texte gauche, logos centre empilés, texte droite
-\vspace*{-4cm}
+% --- En-tête en 3 colonnes ---
+\vspace*{-3.5cm}
 \begin{center}
 	\setlength{\tabcolsep}{2pt}
-	\begin{tabular}[t]{p{0.3\linewidth} c p{0.3\linewidth}}
+	\begin{tabular}[t]{p{0.35\linewidth} c p{0.35\linewidth}}
 		\parbox[t]{\linewidth}{
 			\raggedright
-			{\bfseries UNIVERSITE DE NGAOUNDERE} \newline
-			FACULTE DES SCIENCES \newline
+			{\bfseries UNIVERSITÉ DE NGAOUNDÉRÉ} \newline
+			FACULTÉ DES SCIENCES \newline
 			Département de Mathématiques \newline
 			et Informatique
 		}
-		 & 
-		\begin{tabular}[t]{c}
-			\includegraphics[height=2.0cm]{figures/univ_logo.jpeg} \\[0.2cm]
-			\includegraphics[height=1.8cm]{figures/fac_logo.jpeg}
+		 &
+		\begin{tabular}{c}
+			\includegraphics[height=1.7cm]{figures/univ_logo.jpeg} \\[0.2cm]
+			\includegraphics[height=1.5cm]{figures/fac_logo.jpeg}
 		\end{tabular}
-		 & 
+		 &
 		\parbox[t]{\linewidth}{
 			\raggedleft
-			{\bfseries THE UNIVERSITY OF NGAOUNDERE} \newline
+			{\bfseries UNIVERSITY OF NGAOUNDÉRÉ} \newline
 			FACULTY OF SCIENCE \newline
 			Department of Mathematics \newline
 			and Computer Science
@@ -38,50 +37,35 @@
 
 \vspace{0.8cm}
 
-% Corps comme avant
+% --- Corps principal ---
 \begin{center}
-	{\bfseries\Large Mémoire de Master Recherche} \\[0.4cm]
-	Présenté en vue de l'obtention du diplôme de Master \\
-	en Ingénierie Informatique \\[0.35cm]
-	Option~: Systèmes et Logiciels en Environnements Distribués \\[1cm]
-	{\bfseries\large THÈME} \\[0.25cm]
-	\fbox{%
-		\parbox{0.85\linewidth}{%
-			\centering
-			\bfseries\Large Prédiction du temps de cuisson de haricots basée sur TinyML en utilisant des données de temps de cuisson et des images de haricots
-		}
-		
-	}
-\end{center}
+	{\bfseries ÉCOLE DOCTORALE : SCIENCES, TECHNOLOGIE ET INGÉNIERIE (STI)} \\[0.2cm]
+	UFD : Mathématiques, Informatique, Ingénierie et Applications (M2IAP) \\[1cm]
 
-\begin{center}
-	\textbf{année académique : 2024-2025}
-\end{center}
-\vspace{-1cm}
+	{\bfseries MÉMOIRE} \\[0.3cm]
+	Présenté en vue de l'obtention du diplôme de Master en Ingénierie Informatique \\
+	Option : Systèmes et Logiciels en Environnements Distribués \\[0.8cm]
 
-\begin{center}
-	{\bfseries Rédigé par~: MBAIGOLMEM DANG-DANG Thiery} \\
-	(Licencié en Ingénierie Informatique) \\
-	Matricule~: {\bfseries 20A179FS} \\[0.6cm]
-	Sous l'encadrement de~: \\[0.6cm]
-	
-	\setlength{\tabcolsep}{12pt} % espace entre colonnes
-	\small
-	\begin{tabular}{p{0.42\linewidth} p{0.42\linewidth}}
-		\centering
-		{\bfseries Pr. Dr.-Ing. JEAN LOUIS KEDIENG EBONGUE FENDJI} \\ 
-		\textbf{Maître de conférence}
-		 & 
-		\centering
-		{\bfseries Pr. Dr. Ing. BOUKAR OUSMAN}                     \\ 
-		\textbf{Maître de conférence}
-		
-	\end{tabular}
-\end{center}
+	{\bfseries THÈME} \\[0.25cm]
+	\textcolor{blue!70!black}{\textbf{Prédiction du temps de cuisson de haricots basée sur TinyML en utilisant des données de temps de cuisson et des images de haricots}} \\[1.2cm]
 
+	{\bfseries Rédigé par : MBAIGOLMEM DANG-DANG Thiery} \\
+	(Licence en Ingénierie Informatique) \\
+	Matricule : \textbf{20A179FS} \\[0.8cm]
+
+	Sous la direction de : \\[0.8cm]
+
+	\begin{tabular}{cc}
+    \parbox[c]{0.45\linewidth}{\centering \textbf{Pr. Dr.-Ing. JEAN LOUIS KEDIENG EBONGUE FENDJI}} &
+    \parbox[c]{0.45\linewidth}{\centering \textbf{Pr. Dr. Ing. BOUKAR OUSMAN}} \\[0.5cm]
+    \parbox[c]{0.45\linewidth}{\centering Maître de Conférence} &
+    \parbox[c]{0.45\linewidth}{\centering Maître de Conférence}
+\end{tabular}
+
+\end{center}
 
 \vfill
 
 \begin{center}
-	\shadowbox{\bfseries Septembre 2025}
+	{\bfseries   \textbf{Année académique : 2024--2025} }
 \end{center}

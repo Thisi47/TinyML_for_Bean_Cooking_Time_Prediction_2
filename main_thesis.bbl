@@ -19,6 +19,36 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global/global}
+    \entry{UN_WPP_2022}{misc}{}{}
+      \name{author}{2}{}{%
+        {{hash=a2715ee4c0056e319f3df6014b27156a}{%
+           family={{United Nations}},
+           familyi={U\bibinitperiod},
+           given={Department\bibnamedelimb of\bibnamedelima Economic},
+           giveni={D\bibinitperiod\bibinitdelim o\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=716bdb2407aa447b83484392de7102c8}{%
+           family={Social\bibnamedelima Affairs},
+           familyi={S\bibinitperiod\bibinitdelim A\bibinitperiod},
+           given={Population\bibnamedelima Division},
+           giveni={P\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{5bd4d507e4ec2269b91024fb7ad16fb3}
+      \strng{fullhash}{5bd4d507e4ec2269b91024fb7ad16fb3}
+      \strng{fullhashraw}{5bd4d507e4ec2269b91024fb7ad16fb3}
+      \strng{bibnamehash}{5bd4d507e4ec2269b91024fb7ad16fb3}
+      \strng{authorbibnamehash}{5bd4d507e4ec2269b91024fb7ad16fb3}
+      \strng{authornamehash}{5bd4d507e4ec2269b91024fb7ad16fb3}
+      \strng{authorfullhash}{5bd4d507e4ec2269b91024fb7ad16fb3}
+      \strng{authorfullhashraw}{5bd4d507e4ec2269b91024fb7ad16fb3}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://population.un.org/wpp/}}
+      \field{note}{Consulté le 16 septembre 2025}
+      \field{title}{World Population Prospects 2022: Summary of Results}
+      \field{year}{2022}
+    \endentry
     \entry{mendoza2018prediction}{article}{}{}
       \name{author}{7}{}{%
         {{hash=33603083a4e395754134c1144f5571db}{%
@@ -68,8 +98,8 @@
       \strng{authornamehash}{33f69c4acce351f28b672da96dc5cfae}
       \strng{authorfullhash}{e458203ad6dbdf25a05c2112f2cd6069}
       \strng{authorfullhashraw}{e458203ad6dbdf25a05c2112f2cd6069}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{The Plant Phenome Journal}

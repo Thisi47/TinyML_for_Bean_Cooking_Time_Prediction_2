@@ -1,105 +1,102 @@
 \babel@toc {french}{}\relax 
 \contentsline {chapter}{Dédicace}{1}{chapter*.1}%
 \contentsline {chapter}{Remerciements}{2}{chapter*.2}%
-\contentsline {chapter}{Liste des abréviations}{10}{chapter*.11}%
-\contentsline {chapter}{\numberline {1}Introduction g\'en\'erale}{11}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Contexte et justification}{11}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Problématique}{12}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Objectifs et contributions}{12}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}Objectif général}{12}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}Objectifs spécifiques}{12}{subsection.1.3.2}%
-\contentsline {subsection}{\numberline {1.3.3}Contributions attendues}{13}{subsection.1.3.3}%
-\contentsline {section}{\numberline {1.4}Organisation du mémoire}{13}{section.1.4}%
-\contentsline {chapter}{\numberline {2}Revue de la littérature}{14}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Introduction}{14}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Intelligence artificielle et secteur agroalimentaire}{14}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Prédiction du temps de cuisson des légumineuses et travaux connexes}{14}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Convolution et réseaux de neurones convolutifs (CNN)}{15}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Définition mathématique}{15}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Padding, stride, dilatation}{15}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}Coût, paramètres et convolutions séparables}{16}{subsection.2.4.3}%
-\contentsline {subsection}{\numberline {2.4.4}Autres blocs légers}{16}{subsection.2.4.4}%
-\contentsline {subsection}{\numberline {2.4.5}Fonction d’activation \textit {Softmax}}{16}{subsection.2.4.5}%
-\contentsline {subsection}{\numberline {2.4.6}Encodage des classes : utilisation du Label Encoding}{17}{subsection.2.4.6}%
-\contentsline {section}{\numberline {2.5}TinyML : principes, avantages, cas d’usage et limites}{18}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}Contraintes matérielles typiques}{18}{subsection.2.5.1}%
-\contentsline {subsection}{\numberline {2.5.2}Avantages et cas d’utilisation}{18}{subsection.2.5.2}%
-\contentsline {subsection}{\numberline {2.5.3}Techniques d’optimisation}{18}{subsection.2.5.3}%
-\contentsline {paragraph}{Quantification (INT8, FP16)}{18}{subsection.2.5.3}%
-\contentsline {paragraph}{Pruning (élagage)}{19}{equation.2.6}%
-\contentsline {paragraph}{Distillation de connaissances}{19}{equation.2.6}%
-\contentsline {subsection}{\numberline {2.5.4}Avancées et perspectives du TinyML}{19}{subsection.2.5.4}%
-\contentsline {section}{\numberline {2.6}Modèles légers pour dispositifs contraints}{20}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Métriques d’évaluation des modèles}{20}{section.2.7}%
-\contentsline {subsection}{\numberline {2.7.1}Métriques de régression}{20}{subsection.2.7.1}%
-\contentsline {subsection}{\numberline {2.7.2}Métriques de classification}{21}{subsection.2.7.2}%
-\contentsline {section}{\numberline {2.8}Bonnes pratiques d’évaluation embarquée}{22}{section.2.8}%
-\contentsline {section}{\numberline {2.9}Synthèse des travaux antérieurs}{23}{section.2.9}%
-\contentsline {section}{\numberline {2.10}Conclusion}{24}{section.2.10}%
-\contentsline {chapter}{\numberline {3}Méthodologie et Conception du Système}{25}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Introduction}{25}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Vue d'ensemble du pipeline proposé}{26}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Dataset de classification (\(\mathcal {D}_{\text {clf}}\))}{26}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Dataset de régression (\(\mathcal {D}_{\text {reg}}\))}{27}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Justification du découpage en deux jeux distincts}{29}{subsection.3.2.3}%
-\contentsline {section}{\numberline {3.3}Analyse exploratoire (EDA) et statistiques descriptives}{30}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Analyse exploratoire (EDA) et statistiques descriptives}{30}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Synthèse statistique pour la régression}{30}{subsection.3.4.1}%
-\contentsline {paragraph}{Implications}{31}{figure.caption.18}%
-\contentsline {subsection}{\numberline {3.4.2}Analyse du dataset de classification}{32}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Stratégie adoptée pour la classe \texttt {autre}}{32}{subsection.3.4.3}%
-\contentsline {section}{\numberline {3.5}Architectures modèles et justification}{32}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Modèle de classification}{32}{subsection.3.5.1}%
-\contentsline {subsection}{\numberline {3.5.2}Modèle de régression}{33}{subsection.3.5.2}%
-\contentsline {subsubsection}{Architectures testées}{33}{subsection.3.5.2}%
-\contentsline {paragraph}{TBNet2}{33}{subsection.3.5.2}%
-\contentsline {paragraph}{TBNet5}{33}{subsection.3.5.2}%
-\contentsline {paragraph}{EfficientNet-B0}{34}{figure.caption.19}%
-\contentsline {paragraph}{MobileNetV2}{35}{figure.caption.20}%
-\contentsline {paragraph}{NASNetMobile}{36}{figure.caption.21}%
-\contentsline {section}{\numberline {3.6}Workflow d'entraînement, conversion et évaluation}{37}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Procédure d'entraînement reproductible}{37}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2}Conversion et quantification TFLite}{38}{subsection.3.6.2}%
-\contentsline {subsection}{\numberline {3.6.3}Évaluation finale et mesures embarquées}{38}{subsection.3.6.3}%
-\contentsline {section}{\numberline {3.7}Intégration dans l'application mobile et UX}{38}{section.3.7}%
-\contentsline {paragraph}{Gestion des seuils et de la confiance}{38}{Item.16}%
-\contentsline {section}{\numberline {3.8}Bonnes pratiques et recommandations pour la reproductibilité}{39}{section.3.8}%
-\contentsline {section}{\numberline {3.9}Conclusion du chapitre}{39}{section.3.9}%
-\contentsline {chapter}{\numberline {4}Développement et implémentation}{40}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Environnement de développement}{40}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Matériel}{40}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Logiciels et versions}{40}{subsection.4.1.2}%
-\contentsline {section}{\numberline {4.2}Préparation des données}{40}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Prétraitement des données pour la classification}{41}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Prétraitement des données pour la régression}{44}{subsection.4.2.2}%
-\contentsline {section}{\numberline {4.3}Architectures de modèles}{45}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Stratégie d’entraînement}{46}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Classification avec MobileNetV2}{46}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Régression pour la prédiction du temps de cuisson}{47}{subsection.4.4.2}%
-\contentsline {section}{\numberline {4.5}Export et optimisation TinyML}{48}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Quantification complète INT8 pour la classification}{48}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Conversion TensorFlow Lite pour la régression (float16)}{48}{subsection.4.5.2}%
-\contentsline {section}{\numberline {4.6}Déploiement Android}{48}{section.4.6}%
-\contentsline {subsection}{\numberline {4.6.1}Cible et outils}{48}{subsection.4.6.1}%
-\contentsline {subsection}{\numberline {4.6.2}Intégration et inférence}{49}{subsection.4.6.2}%
-\contentsline {section}{\numberline {4.7}Mesures et artefacts à produire}{50}{section.4.7}%
-\contentsline {section}{\numberline {4.8}Résumé du chapitre}{50}{section.4.8}%
-\contentsline {chapter}{\numberline {5}Résultats et Discussion}{51}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Résultats de la classification}{51}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Analyse et comparaison à l’état de l’art}{52}{subsection.5.1.1}%
-\contentsline {section}{\numberline {5.2}Résultats de la régression}{52}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Courbes de perte et convergence des modèles}{53}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Performances globales des modèles}{53}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}Analyse par variété et robustesse}{56}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Discussion critique et implications}{56}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Comparaison avec l’état de l’art}{56}{subsection.5.4.1}%
-\contentsline {section}{\numberline {5.5}Synthèse}{56}{section.5.5}%
-\contentsline {chapter}{\numberline {6}Conclusion et perspectives}{58}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Synthèse des contributions}{58}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Bilan critique}{58}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Points forts}{58}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}Limites}{59}{subsection.6.2.2}%
-\contentsline {section}{\numberline {6.3}Perspectives}{59}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Conclusion générale}{59}{section.6.4}%
-\contentsline {section}{\numberline {.1}Liens vers les notebooks Colab et GitHub}{61}{section.Alph0.1}%
-\contentsline {chapter}{Bibliographie}{62}{appendix*.35}%
+\contentsline {chapter}{Liste des abréviations}{8}{chapter*.11}%
+\contentsline {chapter}{\numberline {1}Introduction générale}{9}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Contexte et justification}{9}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Problématique}{10}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Objectifs et contributions}{10}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Objectif général}{10}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Objectifs spécifiques}{10}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Contributions attendues}{11}{subsection.1.3.3}%
+\contentsline {section}{\numberline {1.4}Organisation du mémoire}{11}{section.1.4}%
+\contentsline {chapter}{\numberline {2}Revue de la littérature}{12}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Introduction}{12}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Intelligence artificielle et secteur agroalimentaire}{12}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Prédiction du temps de cuisson des légumineuses et travaux connexes}{12}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Convolution et réseaux de neurones convolutifs (CNN)}{13}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Définition mathématique}{13}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Padding, stride, dilatation}{13}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Coût, paramètres et convolutions séparables}{14}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.4}Autres blocs légers}{14}{subsection.2.4.4}%
+\contentsline {subsection}{\numberline {2.4.5}Fonction d’activation \textit {Softmax}}{14}{subsection.2.4.5}%
+\contentsline {subsection}{\numberline {2.4.6}Encodage des classes : utilisation du Label Encoding}{15}{subsection.2.4.6}%
+\contentsline {section}{\numberline {2.5}TinyML : principes, avantages, cas d’usage et limites}{16}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Contraintes matérielles typiques}{16}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Avantages et cas d’utilisation}{16}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}Techniques d’optimisation}{16}{subsection.2.5.3}%
+\contentsline {paragraph}{Quantification (INT8, FP16)}{16}{subsection.2.5.3}%
+\contentsline {paragraph}{Pruning (élagage)}{17}{equation.2.6}%
+\contentsline {paragraph}{Distillation de connaissances}{17}{equation.2.6}%
+\contentsline {subsection}{\numberline {2.5.4}Avancées et perspectives du TinyML}{17}{subsection.2.5.4}%
+\contentsline {section}{\numberline {2.6}Modèles légers pour dispositifs contraints}{18}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Métriques d’évaluation des modèles}{18}{section.2.7}%
+\contentsline {subsection}{\numberline {2.7.1}Métriques de régression}{18}{subsection.2.7.1}%
+\contentsline {subsection}{\numberline {2.7.2}Métriques de classification}{19}{subsection.2.7.2}%
+\contentsline {section}{\numberline {2.8}Bonnes pratiques d’évaluation embarquée}{20}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Synthèse des travaux antérieurs}{21}{section.2.9}%
+\contentsline {section}{\numberline {2.10}Conclusion}{22}{section.2.10}%
+\contentsline {chapter}{\numberline {3}Méthodologie et Conception du Système}{23}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Introduction}{23}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Vue d'ensemble du pipeline proposé}{24}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Dataset de classification (\(\mathcal {D}_{\text {clf}}\))}{24}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Dataset de régression (\(\mathcal {D}_{\text {reg}}\))}{25}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Justification du découpage en deux jeux distincts}{27}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}Analyse exploratoire (EDA) et statistiques descriptives}{28}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Analyse exploratoire (EDA) et statistiques descriptives}{28}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Synthèse statistique pour la régression}{28}{subsection.3.4.1}%
+\contentsline {paragraph}{Implications}{29}{figure.caption.18}%
+\contentsline {subsection}{\numberline {3.4.2}Analyse du dataset de classification}{30}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Stratégie adoptée pour la classe \texttt {autre}}{30}{subsection.3.4.3}%
+\contentsline {section}{\numberline {3.5}Architectures modèles et justification}{30}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Modèle de classification}{30}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Modèle de régression}{31}{subsection.3.5.2}%
+\contentsline {subsubsection}{Architectures testées}{31}{subsection.3.5.2}%
+\contentsline {paragraph}{TBNet2}{31}{subsection.3.5.2}%
+\contentsline {paragraph}{TBNet5}{31}{subsection.3.5.2}%
+\contentsline {paragraph}{EfficientNet-B0}{32}{figure.caption.19}%
+\contentsline {paragraph}{MobileNetV2}{33}{figure.caption.20}%
+\contentsline {paragraph}{NASNetMobile}{34}{figure.caption.21}%
+\contentsline {section}{\numberline {3.6}Workflow d'entraînement, conversion et évaluation}{35}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Procédure d'entraînement reproductible}{35}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Conversion et quantification TFLite}{36}{subsection.3.6.2}%
+\contentsline {subsection}{\numberline {3.6.3}Évaluation finale et mesures embarquées}{36}{subsection.3.6.3}%
+\contentsline {section}{\numberline {3.7}Intégration dans l'application mobile et UX}{36}{section.3.7}%
+\contentsline {paragraph}{Gestion des seuils et de la confiance}{36}{Item.16}%
+\contentsline {section}{\numberline {3.8}Bonnes pratiques et recommandations pour la reproductibilité}{37}{section.3.8}%
+\contentsline {section}{\numberline {3.9}Conclusion du chapitre}{37}{section.3.9}%
+\contentsline {chapter}{\numberline {4}Développement et implémentation}{38}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Environnement de développement}{38}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Matériel}{38}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Logiciels et versions}{38}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Préparation des données}{38}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Prétraitement des données pour la classification}{39}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Prétraitement des données pour la régression}{40}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Architectures de modèles}{41}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Stratégie d’entraînement}{41}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Classification avec MobileNetV2}{41}{subsection.4.4.1}%
+\contentsline {section}{\numberline {4.5}Déploiement Android}{43}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Cible et outils}{43}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Architecture logicielle de l’application}{43}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.3}Intégration et inférence}{44}{subsection.4.5.3}%
+\contentsline {section}{\numberline {4.6}Mesures et artefacts à produire}{44}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Résumé du chapitre}{45}{section.4.7}%
+\contentsline {chapter}{\numberline {5}Résultats et Discussion}{46}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Résultats de la classification}{46}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Analyse et comparaison à l’état de l’art}{47}{subsection.5.1.1}%
+\contentsline {section}{\numberline {5.2}Résultats de la régression}{47}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Courbes de perte et convergence des modèles}{48}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Performances globales des modèles}{48}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}Analyse par variété et robustesse}{52}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Discussion critique et implications}{52}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Comparaison avec l’état de l’art}{52}{subsection.5.4.1}%
+\contentsline {section}{\numberline {5.5}Synthèse}{52}{section.5.5}%
+\contentsline {chapter}{\numberline {6}Conclusion et perspectives}{53}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Synthèse des contributions}{53}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Bilan critique}{53}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Points forts}{53}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Limites}{54}{subsection.6.2.2}%
+\contentsline {section}{\numberline {6.3}Perspectives}{54}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Conclusion générale}{54}{section.6.4}%
+\contentsline {section}{\numberline {.1}Liens vers les notebooks Colab et GitHub}{56}{section.Alph0.1}%
+\contentsline {chapter}{Bibliographie}{58}{appendix*.36}%

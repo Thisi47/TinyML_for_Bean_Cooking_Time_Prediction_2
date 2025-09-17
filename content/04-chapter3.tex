@@ -142,21 +142,32 @@ Si \texttt{TBNet5} et \texttt{TBNet2} affichent des résultats proches ($R^2 = 0
 
 \begin{table}[H]
 	\centering
-	\small
+	\footnotesize
 	\caption{Performances des modèles sur le jeu de test.}
 	\label{tab:metrics_comparison}
-	\begin{tabular}{|l|c|c|c|c|c|}
+	\begin{tabular}{|l|c|c|c|c|c|c|}
 		\hline
-		\textbf{Modèle}    & \textbf{MAE (min)} & \textbf{RMSE (min)} & \textbf{$R^2$} & \textbf{MAPE (\%)} & \textbf{MaxErr (min)} \\
+		\small \textbf{Modèle} & \small \textbf{MAE} & \small \textbf{RMSE} & \small \textbf{$R^2$} & \small \textbf{MAPE} & \small \textbf{MaxErr} & \small \textbf{Taille (Av.Q)} \\
 		\hline
-		EfficientNetB0 & 57162.30           & 57162.35            & -479401.06     & 466.53             & 57288.20              \\
-		MobileNetV2        & 56606.87           & 60760.02            & -541644.94     & 401.15             & 138063.39             \\
-		NasNetMobile   & 55799.49           & 59374.25            & -517219.72     & 403.25             & 135507.25             \\
-		TBNet5             & 16.29              & 28.13               & 0.88           & 0.12               & 176.35                \\
-		TBNet2             & 16.40              & 26.20               & 0.90           & 0.14               & 228.87                \\
+		EfficientNetB0  & 57162.30           & 57162.35            & -479401.06     & 466.53             & 57288.20              & 50                               \\
+		\hline
+		MobileNetV2     & 56606.87           & 60760.02            & -541644.94     & 401.15             & 138063.39             & 31                               \\
+		\hline
+		NasNetMobile    & 55799.49           & 59374.25            & -517219.72     & 403.25             & 135507.25             & 55                               \\
+		\hline
+		TBNet5          & 16.29              & 28.13               & 0.88           & 0.12               & 176.35                & 5.6                              \\
+		\hline
+		TBNet2          & 16.40              & 26.20               & 0.90           & 0.14               & 228.87                & 20.5                             \\
 		\hline
 	\end{tabular}
 \end{table}
+
+\textbf{Unité des métriques}
+\begin{itemize}
+	\item MAE, RMSE, MaxErr en minutes
+	\item \textbf{Taille (Av.Q)} en Mo
+	\item \textbf{MAPE} en pourcentage
+\end{itemize}
 
 \begin{figure}[H]
 	\centering

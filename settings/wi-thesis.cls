@@ -12,6 +12,12 @@
 \DeclareStringOption[]{language}[french]
 \DeclareStringOption[]{thesis}[master]
 \DeclareStringOption[]{chair}[csssa]
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+
+% Définitions mots-clés français pour algorithm2e
+% \SetKwInput{Entrée}{Entrée}
+% \SetKwInput{Sortie}{Sortie}
+% \SetKwComment{Commentaire}{\% }{}
 \ProcessKeyvalOptions*
 
 \LoadClass[a4paper,12pt]{report}

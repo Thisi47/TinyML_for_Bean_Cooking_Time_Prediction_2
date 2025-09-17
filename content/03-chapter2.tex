@@ -38,159 +38,64 @@ La préparation des données est subdivisée en deux pipelines distincts, corres
 
 Le pipeline de classification consiste à préparer les images pour l'entraînement d'un modèle de type MobileNetV2 afin de déterminer si une image contient des haricots ou autre chose. Chaque étape est décrite ci-dessous avec le pseudo-code correspondant.
 
-\begin{verbatim}
-Bloc 1 : Création des dossiers pour données d'entraînement et de test
-Définir base_path pour le dataset
-Définir train_path = base_path + "/Trainset/autre"
-Définir test_path = base_path + "/Testset/autre"
-Créer dossier train_path s'il n'existe pas
-Créer dossier test_path s'il n'existe pas
-\end{verbatim}
 
-Après ce bloc, on s'assure que les dossiers nécessaires pour stocker les images d'entraînement et de test existent. Cette étape est cruciale pour éviter toute erreur lors de la copie ou du chargement des images, et pour structurer correctement le dataset.
+\begin{algorithm}[H]
+\caption{Création des dossiers pour les données d'entraînement et de test}
+Définir \texttt{base\_path} et chemins \texttt{train\_path}, \texttt{test\_path}\;
+Créer dossiers \texttt{train\_path} et \texttt{test\_path} s'ils n'existent pas\;
+\end{algorithm}
 
-\begin{verbatim}
-# Bloc 2 : Téléchargement et extraction du dataset COCO val2017
-Si fichier val2017.zip n'existe pas:
-    Télécharger val2017.zip depuis URL_COCO
-Si dossier val2017 n'existe pas:
-    Extraire contenu de val2017.zip dans /content/
-Afficher message "COCO val2017 prêt"
-\end{verbatim}
+\begin{algorithm}[H]
+\caption{Téléchargement et extraction du dataset COCO val2017}
+Vérifier et télécharger \texttt{val2017.zip} si nécessaire\;
+Extraire le contenu si dossier absent\;
+Afficher message de disponibilité du dataset\;
+\end{algorithm}
 
-Ce bloc permet de récupérer un sous-ensemble standard d'images pour la classe ``autre''. Le dataset COCO val2017 est utilisé comme source d'images non-haricots afin de créer un dataset équilibré pour la classification.
+\begin{algorithm}[H]
+\caption{Sélection et copie d'un sous-ensemble d'images dans les dossiers}
+Lister images \texttt{.jpg}, prendre subset de 1000 images\;
+Copier 800 images dans \texttt{train\_path}, 200 dans \texttt{test\_path}\;
+Afficher confirmation\;
+\end{algorithm}
 
-\begin{verbatim}
-# Bloc 3 : Sélection d'un sous-ensemble d'images et copie dans train et test
-Lister toutes les images .jpg dans val2017
-Prendre un sous-ensemble des 1000 premières images
-Copier les 800 premières dans dossier train_path
-Copier 200 images suivantes dans dossier test_path
-Afficher message "Classe 'autre' créée dans ton dataset"
-\end{verbatim}
+\begin{algorithm}[H]
+\caption{Chargement des chemins d'images et des labels de variétés}
+Collecter chemins et labels depuis dossiers de classes\;
+Indexer labels en tableau numérique\;
+Afficher résumé des données chargées\;
+\end{algorithm}
 
-Ici, on sélectionne un nombre limité d’images afin de contrôler le volume de données et garantir un entraînement rapide. Les images sont séparées en ensembles d'entraînement et de test pour évaluer la généralisation du modèle.
+\begin{algorithm}[H]
+\caption{Création d'un dataset TensorFlow optimisé}
+Définir fonction \texttt{load\_image} pour lecture, redimensionnement, normalisation\;
+Créer dataset \texttt{tf.data} avec mise en batch, mélange et préchargement\;
+\end{algorithm}
 
-\begin{verbatim}
-# Bloc 4 : Chargement des chemins d'images et labels des variétés
-Initialiser listes image_paths et labels_variete
-Pour chaque dossier de classe dans base_path/Trainset:
-    Si le dossier est un répertoire:
-        Extraire nom de la variété depuis nom du dossier
-        Pour chaque fichier image dans ce dossier:
-            Ajouter chemin à image_paths
-            Ajouter label variété à labels_variete
-Afficher nombre d'images chargées et un exemple
-Créer dictionnaire variete_to_idx pour indexer les variétés
-Convertir labels_variete en tableau numpy y_variete d'indices
-Afficher les variétés détectées et la forme de y_variete
-\end{verbatim}
+\begin{algorithm}[H]
+\caption{Chargement automatique des images avec Keras}
+Utiliser \texttt{image\_dataset\_from\_directory} sur \texttt{train\_dir}\;
+Paramétrer taille images, batch size et mélange\;
+Afficher classes détectées\;
+\end{algorithm}
 
-Ce bloc construit la liste complète des chemins d'images et leurs labels associés. La conversion en indices numériques est nécessaire pour l'entraînement supervisé d'un modèle de classification.
+\begin{algorithm}[H]
+\caption{Comptage et visualisation de la distribution des images par classe}
+Définir fonction de comptage des images par classe\;
+Calculer et afficher la distribution (graphique histogramme)\;
+\end{algorithm}
 
-\begin{verbatim}
-# Bloc 5 : Création d'un dataset TensorFlow à partir des chemins et labels
-Définir fonction load_image(path, variete):
-    Lire et décoder jpg
-    Redimensionner à 224x224 et normaliser pixels
-    Retourner image et label variete sous forme dictionnaire
+\begin{algorithm}[H]
+\caption{Validation des images : intégrité et caractéristiques}
+Lister tailles images valides, détecter images corrompues\;
+Tracer histogrammes de dimensions et distributions colorimétriques\;
+Calculer statistiques pixel (moyenne et écart-type) sur un batch\;
+\end{algorithm}
 
-Créer dataset tf.data à partir de (image_paths, y_variete)
-Mapper dataset avec load_image
-Mélanger dataset, batcher par 32, précharger données de façon optimisée
-\end{verbatim}
+\vspace{5mm}
 
-Cette étape permet de créer un pipeline de données efficace pour TensorFlow, incluant le prétraitement (redimensionnement, normalisation) et l'optimisation de l'entraînement via batch et prefetch.
+\noindent\textbf{Description :} Ce processus couvre la préparation méthodique d'un dataset d'images pour classification, incluant gestion des dossiers, récupération des données, constitution des étiquettes, construction optimisée de pipelines TensorFlow, ainsi que analyses exploratoires de la distribution et qualité des images. Ces étapes assurent un cadre robuste et reproductible pour l'entraînement des modèles de machine learning.
 
-\begin{verbatim}
-# Bloc 6 : Chargement automatique du dataset depuis un dossier avec Keras
-Charger dataset depuis train_dir avec Keras image_dataset_from_directory
-Taille images redimensionnées à 224x224
-Taille batch 32, mélange aléatoire activé
-Afficher noms des classes détectées dans train_dir
-\end{verbatim}
-
-Ce bloc illustre l'utilisation de la fonction Keras  `image\_dataset\_from\_directory', qui simplifie le chargement des images classées par dossier et automatise le prétraitement de base.
-
-\begin{verbatim}
-# Bloc 7 : Comptage des images par classe dans un dossier donné
-Définir fonction count_images_per_class(dataset_path):
-    Initialiser dictionnaire counts
-    Pour chaque classe dans dataset_path:
-        Si c'est un dossier:
-            Compter fichiers images (.jpg, .jpeg, .png) dans dossier
-            Mettre dans counts[classe]
-    Retourner counts
-
-Calculer train_counts avec count_images_per_class sur train_dir
-Afficher train_counts
-\end{verbatim}
-
-Le comptage des images par classe permet de détecter un éventuel déséquilibre et de prendre des mesures si nécessaire (sous-échantillonnage ou sur-échantillonnage).
-
-\begin{verbatim}
-# Bloc 8 : Visualisation de la distribution des images par classe (bar chart)
-Créer figure matplotlib
-Tracer histogramme barres avec counts par classes (train_counts)
-Rotation des labels en abscisse
-Titre "Distribution des images par classe"
-Afficher graphique
-\end{verbatim}
-
-Visualiser la répartition des classes aide à comprendre la structure du dataset et à détecter d’éventuelles anomalies avant l’entraînement.
-
-\begin{verbatim}
-# Bloc 9 : Lecture des tailles d'images et détection des images corrompues
-Initialiser listes all_shapes et corrupted_files
-Pour chaque classe dans class_names:
-    Pour chaque fichier image:
-        Tenter d'ouvrir image avec PIL
-        Si succès:
-            Récupérer taille (largeur, hauteur)
-            Ajouter à all_shapes
-        Sinon:
-            Ajouter chemin à corrupted_files
-
-Afficher nombre d'images corrompues et exemples si existants
-\end{verbatim}
-
-Ce bloc garantit l’intégrité des images et fournit des statistiques sur leurs dimensions, ce qui est utile pour ajuster le redimensionnement et la normalisation.
-
-\begin{verbatim}
-# Bloc 10 : Histogramme des tailles (largeur et hauteur) des images
-Extraire listes widths et heights depuis all_shapes
-Créer figure matplotlib
-Tracer histogrammes pour widths et heights superposés
-Ajouter titre, légende, axes x et y
-Afficher graphique
-\end{verbatim}
-
-Visualiser la distribution des tailles des images permet de confirmer que le redimensionnement à 224x224 est approprié pour toutes les images.
-
-\begin{verbatim}
-# Bloc 11 : Histogrammes de distribution des canaux couleur R, G, B par classe
-Pour chaque classe dans class_names:
-    Lister images
-    Prendre un échantillon random jusqu'à 50 images
-    Pour chaque image de l'échantillon:
-        Charger image en numpy array
-        Extraire canaux R, G, B et étaler pixel par pixel
-    Tracer histogrammes superposés pour R, G et B
-    Ajouter titre, légende, axes
-    Afficher graphique
-\end{verbatim}
-
-Analyser les distributions des canaux couleur permet de détecter des anomalies ou biais de couleur et d’adapter éventuellement l’augmentation de données.
-
-{
-\small
-\begin{verbatim}
-# Bloc 12 : Calcul de la moyenne et de l'écart-type des pixels sur un batch d'images
-Extraire un batch d'images du dataset train_ds
-Convertir batch en numpy array
-Calculer moyenne et écart-type global des pixels sur tout le batch
-Afficher ces valeurs
-\end{verbatim}}
 
 La moyenne et l’écart-type des pixels sont utilisées pour normaliser les images. Cette normalisation standardise les données et facilite l’entraînement du modèle de classification.
 
@@ -198,49 +103,47 @@ La moyenne et l’écart-type des pixels sont utilisées pour normaliser les ima
 
 Le prétraitement des données pour la régression suit un pipeline complet visant à préparer les images et les labels de temps de cuisson pour l’entraînement du modèle. Il comprend le chargement, la normalisation, l’augmentation, et la structuration des jeux de données.
 
-{\footnotesize
-\begin{verbatim}
-1. Charger le fichier CSV contenant les chemins d’images et les étiquettes (labels).
-   % Cette étape permet de récupérer la correspondance image/label depuis le fichier source.
-2. Extraire la liste des chemins d’images et convertir les labels au format float.
-   % Conversion nécessaire pour la régression, car les labels seront utilisés comme valeurs 
-   % numériques continues.
-3. Définir les transformations de base (redimensionnement, conversion en tenseur).
-   % Prépare les images à une taille standard (224x224) et un format exploitable par le modèle.
-4. Définir les transformations d’augmentation de données 
-   (redimensionnement, recadrage aléatoire, flips, jitter couleur, flou gaussien).
-   % Ces augmentations permettent d’enrichir le jeu de données et de réduire le surapprentissage.
-5. Pour chaque chemin d’image :
-    a. Ouvrir l’image et la convertir en RGB.
-       % Garantit un format cohérent à 3 canaux pour tous les modèles CNN.
-    b. Appliquer la transformation de base.
-       % Assure que toutes les images ont la même taille et format.
-    c. Convertir l’image en tableau numpy uint8 et l’ajouter à la liste des images de base.
-       % Prépare les données pour un traitement batchable par le modèle.
-6. Convertir la liste des images et labels en tableaux numpy.
-   % Passage à un format efficace pour TensorFlow/Keras.
-7. Normaliser les labels entre 0 et 1.
-   % Mise à l’échelle Min-Max des temps de cuisson pour stabiliser l’apprentissage.
-8. Séparer le jeu de données en ensembles d'entraînement, de validation et de test 
-   (stratification sur les labels).
-   % Permet d’évaluer correctement le modèle et de conserver la distribution des labels.
-9. Pour chaque image de l’ensemble d’entraînement :
-    a. Ajouter l’image originale et son label.
-    b. Pour un nombre donné d’augmentations :
-        i. Convertir l’image en format PIL.
-           % Nécessaire pour appliquer les transformations d’augmentation.
-       ii. Appliquer les transformations d’augmentation.
-           % Génère des variantes artificielles de chaque image pour renforcer le modèle.
-      iii. Convertir l’image augmentée au format numpy uint8.
-           % Compatible avec l’entraînement TensorFlow/Keras.
-       iv. Ajouter l’image augmentée et le label à la liste.
-10. Convertir les listes d’images et labels augmentés en tableaux numpy.
-    % Finalisation des jeux de données augmentés.
-11. Enregistrer chaque ensemble (entraînement, validation, test) dans un fichier HDF5, 
-    avec deux jeux de données : images et labels (temps de cuisson).
-    % Permet un accès rapide et structuré aux données pour l’entraînement et l’inférence.
-\end{verbatim}
+
+
+\begin{algorithm}[H]
+\caption{Préparation et augmentation du jeu de données d’images}
+\Entrée{Fichier CSV avec chemins d’images et labels}
+\Sortie{Jeux de données entraînement, validation et test augmentés et sauvegardés}
+
+Charger CSV des chemins d’images et labels\;
+Extraire chemins d’images et convertir labels en float\;
+Définir transformations de base (redimensionnement, conversion tenseur)\;
+Définir transformations d’augmentation (recadrage, flips, jitter, flou)\;
+
+\ForEach{chemin d’image}{
+    Ouvrir image, convertir en RGB\;
+    Appliquer transformation de base\;
+    Convertir en tableau numpy uint8\;
+    Ajouter à liste images de base\;
 }
+
+Convertir listes images et labels en tableaux numpy\;
+Normaliser labels (mise à l’échelle Min-Max)\;
+Séparer données en ensembles entraînement, validation, test avec stratification\;
+
+\ForEach{image dans ensemble entraînement}{
+    Ajouter image originale et label\;
+    \For{nombre d’augmentations}{
+        Convertir image en PIL\;
+        Appliquer transformations d’augmentation\;
+        Convertir en numpy uint8\;
+        Ajouter image augmentée et label\;
+    }
+}
+
+Convertir listes augmentées en tableaux numpy\;
+Enregistrer ensembles (entraînement, validation, test) dans fichiers HDF5 avec images et labels\;
+
+\end{algorithm}
+
+\vspace{5mm}
+
+\noindent\textbf{Description :} Cet algorithme présente la préparation complète des données d’images pour un projet d’apprentissage profond incluant le chargement des chemins et labels, les transformations et augmentations d’images, la normalisation et la séparation du dataset, ainsi que la sauvegarde finale au format optimisé pour l’entraînement. Cette procédure garantit une base de données enrichie et stable pour des modèles robustes.
 
 \section{Architectures de modèles}
 \label{sec:modeles}
@@ -280,159 +183,210 @@ La régularisation inclut un \texttt{dropout} de 0.3 et une pénalisation L2 (\(
 \label{sec:entrainement}
 
 \subsection{Classification avec MobileNetV2}
-{\footnotesize
-	\begin{verbatim}
-# Création, compilation et affichage du modèle MobileNetV2 gelé
+\section*{Création, compilation et affichage du modèle MobileNetV2 gelé}
 
-1. Charger MobileNetV2 pré-entraîné sans couche top, input_shape = IMG_SIZE + (3,)
-2. Geler les poids du base_model pour ne pas entraîner le réseau convolutif pré-entraîné.
-3. Définir le modèle fonctionnel tf.keras :
-4. Compiler le modèle
-5. Afficher le résumé du modèle pour vérifier la structure.
-\end{verbatim}}
+\begin{algorithm}[H]
+\caption{Entraînement et sauvegarde du modèle de classification}
+\Entrée{Modèle compilé, ensembles \texttt{train\_ds} et \texttt{val\_ds}, nombre d'époques \texttt{EPOCHS}}
+\Sortie{Modèle entraîné sauvegardé, historique d'entraînement}
 
-% Commentaire explicatif
-Ce bloc définit la structure du modèle de classification. MobileNetV2 est utilisé comme extracteur de caractéristiques pré-entraîné et gelé pour transférer l’apprentissage. La tête Dense avec softmax permet de prédire la classe parmi les variétés. Le dropout et la compilation assurent régularisation et suivi des performances.
+Entraîner le modèle sur \texttt{train\_ds} et \texttt{val\_ds} pour \texttt{EPOCHS} époques\;
+Sauvegarder le modèle entraîné\;
+Extraire historique d’entraînement (accuracy, loss)\;
+Tracer et afficher courbes d’accuracy et loss\;
+\KwRet{historique}
+\end{algorithm}
 
-\begin{verbatim}
-# Entraînement et sauvegarde du modèle
+\vspace{8pt}
 
-1. Entraîner le modèle sur train_ds et val_ds pour EPOCHS époques.
-2. Sauvegarder le modèle.
-3. Extraire l’historique d’entraînement : accuracy et loss.
-4. Tracer les courbes d’accuracy et loss pour les ensembles train et validation.
-5. Afficher les graphiques pour visualiser la progression de l’apprentissage.
-\end{verbatim}
+\begin{algorithm}[H]
+\caption{Fonction d'entraînement pour modèles de régression avec early stopping}
+\Entrée{Chemin jeu de données, nombre d’époques \texttt{EPOCHS}, taille batch, fonction \texttt{model\_builder}, patience}
+\Sortie{Historique d’entraînement}
 
-% Commentaire explicatif
-Ce bloc décrit la procédure d’entraînement du modèle de classification. L’entraînement se fait sur le dataset d’entraînement avec validation pour suivre le surapprentissage. L’historique et les graphiques permettent de visualiser la performance et de décider si l’entraînement est suffisant.
+Initialiser meilleure validation MAE et compteur patience\;
+Construire modèle via \texttt{model\_builder}\;
+Initialiser dictionnaire historique\;
+Charger jeu de données d’entraînement et calculer steps par époque\;
 
-\subsection{Régression pour la prédiction du temps de cuisson}
-{\small
-	\begin{verbatim}
-# Fonction d'entrainement des modèles 
-1. Initialiser les variables pour la meilleure validation MAE et le compteur de patience.
-2. Construire une nouvelle instance du modèle via la fonction model_builder.
-3. Initialiser un dictionnaire pour stocker l’historique d’entraînement.
-4. Charger le jeu de données d’entraînement à partir du chemin donné.
-5. Calculer le nombre d’itérations (steps) par époque selon la taille du batch.
-6. Pour chaque époque dans le nombre total d’époques :
-    a. Afficher l’information de l’époque en cours.
-    b. Créer un générateur de batchs d’entraînement.
-    c. Entraîner le modèle sur une époque complète avec le générateur.
-    d. Récupérer la perte (loss) et la MAE d’entraînement.
-    e. Évaluer le modèle sur les données de validation pour obtenir val_loss et val_mae.
-    f. Enregistrer ces métriques dans l’historique.
-    g. Afficher un résumé des résultats d’entraînement et de validation.
-    h. Appliquer une stratégie d’early stopping :
-        i. (Si val_mae s’améliore, sauvegarder le modèle et réinitialiser le 
-            compteur de patience.)
-       ii. Sinon, incrémenter le compteur de patience.
-      iii. (Si le compteur atteint la patience maximale, arrêter l’entraînement 
-            prématurément.)
-    i. Libérer la mémoire du générateur.
-7. Afficher la fin de l’entraînement.
-8. Fermer le loader de données.
-9. Retourner l’historique d’entraînement.
-\end{verbatim}}
+\For{$epoch \gets 1$ \KwTo \texttt{EPOCHS}}{
+    Afficher numéro d’époque\;
+    Créer générateur de batchs\;
+    Entraîner modèle sur une époque complète\;
+    Récupérer loss et MAE d’entraînement\;
+    Évaluer sur validation : val\_loss et val\_mae\;
+    Enregistrer métriques dans historique\;
+    Afficher résumé résultats\;
+    \If{val\_mae s’améliore}{
+        Sauvegarder modèle\;
+        Réinitialiser compteur patience\;
+    }
+    \Else{
+        Incrémenter compteur patience\;
+        \If{compteur atteint patience maximale}{
+            Arrêter entraînement prématurément\;
+        }
+    }
+    Libérer mémoire générateur\;
+}
 
-% Commentaire explicatif
-La régression utilise le même principe que pour la classification mais avec un modèle adapté à la prédiction continue (temps de cuisson). L’early stopping permet d’éviter le surapprentissage et d’optimiser la performance sur le jeu de validation.
+Afficher fin d'entraînement\;
+Fermer loader de données\;
+\KwRet{historique}
+\end{algorithm}
 
-\section{Export et optimisation TinyML}
-\label{sec:optim_tinyml}
+\vspace{8pt}
 
-\subsection{Quantification complète INT8 pour la classification}
-{\small
-	\begin{verbatim}
-# Conversion du modèle classification MobileNetV2 
-1. Définir chemin tflite_model_path pour sauvegarder le modèle TFLite.
-2. Charger le modèle TensorFlow SavedModel de classification (saved_model_dir).
-3. Initialiser le convertisseur TFLite depuis le modèle chargé.
-4. Configurer les optimisations par défaut.
-5. Définir un dataset représentatif pour la quantification (100 images du jeu de test).
-6. Spécifier la quantification complète INT8 :
-       - inputs : uint8
-       - outputs : uint8
-       - utiliser le dataset représentatif pour calibrer.
-7. Convertir le modèle en format TFLite.
-8. Sauvegarder le modèle TFLite quantifié.
-9. Afficher un message de succès de la conversion.
-\end{verbatim}}
+\noindent\textbf{Description :} Ces algorithmes détaillent les procédures d'entraînement supervisé pour les modèles de classification et régression. Le suivi des métriques pendant l'entraînement, ainsi que l'utilisation d'un mécanisme d'early stopping pour la régression, permettent d'améliorer la généralisation en évitant le surapprentissage. La sauvegarde périodique du modèle assure la conservation des meilleurs poids selon la performance de validation.
 
-% Explication
-Cette quantification INT8 complète réduit fortement la taille mémoire et optimise l’exécution sur dispositifs Android tout en maintenant la précision des prédictions de classification. L’utilisation d’un dataset représentatif garantit une calibration correcte des valeurs INT8.
+\section*{Export et optimisation TinyML}
+
+\subsection*{Quantification complète INT8 pour la classification}
 
 
-\subsection{Conversion TensorFlow Lite pour la régression (float16)}
-\begin{verbatim}
-# Conversion du modèle régression 
-1. Importer TensorFlow (version 2.13).
-2. Charger le modèle SavedModel de régression.
-3. Initialiser un convertisseur TFLite à partir du modèle chargé.
-4. Activer les optimisations par défaut.
-5. Définir le type de données cible : float16 (réduction de taille mémoire ~50\%).
-6. Convertir le modèle en format TFLite.
-7. Sauvegarder le modèle TFLite dans un fichier binaire.
-8. Afficher un message de succès.
-\end{verbatim}
+\begin{algorithm}[H]
+\caption{Conversion du modèle classification MobileNetV2 en TFLite quantifié INT8}
+\Entrée{Modèle TensorFlow SavedModel, chemin de sauvegarde TFLite}
+\Sortie{Modèle TFLite quantifié INT8 sauvegardé}
 
-% Explication
-La conversion float16 permet de réduire la taille du modèle de régression tout en conservant une précision élevée, idéale pour TinyML sur des dispositifs embarqués.
+Définir chemin de sauvegarde TFLite\;
+Charger modèle TensorFlow SavedModel\;
+Initialiser convertisseur TFLite\;
+Activer optimisations par défaut\;
+Définir dataset représentatif (exemple : 100 images du jeu de test)\;
+Configurer quantification complète INT8 : \\
+\hspace{5mm} - Inputs : uint8 \\
+\hspace{5mm} - Outputs : uint8 \\
+\hspace{5mm} - Calibration avec dataset représentatif\;
+Convertir modèle en TFLite\;
+Sauvegarder modèle TFLite quantifié\;
+Afficher message de succès de la conversion\;
+\end{algorithm}
+
+\vspace{5mm}
+
+\noindent\textbf{Description :} Cette conversion INT8 optimise la taille mémoire et la vitesse d'exécution sur dispositifs embarqués tout en conservant une bonne précision. La calibration avec un dataset représentatif est cruciale pour assurer une quantification efficace et fidèle du modèle.
+
+\bigskip
+
+\subsection*{Conversion TensorFlow Lite pour la régression (float16)}
+
+\begin{algorithm}[H]
+\caption{Conversion du modèle régression en TFLite float16}
+\Entrée{Modèle TensorFlow SavedModel, chemin de sauvegarde TFLite}
+\Sortie{Modèle TFLite float16 sauvegardé}
+
+Importer TensorFlow version 2.13\;
+Charger modèle SavedModel de régression\;
+Initialiser convertisseur TFLite\;
+Activer optimisations par défaut\;
+Définir type de données cible : float16 (réduction mémoire d'environ 50\%)\;
+Convertir modèle en format TFLite\;
+Sauvegarder fichier binaire TFLite\;
+Afficher message de succès\;
+\end{algorithm}
+
+\vspace{5mm}
+
+\noindent\textbf{Description :} Cette conversion en float16 permet de diminuer significativement la taille du modèle de régression tout en préservant une précision élevée, ce qui est particulièrement adapté pour TinyML sur dispositifs embarqués à ressources limitées.
 
 \section{Déploiement Android}
 \label{sec:deploiement_android}
 
 \subsection{Cible et outils}
+Le déploiement a été effectué sur un \textbf{Samsung Galaxy Note 9} (Android 10, 6 Go RAM, 128 Go stockage) via une application développée avec :
 \begin{itemize}
-	\item \textbf{Android Studio} Narwhal (2025.1.2), \textbf{SDK} Android 36.
-	\item Compatibilité descendante : \texttt{minSdkVersion=26} (Android 8.0).
-	\item \textbf{Langage} : Kotlin.
-	\item \textbf{Runtime ML} : \texttt{TensorFlow Lite Interpreter} v2.13.
+    \item \textbf{Android Studio} Narwhal (2025.1.2), \textbf{SDK} Android 36.
+    \item Compatibilité descendante : \texttt{minSdkVersion=26} (Android 8.0).
+    \item \textbf{Langage} : Kotlin.
+    \item \textbf{Runtime ML} : \texttt{TensorFlow Lite Interpreter} v2.13.
+\end{itemize}
+
+\subsection{Architecture logicielle de l’application}
+L’application mobile repose sur une architecture modulaire :
+\begin{itemize}
+    \item \textbf{Interface utilisateur (UI)} : importation des photos de haricots et affichage des résultats.
+    \item \textbf{Module de classification} : MobileNetV2 quantifié INT8, détermine si l’image contient des haricots.
+    \item \textbf{Module de régression} : CNN personnalisé (TFLite float16), estime le temps de cuisson.
+    \item \textbf{Gestionnaire d’inférence} : orchestre les prétraitements, les appels aux modèles et la dénormalisation.
+    \item \textbf{Module résultats} : restitution de la variété détectée, du temps de cuisson estimé, de la latence et des métriques (MAE, RMSE, accuracy).
 \end{itemize}
 
 \subsection{Intégration et inférence}
+\begin{algorithm}[H]
+    \caption{Pipeline de prédiction du temps de cuisson des haricots}
+    \Image{Image de haricot sous forme de bitmap}
+    \Temps{Temps de cuisson estimé et variété détectée}
 
-\begin{verbatim}
-# Deploiement sur Android 
-1. MainViewModel (ViewModel) :
-    - Définir états observables : imageBitmap, predictionResult.
-    - Constantes : taille image (224x224), min/max temps cuisson.
-    - loadModelFile(context, modelPath) : charger modèle TFLite depuis assets.
-    - runPrediction(context, bitmap) :
-        a. Mettre à jour imageBitmap et predictionResult.
-        b. Lancer coroutine pour exécuter runModelInference.
-        c. Mesurer latence et mettre à jour predictionResult.
-        d. Gérer erreurs.
-    - runModelInference(context, bitmap) :
-        a. Convertir bitmap en ARGB_8888 si nécessaire.
-        b. Redimensionner à 224x224.
-        c. Créer ByteBuffer, normaliser pixels [0,1].
-        d. Charger interpréteur TFLite.
-        e. Exécuter inférence et récupérer sortie.
-        f. Dénormaliser prédiction et retourner.
-    - denormalize(normalizedValue) : convertir sortie normalisée en valeur réelle.
-    - reset() : réinitialiser états.
-2. IntroManager :
-    - Gérer SharedPreferences pour écran d’introduction.
-    - shouldShowIntro() : retourner booléen.
-    - setShowIntro(shouldShow) : modifier préférence.
-3. MainActivity :
-    - Initialiser IntroManager.
-    - Afficher IntroScreen si besoin, sinon écran prédiction.
-    - Navigation entre PredictionScreen et InfoScreen.
-4. Composables UI :
-    - IntroScreen : boîte de dialogue avec option "ne plus afficher".
-    - PredictionScreen :
-        a. Gérer permissions caméra, sélection image galerie/camera.
-        b. Afficher image sélectionnée.
-        c. Afficher résultats prédiction (temps, RMSE, MAE).
-        d. Boutons importer, prendre photo, réinitialiser.
-    - InfoScreen :
-        a. Présentation app.
-        b. Explication métriques MAE et RMSE.
-        c. Contexte cuisson haricots.
-\end{verbatim}
+    \SetKwFunction{FMain}{RunPrediction}
+    \SetKwFunction{FClassify}{runClassification}
+    \SetKwFunction{FRegress}{runRegression}
+
+    \SetKwProg{Fn}{Fonction}{ :}{}
+    \Fn{\FMain{$context$, $bitmap$}}{
+        Mettre à jour l'image affichée avec $bitmap$\;
+        Afficher ``Analyse en cours...''\;
+        Convertir $bitmap$ en format ARGB\_8888 si nécessaire\;
+        \tcp{Étape 1 : Classification}
+        $(classePrédite, score) \gets$ \FClassify{$context$, $bitmap$}\;
+        \eIf{$classePrédite =$ ``autre''}{
+            Afficher message d'erreur indiquant image non reconnue comme haricot\;
+            Afficher métriques classification (Précision, Recall, F1-score)\;
+        }{
+            \tcp{Étape 2 : Régression}
+            Démarrer chronomètre\;
+            $temps \gets$ \FRegress{$context$, $bitmap$}\;
+            Arrêter chronomètre\;
+            Afficher variété détectée : $classePrédite$\;
+            Afficher temps de cuisson estimé : $temps$ minutes\;
+            Afficher latence de prédiction\;
+            Afficher métriques régression (RMSE, MAE) et classification\;
+        }
+        \KwRet{}
+    }
+
+    \SetKwProg{Fn}{Fonction}{ :}{}
+    \Fn{\FClassify{$context$, $bitmap$}}{
+        Redimensionner $bitmap$ en $224 \times 224$\;
+        Convertir pixels en \texttt{ByteBuffer} UINT8 (sans normalisation)\;
+        Charger modèle TFLite quantifié int8 ``bean\_classifier.tflite''\;
+        Exécuter inférence pour obtenir sortie UINT8\;
+        Trouver indice de la classe ayant le score maximum\;
+        \KwRet{(classe correspondante, indice)}
+    }
+
+    \SetKwProg{Fn}{Fonction}{ :}{}
+    \Fn{\FRegress{$context$, $bitmap$}}{
+        Redimensionner $bitmap$ en $224 \times 224$\;
+        Convertir pixels en tableau float normalisé en $[0,1]$\;
+        Charger modèle TFLite float16 ``bean\_regressor.tflite''\;
+        Exécuter inférence pour obtenir sortie float32\;
+        Dénormaliser la sortie pour obtenir temps cuisson :
+        \[
+            \text{temps} = \text{valeurNormalise} \times (410 - 51) + 51
+        \]
+        \KwRet{temps}
+    }
+
+    \SetKwProg{Fn}{Fonction}{ :}{}
+    \Fn{Réinitialiser}{
+        Mettre à null \texttt{imageBitmap} et \texttt{predictionResult}\;
+    }
+\end{algorithm}
+
+
+% \subsection{Limites rencontrées}
+% Plusieurs limites ont été observées lors du déploiement :
+% \begin{itemize}
+%     \item \textbf{Latence} : bien que le CNN personnalisé soit rapide ($\approx$160 ms), MobileNetV2 présente une latence perceptible ($\approx$467 ms).
+%     \item \textbf{Consommation mémoire} : les modèles pré-entraînés (EfficientNetB0, NASNetMobile) sont trop lourds pour des smartphones anciens.
+%     \item \textbf{Robustesse aux conditions réelles} : perte de précision avec des photos floues, mal éclairées ou prises sous un angle extrême.
+%     \item \textbf{Compatibilité} : l’utilisation de TensorFlow Lite impose Android ≥ 8.0, excluant certains appareils.
+% \end{itemize}
+
+% \subsection{Résumé}
+% Le déploiement Android valide la faisabilité d’un système embarqué de prédiction du temps de cuisson des haricots. Les modèles quantifiés offrent un bon compromis entre précision et rapidité, avec une préférence pour le CNN personnalisé. L’intégration ouvre la voie à des applications pratiques dans un contexte domestique ou agroalimentaire.
+
 
 \section{Mesures et artefacts à produire}
 \label{sec:mesures_artefacts}
@@ -444,9 +398,9 @@ Cette section ne présente \emph{pas} de résultats chiffrés (qui seront rappor
 	\caption{Synthèse des modèles déployés.}
 	\begin{tabular}{l l l l}
 		\toprule
-		Modèle                       & Taille (Mo) & Latence Android (ms) & Métriques             \\ \midrule
-		CNN personnalisé 1           & 0.9         & 160                  & 26 (min) RMSE          \\
-		MobileNetV2 (classification) & 2.5         & 467                  & 97\% accuracy           \\ \bottomrule
+		Modèle                       & Taille (Mo) & Latence Android (ms) & Métriques     \\ \midrule
+		CNN personnalisé 1           & 0.9         & 160                  & 26 (min) RMSE \\
+		MobileNetV2 (classification) & 2.5         & 467                  & 97\% accuracy \\ \bottomrule
 	\end{tabular}
 \end{table}
 
