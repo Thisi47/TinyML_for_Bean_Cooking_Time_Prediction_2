@@ -1,4 +1,0 @@
-pdflatex main_thesis
-biber main_thesis
-pdflatex main_thesis
-pdflatex main_thesis
