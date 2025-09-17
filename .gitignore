@@ -1,0 +1,15 @@
+*.toc
+*.log
+*.fls
+*.fdb_latexmk
+*.bbl
+*.aux
+*.bbl-SAVE-ERROR
+*.lof
+*.out
+*.sh
+*.bcf
+*.xml
+*.gz
+*.lot
+
